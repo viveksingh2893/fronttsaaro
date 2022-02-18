@@ -1,0 +1,22 @@
+.lbutton-main{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height:2.7vw;
+    width:21vw;
+    border-radius: 0.2vw;
+    background: #7A4EB6;
+    cursor: pointer;
+
+}
+.lbutton-p{
+    font-family: Roboto;
+    font-size: 1vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2vw;
+    margin:0rem;
+    text-align: left;
+    color: #ffffff;
+
+}

@@ -1,0 +1,94 @@
+.box {
+  background-color: #331a55;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 17vw;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+}
+.img{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img1 {
+  width: 68px;
+  height: 76px;
+  background: url(img1.png);
+
+
+}
+
+.img2 {
+  width: 117px;
+  height: 44px;
+}
+
+.line {
+  width: 329px;
+  height: 0px;
+  left: -0.5px;
+  top: 310.5px;
+  border: 3px solid #ffffff;
+
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.button{
+  display: flex;
+  
+  height:4.1vh;
+  width:14vw;
+  margin-left: 2.1vw;
+  align-items: center;
+  margin-top:1.56vw;
+ 
+  
+  
+}
+.button-child{
+  display:'flex';
+  
+  flex-direction:row;
+  margin:10px;
+  
+  /* margin-right:2.1vw; */
+  border:1px solid red;
+  
+  padding-top:0.25vw;
+  padding-bottom:0.25vw
+}
+.button:hover{
+  background: #7A4EB6;
+  ;
+}
+.button-para{
+  border:1px solid #ffffff;
+font-family: Roboto;
+font-size: 1vw;
+font-style: normal;
+font-weight: 700;
+line-height: 1.1vw;
+letter-spacing: 0em;
+text-align: left;
+color:#ffffff;
+margin-left: 5px;
+
+}
+
+.atag {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.svg{
+    margin-left: 0.4rem;
+}
