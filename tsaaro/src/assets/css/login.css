@@ -1,4 +1,5 @@
 @import "~antd/dist/antd.css";
+@import "global.css";
 
 .login-main {
   display: flex;
@@ -12,12 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  background: linear-gradient(
-    146.59deg,
-    #331a55 8.26%,
-    rgba(51, 26, 85, 0.88) 57.99%,
-    rgba(51, 26, 85, 0) 193.32%
-  );
+  background: var(--tsaarobackground);
 }
 .login-col2 {
   display: flex;
@@ -86,5 +82,14 @@ font-weight: 600;
 line-height: 1.7vw;
 text-align: left;
 
+}
+
+.welcome{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100vw;
+  height:100vh;
+  background: var(--tsaarobackground);
 }
 

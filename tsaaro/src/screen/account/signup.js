@@ -29,9 +29,7 @@ const SignupScr = () => {
       </Col>
       <Col className="login-col2" span={14}>
         <Col className="login-col2-child">
-            <p className='login-title'>
-                Sign Up
-            </p>
+          <p className="login-title">Sign Up</p>
           <InputView label="Email Address" />
 
           <InputView label="Website" />

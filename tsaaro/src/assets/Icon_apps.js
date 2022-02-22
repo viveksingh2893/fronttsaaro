@@ -2,8 +2,8 @@ function SvgIcon(props) {
   if (props.name === "dashboard") {
     return (
       <svg
-        width="35"
-        height="35"
+        width="1.8vw"
+        height="1.8vw"
         viewBox="0 0 35 35"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -47,8 +47,8 @@ function SvgIcon(props) {
   if (props.name === "consent banner") {
     return (
       <svg
-        width="35"
-        height="35"
+        width="1.8vw"
+        height="1.8vw"
         viewBox="0 0 35 35"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -86,8 +86,8 @@ function SvgIcon(props) {
   if (props.name === "cookie manager") {
     return (
       <svg
-        width="35"
-        height="35"
+        width="1.8vw"
+        height="1.8vw"
         viewBox="0 0 35 35"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -164,8 +164,8 @@ function SvgIcon(props) {
   if (props.name === "consent log") {
     return (
       <svg
-        width="35"
-        height="35"
+        width="1.8vw"
+        height="1.8vw"
         viewBox="0 0 35 35"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -210,8 +210,8 @@ function SvgIcon(props) {
   if (props.name === "privacy policy") {
     return (
       <svg
-        width="35"
-        height="35"
+        width="1.8vw"
+        height="1.8vw"
         viewBox="0 0 35 35"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -249,8 +249,8 @@ function SvgIcon(props) {
   if (props.name === "cookie policy") {
     return (
       <svg
-        width="35"
-        height="35"
+        width="1.8vw"
+        height="1.8vw"
         viewBox="0 0 35 35"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -290,8 +290,8 @@ function SvgIcon(props) {
   if (props.name === "site settings") {
     return (
       <svg
-        width="35"
-        height="35"
+        width="1.8vw"
+        height="1.8vw"
         viewBox="0 0 35 35"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -346,6 +346,46 @@ function SvgIcon(props) {
             <rect width="35" height="35" fill="white" />
           </clipPath>
         </defs>
+      </svg>
+    );
+  }
+  if (props.name === "burger") {
+    return (
+      <svg
+        width="1.75vw"
+        height="1.75vw"
+        viewBox="0 0 28 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M24.5 11.6667H3.5"
+          stroke="#1E1A1A"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M24.5 7H3.5"
+          stroke="#1E1A1A"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M24.5 16.3333H3.5"
+          stroke="#1E1A1A"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M24.5 21H3.5"
+          stroke="#1E1A1A"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
       </svg>
     );
   }
