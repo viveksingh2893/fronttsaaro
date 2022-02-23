@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,300&display=swap');
 .cont {
-  height: 4vw;
+  height:60px;
   left: 17vw;
   background: #ffffff;
+  width:calc(100vw - 17vw);
   display: flex;
   flex-direction: row;
-  margin-left: 17vw;
+  border:1px solid black;
   align-items: center;
   box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.2);
 }

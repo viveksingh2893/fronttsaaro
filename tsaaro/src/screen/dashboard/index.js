@@ -13,12 +13,17 @@ import PrivacypolicyScr from './privacypolicy';
 import ConsentlogScr from './consentlog';
 import DashboardScr from './dashboard';
 import SitesettingScr from './sitesetting';
+import { Col,Row } from 'antd';
 const Screen=()=>{
     return(
         <>
-        <HeaderMenuView/>
-        <SideMenuView/>
-        <Routes>
+        <Row>
+            
+            <Col>
+            <SideMenuView/>
+            </Col>
+            <Col span={18}><HeaderMenuView/>
+            <Routes>
             <Route path="/dsboard" element={<DashboardScr/>}/>
             <Route path="/cm" element={<CookiemanagerScr/>}/>
             <Route path="/cb" element={<ConsentbannerScr/>}/>
@@ -27,6 +32,14 @@ const Screen=()=>{
             <Route path="/pp" element={<PrivacypolicyScr/>}/>
             <Route path="/ss" element={<SitesettingScr/>}/>
         </Routes>
+
+
+            
+            </Col>
+        </Row>
+        
+        
+       
         </>
 
     );

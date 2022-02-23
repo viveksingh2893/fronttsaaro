@@ -1,0 +1,41 @@
+.cm{
+
+font-family: Roboto;
+font-size: 2vw;
+font-style: normal;
+font-weight: 600;
+line-height: 2.2vw;
+letter-spacing: 0em;
+text-align: left;
+
+}
+.cm-toggle-col{
+    padding:0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cm-toggle{
+
+font-family: Roboto;
+font-size: 1.1vw;
+font-style: normal;
+font-weight: 700;
+line-height: 1.3vw;
+letter-spacing: 0em;
+margin:0;
+text-align: left;
+
+}
+.cm-cookie-selection{
+
+font-family: Roboto;
+font-size: 1vw;
+font-style: normal;
+font-weight: 500;
+line-height: 1.2vw;
+letter-spacing: 0em;
+text-align: left;
+margin:0
+
+}
