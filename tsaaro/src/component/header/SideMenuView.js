@@ -3,9 +3,10 @@ import { Col, Image, Row } from "antd";
 import "../../assets/css/sidemenu.css";
 import logo from "../../assets/images/img1.png";
 import SmButton from "./smButton";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 function SideMenuView() {
+  const {name}=useParams()
   return (
     <div className="box">
       <div className="img">
@@ -26,7 +27,7 @@ function SideMenuView() {
       ></div>
 
       <div className="btn">
-        <NavLink to=".\dsboard">
+        <NavLink to=".\dash">
           <SmButton id="dsboard" name="Dashboard" />
         </NavLink>
         <NavLink to=".\cb">

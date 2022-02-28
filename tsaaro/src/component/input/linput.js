@@ -1,5 +1,4 @@
 import { Checkbox, Input,Row } from "antd"
-import { OmitProps } from "antd/lib/transfer/ListBody";
 import '../../assets/css/linput.css'
 const InputView=(props)=>{
 
@@ -10,7 +9,7 @@ const InputView=(props)=>{
             <b className="linput-b">{props.clickable}</b></div>:
             <div>{props.text}<b className="linput-b"> {props.clickable}</b></div>:<>
             <p className='linput-p1'>{props.label}</p>
-            <Input className='linput-inp' placeholder={props.label}/>
+            <Input className='linput-inp'  placeholder={props.label} onChange={props.onChange}/>
             </>}
         </Row>
 
