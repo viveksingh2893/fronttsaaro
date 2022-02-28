@@ -6,7 +6,7 @@ const LbuttonView=(props)=>{
 
     return(
 
-        <Row className='lbutton-main' onClick={()=>console.log("hello world")}
+        <Row className='lbutton-main' onClick={props.action}
         style={{border:props.icon==='googleicon'?'1px solid #7A4EB6':"none"
         ,backgroundColor:props.icon==='googleicon'?
         '#ffffff':'#7a4eb8'
