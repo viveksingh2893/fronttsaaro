@@ -41,8 +41,9 @@
 }
 
 .acc{
-   /* margin-left: 620px; */
-   color: #5647ab;
+    display:flex;
+    margin-left: 40vw;
+    color: #5647ab;
     
 }
 
