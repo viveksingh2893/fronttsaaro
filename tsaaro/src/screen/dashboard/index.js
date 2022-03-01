@@ -1,4 +1,3 @@
-
 import HeaderMenuView from '../../component/header/HeaderMenuView';
 import SideMenuView from '../../component/header/SideMenuView';
 import {
@@ -14,13 +13,14 @@ import ConsentlogScr from './consentlog';
 import DashboardScr from './dashboard';
 import SitesettingScr from './sitesetting';
 import { Col,Row } from 'antd';
+
 const Screen=()=>{
     return(
         <>
         <Row>
             
             <Col>
-            <SideMenuView/>
+                <SideMenuView/>
             </Col>
             <Col span={18}><HeaderMenuView/>
         <Routes>

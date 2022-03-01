@@ -45,3 +45,21 @@ margin:0
     height: 2.5vw;
     
   }
+
+  .ct{
+    font-family: Roboto;
+    font-size: 1.2vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2vw;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-right:10px
+    }
+
+    .mac{
+        background-color: #F6F6F6;
+        padding: 7vmin;
+        align-items: center;
+        justify-content: center;
+    }

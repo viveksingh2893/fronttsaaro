@@ -2,10 +2,12 @@ import { Col, Button, Row } from "antd";
 import { useState } from "react";
 import "../../assets/css/cookieboard.css";
 import SvgIcon from "../../assets/Icon_apps";
+import CookieTypesView from "../../component/header/CookieTypesView";
 
 
 const CookiemanagerScr = () => {
   const [toggle, setToggle] = useState(false);
+  const [cookietype, setCookieType] = useState("Neccessary")
   const [switchcookies, setSwitch] = useState([1, 0, 0, 0, 0, 0]);
 
   const handletoggle = (e) => {
@@ -19,18 +21,25 @@ const CookiemanagerScr = () => {
   const handleswitch = (id) => {
     if (id === "nc") {
       setSwitch([1, 0, 0, 0, 0, 0]);
+      setCookieType('Neccessary');
     } else if (id === "fc") {
       setSwitch([0, 1, 0, 0, 0, 0]);
+      setCookieType('Functional');
     } else if (id === "an") {
       setSwitch([0, 0, 1, 0, 0, 0]);
+      setCookieType('Analytics');
     } else if (id === "pr") {
       setSwitch([0, 0, 0, 1, 0, 0]);
+      setCookieType('Performance');
     } else if (id === "ad") {
       setSwitch([0, 0, 0, 0, 1, 0]);
+      setCookieType('Advertisment');
     } else if (id === "ot") {
       setSwitch([0, 0, 0, 0, 0, 1]);
+      setCookieType('Others');
     }
   };
+  
   return (
     <Col
       style={{
@@ -101,6 +110,7 @@ const CookiemanagerScr = () => {
               span={4}
             >
               <h4 className="cm-cookie-selection">Neccessary(1)</h4>
+              
             </Col>
             <Col
               onClick={() => handleswitch("fc")}
@@ -158,71 +168,7 @@ const CookiemanagerScr = () => {
               <h4 className="cm-cookie-selection">Others(1)</h4>
             </Col>
           </Row>
-          <Row>
-            <Col
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-              }}
-              span={12}
-            >
-              <h3 >Neccessary</h3> 
-              <div onClick={()=>console.log("edit")}><SvgIcon name='edit'/></div>
-            </Col>
-            <Col
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-end",
-              }}
-              span={12}
-            >
-              <div className="input">
-                <form>
-                  <select id="cars" name="cars" className="language">
-                    <option value="english" >English</option>
-                    <option value="hindi" >Hindi</option>
-                    <option value="bulgarian" >Bulgarian</option>
-                    <option value="catalan">Catalan</option>
-                  </select>
-                </form>
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <p>
-              Scan your website for cookies and manage the discovered or
-              self-declared cookies here.
-            </p>
-          </Row>
-          
-          <Row>
-            <Col
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-              }}
-              span={12}
-            >
-              <h3>Cookie List</h3>
-              
-            </Col>
-            <Col
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-end",
-              }}
-              span={12}
-            >
-              <SvgIcon name='plus circle'/>
-              Add New Cookie
-            </Col>
-          </Row>
-          <Row>Hello</Row>
-          <Row>Hello</Row>
+          <CookieTypesView type={cookietype}/>
         </Col>
       </Row>
     </Col>

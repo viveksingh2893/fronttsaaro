@@ -4,8 +4,9 @@ import "../../assets/css/header.css";
 import SvgIcon from "../../assets/Icon_apps";
 import { Menu, Dropdown } from 'antd';
 
-function HeaderMenuView() {
+function HeaderMenuView(props) {
   const [change, setChange] = useState(false);
+  
   const [icon, setIcon] = useState("")
   const toggle =()=>{
     if (change===false){
@@ -29,7 +30,7 @@ function HeaderMenuView() {
 
   return (
     <div className="cont">
-      <div className="menu" onClick={()=>console.log('hello world')}>
+      <div className="menu" onClick={() => console.log("hello  world")}>
        <SvgIcon name='burger'/>
       </div>
       <div className="input">
