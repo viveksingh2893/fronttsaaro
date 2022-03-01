@@ -8,11 +8,12 @@ import DashboardScr from './screen/dashboard/dashboard';
 
 import { Route, Routes } from 'react-router-dom';
 import Screen from './screen/dashboard';
+import AccountScr from './screen/account';
 
 function App() {
   return (
  
-  <Screen/>
+  <AccountScr/>
 
 
 

@@ -23,8 +23,8 @@ const Screen=()=>{
             <SideMenuView/>
             </Col>
             <Col span={18}><HeaderMenuView/>
-            <Routes>
-            <Route path="/dsboard" element={<DashboardScr/>}/>
+        <Routes>
+            <Route path="/dash" element={<DashboardScr/>}/>
             <Route path="/cm" element={<CookiemanagerScr/>}/>
             <Route path="/cb" element={<ConsentbannerScr/>}/>
             <Route path="/cl" element={<ConsentlogScr/>}/>
@@ -32,9 +32,6 @@ const Screen=()=>{
             <Route path="/pp" element={<PrivacypolicyScr/>}/>
             <Route path="/ss" element={<SitesettingScr/>}/>
         </Routes>
-
-
-            
             </Col>
         </Row>
         
