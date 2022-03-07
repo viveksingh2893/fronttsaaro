@@ -5,32 +5,37 @@ import "../../assets/css/login.css";
 import Loginleftsvg from "../../assets/loginleftside";
 import InputView from "../../component/input/linput";
 import LbuttonView from "../../component/button/lbutton";
-import Loginapi from "../../api/loginapi";
+import Postapi from "../../api/Postapi";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginScr = () => {
-  const [username, setUsername]=useState()
-  const[password,setPassword]=useState()
-  
-//  const data={
-//   "email":"rohit@destratum.com",
-//   "password":"123456"
-// }
-const data={
-  email:username,
-  password:password
-}
-console.log(data)
-  const postreq=()=>{
-    Loginapi('http://127.0.0.1:8000/app/api/token/',data)
-    
-    
-    
-  }
-  const getreq=()=>{
-    axios.get('http://127.0.0.1:8000/app/date')
-  }
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+  const [wrongcred, setWrongcred] = useState(false);
+  const navigate = useNavigate();
+  //  const data={
+  //   "email":"rohit@destratum.com",
+  //   "password":"123456"
+  // }
+  const data = {
+    email: username,
+    password: password,
+  };
+  console.log(data);
+  const postreq = async () => {
+    const auth = await Postapi("http://192.168.29.5:8000/auth/token/", data,'login');
+    console.log("auth....", auth);
+    if (auth) {
+      navigate("/dashboard/dash");
+    } else {
+      setWrongcred(true);
+    }
+  };
+  const getreq = () => {
+    axios.get("http://127.0.0.1:8000/app/date");
+  };
   return (
     <Row gutter={0} className="login-main">
       <Col className="login-col1" span={10}>
@@ -55,18 +60,24 @@ console.log(data)
       <Col className="login-col2" span={14}>
         <Col className="login-col2-child">
           <p className="login-title">Login</p>
-          <InputView label="Email Address" value={username}onChange={(e)=>setUsername(e.target.value)} />
-
-          <InputView label="Password" onChange={(e)=>setPassword(e.target.value)} />
-
           <InputView
-            checkbox={true}
-            text="I Accept the"
-            clickable={"Terms & Conditions & Privacy Policy "}
+            label="Email Address"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
 
-          <LbuttonView title="Login"   value={username} action={postreq} />
-          <InputView text="Don't have account?" clickable="Sign Up here" />
+          <InputView
+            label="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <h5 className="login-fg-pwd">Forgot password?</h5>
+          {wrongcred ? (
+            <h5 className="login-wrn-cred">
+              Your email or password is incorrect.
+            </h5>
+          ) : null}
+          <LbuttonView title="Login" value={username} action={postreq} />
+          <InputView text="Don't have account?" clickable="Sign Up here" action={()=>navigate("/signup")} />
           <LbuttonView icon="googleicon" title="Login with google" />
         </Col>
       </Col>

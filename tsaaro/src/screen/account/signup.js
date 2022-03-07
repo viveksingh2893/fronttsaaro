@@ -5,7 +5,16 @@ import "../../assets/css/login.css";
 import Loginleftsvg from "../../assets/loginleftside";
 import InputView from "../../component/input/linput";
 import LbuttonView from "../../component/button/lbutton";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 const SignupScr = () => {
+  const [email, setEmail] = useState();
+  const [website, setWebsite] = useState();
+  const [password, setPassword] = useState();
+  const [wrongcred, setWrongcred] = useState(false);
+  const navigate=useNavigate()
+  console.log(email,website,password);
+
   return (
     <Row gutter={0} className="login-main">
       <Col className="login-col1" span={10}>
@@ -30,11 +39,11 @@ const SignupScr = () => {
       <Col className="login-col2" span={14}>
         <Col className="login-col2-child">
           <p className="login-title">Sign Up</p>
-          <InputView label="Email Address" />
+          <InputView  onChange={(e)=>setEmail(e.target.value)}label="Email Address" />
 
-          <InputView label="Website" />
+          <InputView  onChange={(e)=>setWebsite(e.target.value)}label="Website" />
 
-          <InputView label="Password" />
+          <InputView  onChange={(e)=>setPassword(e.target.value)}label="Password" />
 
           <InputView
             checkbox={true}
@@ -44,7 +53,7 @@ const SignupScr = () => {
 
           <LbuttonView title="Sign Up" />
 
-          <InputView text="Already have an Account ?" clickable="Login here" />
+          <InputView text="Already have an Account ?" clickable="Login here" action={()=>navigate('/')} />
 
           <LbuttonView icon="googleicon" title="Sign Up with google" />
         </Col>
