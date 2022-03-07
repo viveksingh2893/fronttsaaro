@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import HeaderMenuView from '../../component/header/HeaderMenuView';
 import SideMenuView from '../../component/header/SideMenuView';
 import {
@@ -13,16 +14,21 @@ import ConsentlogScr from './consentlog';
 import DashboardScr from './dashboard';
 import SitesettingScr from './sitesetting';
 import { Col,Row } from 'antd';
+import '../../assets/css/sidemenu.css'
 
 const Screen=()=>{
+    const [inactive, setInactive] = useState(false);
     return(
         <>
-        <Row>
-            
+        <Row style={{display:'flex'}}>
             <Col>
-                <SideMenuView/>
+                <div className={`sidenav ${inactive ? "inactive" : ""}`}>
+                    <SideMenuView/>
+                </div>
             </Col>
-            <Col span={18}><HeaderMenuView/>
+            <Col span={18} style={{flex:3}}>
+                <HeaderMenuView inactive={inactive} setInactive={setInactive}
+            />
         <Routes>
             <Route path="/dash" element={<DashboardScr/>}/>
             <Route path="/cm" element={<CookiemanagerScr/>}/>
@@ -34,9 +40,6 @@ const Screen=()=>{
         </Routes>
             </Col>
         </Row>
-        
-        
-       
         </>
 
     );

@@ -4,11 +4,11 @@ import { Row,Col } from "antd"
 
 const SmButton= (props)=>{
 return(
-    <Row gutter={0} className="button">
-      <Row  className="button-child">
-       
-      <SvgIcon name={props.name.toLowerCase()}/>
-      <p className="button-para">{props.name}
+    <Row gutter={5} className="button">
+      <Row className="button-child">
+
+       <div style={{flex:.7}}><SvgIcon name={props.name.toLowerCase()}/></div>
+      <p style={{flex:2}} className="button-para">{props.name}
       </p>
       
       </Row>
