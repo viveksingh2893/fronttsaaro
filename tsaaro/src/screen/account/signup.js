@@ -7,13 +7,23 @@ import InputView from "../../component/input/linput";
 import LbuttonView from "../../component/button/lbutton";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Postapi from "../../api/Postapi";
 const SignupScr = () => {
   const [email, setEmail] = useState();
   const [website, setWebsite] = useState();
   const [password, setPassword] = useState();
-  const [wrongcred, setWrongcred] = useState(false);
+  const [verify, setVerify] = useState();
   const navigate=useNavigate()
   console.log(email,website,password);
+  const postreq = async () => {
+    const auth = await Postapi("http://192.168.29.5:8001/auth/user/signup", {email:email,website:website,password:password,password2:verify},'login');
+    console.log("auth....", auth);
+    if (auth) {
+      navigate("/");
+    } else {
+      console.log("hello signup");
+    }
+  };
 
   return (
     <Row gutter={0} className="login-main">
@@ -44,6 +54,7 @@ const SignupScr = () => {
           <InputView  onChange={(e)=>setWebsite(e.target.value)}label="Website" />
 
           <InputView  onChange={(e)=>setPassword(e.target.value)}label="Password" />
+          <InputView  onChange={(e)=>setVerify(e.target.value)}label="Confirm Password" />
 
           <InputView
             checkbox={true}
@@ -51,7 +62,7 @@ const SignupScr = () => {
             clickable={"Terms & Conditions & Privacy Policy "}
           />
 
-          <LbuttonView title="Sign Up" />
+          <LbuttonView title="Sign Up" action={postreq}/>
 
           <InputView text="Already have an Account ?" clickable="Login here" action={()=>navigate('/')} />
 

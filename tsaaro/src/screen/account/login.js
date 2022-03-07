@@ -7,7 +7,7 @@ import InputView from "../../component/input/linput";
 import LbuttonView from "../../component/button/lbutton";
 import Postapi from "../../api/Postapi";
 import axios from "axios";
-import { useState } from "react";
+import { useState,useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 const LoginScr = () => {
@@ -19,13 +19,36 @@ const LoginScr = () => {
   //   "email":"rohit@destratum.com",
   //   "password":"123456"
   // }
+const { REACT_APP_GOOGLE_CLIENT_ID, REACT_APP_BASE_BACKEND_URL } = process.env;
+const openGoogleLoginPage = useCallback(() => {
+    const googleAuthUrl = 'https://accounts.google.com/o/oauth2/v2/auth';
+    const redirectUri = 'auth/google/';
+
+    const scope = [
+      'https://www.googleapis.com/auth/userinfo.email',
+      'https://www.googleapis.com/auth/userinfo.profile'
+    ].join(' ');
+
+    const params = {
+      response_type: 'code',
+      client_id: '476617142718-lluvm3mkk189lkp2968vqv8l2l8sig1q.apps.googleusercontent.com',
+      redirect_uri: `'http://192.168.29.5:8001'/${redirectUri}`,
+      prompt: 'select_account',
+      access_type: 'offline',
+      scope
+    };
+    
+    const urlParams = new URLSearchParams(params).toString();
+
+    window.location = `${googleAuthUrl}?${urlParams}`;
+  }, []);
   const data = {
     email: username,
     password: password,
   };
   console.log(data);
   const postreq = async () => {
-    const auth = await Postapi("http://192.168.29.5:8000/auth/token/", data,'login');
+    const auth = await Postapi("http://192.168.29.5:8001/auth/token/", data,'login');
     console.log("auth....", auth);
     if (auth) {
       navigate("/dashboard/dash");
@@ -78,7 +101,7 @@ const LoginScr = () => {
           ) : null}
           <LbuttonView title="Login" value={username} action={postreq} />
           <InputView text="Don't have account?" clickable="Sign Up here" action={()=>navigate("/signup")} />
-          <LbuttonView icon="googleicon" title="Login with google" />
+          <LbuttonView icon="googleicon" title="Login with google" action={openGoogleLoginPage} />
         </Col>
       </Col>
     </Row>
