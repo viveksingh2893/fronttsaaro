@@ -2,12 +2,14 @@ import React, {useState, useEffect} from "react";
 import "../../assets/css/cookieboard.css";
 import SvgIcon from "../../assets/Icon_apps";
 import { Menu, Dropdown, Row,Col } from 'antd';
-import ManualCookieView from "./ManualCookieView";
+import ManualCookieView from "../header/ManualCookieView";
+import AddCookiePop from "../popup/cookiePopView";
 
 function CookieTypesView(props) {
+
   return (
       <div>
-    <Row>
+        <Row>
             <Col
               style={{
                 display: "flex",

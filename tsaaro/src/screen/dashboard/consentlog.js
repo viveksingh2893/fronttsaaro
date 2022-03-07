@@ -1,6 +1,6 @@
 const ConsentlogScr=()=>{
     return(
-        <div  style={{display:'flex',height:'100vw',height:'40vw',justifyContent:'center',alignItems:'center'}}>
+        <div  style={{display:'flex',height:'100vh',height:'40vw',justifyContent:'center',alignItems:'center'}}>
 
 
         <h1>Hello Consent Log</h1>
