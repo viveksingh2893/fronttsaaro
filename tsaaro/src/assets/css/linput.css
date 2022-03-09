@@ -20,9 +20,11 @@ text-align: left;
 
 
 }
-.linput-inp{
+.linput-otp{
     width:21vw;
     height:3vw;
+    text-align: center;
+    letter-spacing:3px;
     border: 1px solid #ADADAD;
     
 }
@@ -32,6 +34,7 @@ text-align: left;
 
 
 }
+
 .linput-b{
     font-family: Roboto;
 font-size: 0.92vw;
