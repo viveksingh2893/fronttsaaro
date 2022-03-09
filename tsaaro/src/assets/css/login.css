@@ -92,4 +92,23 @@ text-align: left;
   height:100vh;
   background: var(--tsaarobackground);
 }
+.login-fg-pwd{
+  margin-top:-1vw;
+  text-align:right;
+  color:#7A4EB6;
+  cursor: pointer;
 
+}
+.login-wrn-cred{
+
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 19px;
+letter-spacing: 0em;
+text-align: left;
+color: #F51D2C;
+
+
+}
