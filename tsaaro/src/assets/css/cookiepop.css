@@ -73,12 +73,12 @@ body.active-add {
 
 .add-h3 {
   color: #331a55;
-  margin: 1vw;
 }
 
 .add-head {
   display: flex;
   justify-content: space-between;
+  /* height: 100vh; */
 }
 
 .add-input1 {

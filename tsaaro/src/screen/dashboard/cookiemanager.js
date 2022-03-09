@@ -2,9 +2,12 @@ import React, {useState, useEffect} from "react";
 import { Col, Button, Row } from "antd";
 import "../../assets/css/cookieboard.css";
 import CookieView from "../../component/content/cookieView";
-
+import ScanHistoryView from "../../component/content/scanHistoryView";
+import ScanAgainPop from "../../component/popup/scanAgainPopView";
 
 const CookiemanagerScr = () => {
+  const [scan, setScan] = useState(false);
+  
   const [toggle, setToggle] = useState(false);
   const [select, setSelect] = useState("cookie")
   const [choose, setChoose] = useState('')
@@ -16,10 +19,19 @@ const CookiemanagerScr = () => {
     setToggle(!toggle); 
   };
 
+  const toggleScan = () => {
+    setScan(!scan);
+  };
+  if (scan) {
+    document.body.classList.add("active-add");
+  } else {
+    document.body.classList.remove("active-add");
+  }
+
   useEffect(()=>{
     if (toggle){
         console.log('scan');
-        setChoose('scan')
+        setChoose(<ScanHistoryView/>)
       
     }else{
       console.log('cookie')
@@ -57,7 +69,7 @@ const CookiemanagerScr = () => {
             justifyContent: "flex-end",
           }}
         >
-          <Button>Scan here</Button>
+          <Button onClick={toggleScan} type="primary" className="primary-btn">Scan Again</Button>
         </Col>
       </Row>
       <Row style={{ padding: "1rem" }}>
@@ -92,7 +104,9 @@ const CookiemanagerScr = () => {
           <div>{choose}</div>
         </Col>
       </Row>
+      {scan && (<ScanAgainPop closeScan={setScan}/>)}
     </Col>
+    
   );
 };
 export default CookiemanagerScr;

@@ -508,6 +508,38 @@ function SvgIcon(props) {
     </svg>
     );
   }
+  if (props.name === "no cookie") {
+    return (
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="6.8vw"
+      height="6.8vw"
+      fill="none"
+      viewBox="0 0 130 130"
+    >
+      <path
+        fill="#ADADAD"
+        d="M65.003 119.167c29.915 0 54.166-24.252 54.166-54.167 0-29.916-24.251-54.167-54.166-54.167-29.916 0-54.167 24.252-54.167 54.167 0 29.915 24.251 54.167 54.167 54.167z"
+      ></path>
+      <ellipse
+        cx="84.15"
+        cy="44.107"
+        fill="#fff"
+        rx="10.446"
+        ry="10.446"
+      ></ellipse>
+      <ellipse cx="43.641" cy="44.223" fill="#fff" rx="6.5" ry="6.5"></ellipse>
+      <ellipse cx="84.266" cy="87.17" fill="#fff" rx="6.5" ry="6.5"></ellipse>
+      <ellipse
+        cx="43.525"
+        cy="80.67"
+        fill="#fff"
+        rx="10.446"
+        ry="10.446"
+      ></ellipse>
+    </svg>
+    );
+  }
 }
 
 export default SvgIcon;

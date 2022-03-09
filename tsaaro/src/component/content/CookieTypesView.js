@@ -3,11 +3,36 @@ import "../../assets/css/cookieboard.css";
 import SvgIcon from "../../assets/Icon_apps";
 import { Menu, Dropdown, Row,Col } from 'antd';
 import ManualCookieView from "../header/ManualCookieView";
-import AddCookiePop from "../popup/cookiePopView";
+import CookieEditPopView from "../popup/cookieEditPopView";
+import AddCookiePopView from "../popup/addCookiePopView";
+import NoCookieView from "./noCookieView";
+ 
 
 function CookieTypesView(props) {
+  const [modal, setModal] = useState(false);
+  const [add, setAdd] = useState(false);
+
+  const toggleAdd = (props) => {
+    setAdd(!add);
+  };
+  if (add) {
+    document.body.classList.add("active-add");
+  } else {
+    document.body.classList.remove("active-add");
+  }
+
+  const toggleModal = () => {
+    setModal(!modal);
+  };
+
+  if (modal) {
+    document.body.classList.add("active-modal");
+  } else {
+    document.body.classList.remove("active-modal");
+  }
 
   return (
+    <>
       <div>
         <Row>
             <Col
@@ -19,7 +44,7 @@ function CookieTypesView(props) {
               span={12}
             >
               <h4 className="ct">{props.type}</h4> 
-              <div onClick={()=>console.log("edit")}><SvgIcon name='edit'/></div>
+              <div onClick={toggleModal}><SvgIcon name='edit'/></div>
             </Col>
             <Col
               style={{
@@ -59,7 +84,7 @@ function CookieTypesView(props) {
               span={12}
             >
               <h3 className="ct"
-              onClick={()=>console.log("cookie list")}
+              onClick={()=>console.log("Cookie List")}
               style={{
                     color: '#331A55',
                     textDecorationLine: 'underline'
@@ -69,7 +94,7 @@ function CookieTypesView(props) {
               
             </Col>
             <Col
-            onClick={()=>console.log("add cookie")}
+            onClick={toggleAdd}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -90,9 +115,26 @@ function CookieTypesView(props) {
                   Add New Cookie
                   </h3>
             </Col>
+            
           </Row>
           <ManualCookieView/>
+          {/* <NoCookieView/> */}
           </div>
+          {modal && (
+            <div className="modal">
+              <div className="modal-content">
+                <CookieEditPopView closeModal={setModal}/>
+              </div>
+            </div>
+          )}
+          {add && (
+        <div className="add-modal">
+          <div className="add-content">
+            <AddCookiePopView closeAdd={setAdd}/>
+        </div>
+        </div>
+      )}
+          </>
   );
 }
 

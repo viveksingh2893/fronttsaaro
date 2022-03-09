@@ -1,0 +1,101 @@
+.scan-history-item{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F6F6F6;
+    margin: 1vw;
+    width: 68vw;
+    height: 5vw;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&display=swap");
+.scan-alert-box {
+  background-color: #fff8d9;
+  display: flex;
+  margin: 1vw;
+}
+
+.scan-alert-message {
+  font-size: 1vw;
+  margin: 0.8vw;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.scan-alert-svg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vw;
+}
+
+.scan-alert-close{
+    cursor: pointer;
+}
+
+.scan-alert-box.inactive{
+    display: none;
+}
+
+.scan-hist-status{
+    color: #4ACD96;
+    font-size: 1.3vw;
+}
+
+.scan-hist-item{
+    font-size: 1.3vw;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&display=swap');
+.container {  
+  display: grid;
+  grid-template-columns: 2.2fr 1.5fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 12px;
+  grid-auto-flow: row;
+  margin: 1rem;
+  margin-left: 2rem;
+}
+
+.Scan-Status{
+  margin-left: 3vw;
+  color: #331A55;
+  font-size: 1.2vw;
+  font-weight: bold;
+}
+
+.Cookies{
+  color: #331A55;
+  font-size: 1.2vw;
+  font-weight: bold;
+
+}
+
+.Scan-Date{
+  color: #331A55;
+  font-size: 1.2vw;
+  font-weight: bold;
+
+}
+
+ .Urls-Scanned{
+  color: #331A55;
+  font-size: 1.2vw;
+  font-weight: bold;
+
+}
+
+ .Categories{
+  color: #331A55;
+  font-size: 1.2vw;
+  font-weight: bold;
+
+}
+
+ .Scripts{
+  color: #331A55;
+  font-size: 1.2vw;
+  font-weight: bold;
+
+}

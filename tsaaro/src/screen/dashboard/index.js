@@ -15,33 +15,29 @@ import DashboardScr from './dashboard';
 import SitesettingScr from './sitesetting';
 import { Col,Row } from 'antd';
 import '../../assets/css/sidemenu.css'
-
+ 
 const Screen=()=>{
     const [inactive, setInactive] = useState(false);
     return(
-        <>
-        <Row style={{display:'flex'}}>
-            <Col>
-                <div className={`sidenav ${inactive ? "inactive" : ""}`}>
-                    <SideMenuView/>
+        <div style={{display:'flex', flexDirection:'row'}}>
+            <div className={`sidenav ${inactive ? "inactive" : ""}`} >
+                <SideMenuView/>
+            </div>
+            <div style={{display:'flex', flexDirection:'column'}}>
+                <HeaderMenuView inactive={inactive} setInactive={setInactive}/>
+                <div style={{display:'flex', width:inactive?'90vw':'80vw'}}>
+                <Routes>
+                    <Route path="/dash" element={<DashboardScr/>}/>
+                    <Route path="/cm" element={<CookiemanagerScr/>}/>
+                    <Route path="/cb" element={<ConsentbannerScr/>}/>
+                    <Route path="/cl" element={<ConsentlogScr/>}/>
+                    <Route path="/cp" element={<CookiepolicyScr/>}/>
+                    <Route path="/pp" element={<PrivacypolicyScr/>}/>
+                    <Route path="/ss" element={<SitesettingScr/>}/>
+                </Routes>
                 </div>
-            </Col>
-            <Col span={18} style={{flex:3}}>
-                <HeaderMenuView inactive={inactive} setInactive={setInactive}
-            />
-        <Routes>
-            <Route path="/dash" element={<DashboardScr/>}/>
-            <Route path="/cm" element={<CookiemanagerScr/>}/>
-            <Route path="/cb" element={<ConsentbannerScr/>}/>
-            <Route path="/cl" element={<ConsentlogScr/>}/>
-            <Route path="/cp" element={<CookiepolicyScr/>}/>
-            <Route path="/pp" element={<PrivacypolicyScr/>}/>
-            <Route path="/ss" element={<SitesettingScr/>}/>
-        </Routes>
-            </Col>
-        </Row>
-        </>
-
+            </div>
+        </div>
     );
 }
 export default Screen;

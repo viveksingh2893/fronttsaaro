@@ -2,7 +2,7 @@ import { Col, Button, Row } from "antd";
 import { useState } from "react";
 import "../../assets/css/cookieboard.css";
 import SvgIcon from "../../assets/Icon_apps";
-import CookieTypesView from "./CookieTypesView";
+import CookieTypesView from "./cookieTypesView";
 
 
 const CookieView = () => {
