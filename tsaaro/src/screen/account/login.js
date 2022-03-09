@@ -32,14 +32,14 @@ const openGoogleLoginPage = useCallback(() => {
     const params = {
       response_type: 'code',
       client_id: '476617142718-lluvm3mkk189lkp2968vqv8l2l8sig1q.apps.googleusercontent.com',
-      redirect_uri: `'http://192.168.29.5:8001'/${redirectUri}`,
+      redirect_uri: `http://localhost:8001/${redirectUri}`,
       prompt: 'select_account',
       access_type: 'offline',
       scope
     };
     
     const urlParams = new URLSearchParams(params).toString();
-
+console.log(urlParams)
     window.location = `${googleAuthUrl}?${urlParams}`;
   }, []);
   const data = {
