@@ -3,17 +3,16 @@ import "../../assets/css/header.css";
 import SvgIcon from "../../assets/Icon_apps";
 import { Menu, Dropdown } from 'antd';
 import AddSitePopView from '../popup/addSitePopView';
-import Modal from "react-modal";
 
 
 function HeaderMenuView(props) {
   const [change, setChange] = useState(false);
   const [icon, setIcon] = useState("")
-  const [isOpen, setIsOpen] = useState(false);
+  const [site, setSite] = useState(false);
 
   const toggleSite = () => {
-    setIsOpen(!isOpen);
-  }
+    setSite(!site);
+  };
 
   const toggle =()=>{
     if (change===false){
@@ -65,7 +64,13 @@ function HeaderMenuView(props) {
         </Dropdown>
       </div> 
     </div>
-    {/* {site && (<AddSitePopView closeSite={setSite}/>)} */}
+    {site && (
+      <div className="add-modal">
+        <div className="add-content">
+          <AddSitePopView closeSite={setSite}/>
+        </div>
+      </div>
+      )}
     </>
   );
 }

@@ -4,12 +4,13 @@ import "../../assets/css/scanhistory.css";
 function ScanTableHeadView() {
   return (
     <div class="container">
-      <div class="Scan-Date">Scan-Date-\(UTC-\+-00\.00\)</div>
-      <div class="Scan-Status">Scan-Status</div>
-      <div class="Urls-Scanned">Urls-Scanned</div>
-      <div class="Categories">Categories</div>
-      <div class="Cookies">Cookies</div>
-      <div class="Scripts">Scripts</div>
+      <div class="Scan-Comp">Scan Date (UTC+\-00.00)</div>
+      <div class="Scan-Comp">Scan-Status</div>
+      <div class="Scan-Comp">Urls-Scanned</div>
+      <div class="Scan-Comp">Categories</div>
+      <div class="Scan-Comp">Cookies</div>
+      <div class="Scan-Comp">Scripts</div>
+      <div class="Scan-Comp"></div>
     </div>
     
   );

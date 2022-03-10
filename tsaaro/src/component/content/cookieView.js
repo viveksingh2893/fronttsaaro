@@ -33,8 +33,8 @@ const CookieView = () => {
   
   return (
     <>
-          <Row>
-            <Col
+          <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
+            <div
               onClick={() => handleswitch("nc")}
               className="cm-toggle-col"
               style={{
@@ -45,8 +45,8 @@ const CookieView = () => {
             >
               <h4 className="cm-cookie-selection">Neccessary(1)</h4>
               
-            </Col>
-            <Col
+            </div>
+            <div
               onClick={() => handleswitch("fc")}
               style={{
                 borderBottom:
@@ -56,8 +56,8 @@ const CookieView = () => {
               span={4}
             >
               <h4 className="cm-cookie-selection">Functional(1)</h4>
-            </Col>
-            <Col
+            </div>
+            <div
               onClick={() => handleswitch("an")}
               className="cm-toggle-col"
               style={{
@@ -67,8 +67,8 @@ const CookieView = () => {
               span={4}
             >
               <h4 className="cm-cookie-selection">Analytics(1)</h4>
-            </Col>
-            <Col
+            </div>
+            <div
               onClick={() => handleswitch("pr")}
               className="cm-toggle-col"
               style={{
@@ -78,8 +78,8 @@ const CookieView = () => {
               span={4}
             >
               <h4 className="cm-cookie-selection">Performance(1)</h4>
-            </Col>
-            <Col
+            </div>
+            <div
               onClick={() => handleswitch("ad")}
               style={{
                 borderBottom:
@@ -89,8 +89,8 @@ const CookieView = () => {
               span={4}
             >
               <h4 className="cm-cookie-selection">Advertisment(1)</h4>
-            </Col>
-            <Col
+            </div>
+            <div
               onClick={() => handleswitch("ot")}
               style={{
                 borderBottom:
@@ -100,8 +100,8 @@ const CookieView = () => {
               span={4}
             >
               <h4 className="cm-cookie-selection">Others(1)</h4>
-            </Col>
-          </Row>
+            </div>
+          </div>
           <CookieTypesView type={cookietype}/>
           </>
   );

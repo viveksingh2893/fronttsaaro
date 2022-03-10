@@ -1,40 +1,17 @@
-.site,
-.site-overlay {
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: fixed;
-}
-
-.site-overlay {
-  background: rgba(49, 49, 49, 0.8);
-}
 .site-content {
+  display:flex;
   position: absolute;
-  top: 59%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  line-height: 1.4;
+  top:0;
   background: #ffffff;
   padding: 14px 28px;
   border-radius: 3px;
-  width: 80vw;
-  min-width: 300px;
-  height: 55vw;
-  
+  height: 145vh;
+  flex-direction: column;
 }
 
 .site-pop-input {
   display: flex;
   justify-content: space-around;
-  background-color: #ffff;
-  width: 80vw;
-  position: relative;
-  top: -1vw;
-  left: -2.2vw;
 }
 
 .site-pop-inp-box {
@@ -122,10 +99,6 @@
   text-align: center;
 }
 
-.site-pop-plan-main {
-  display: flex;
-}
-
 .plan-item {
   display: flex;
   font-size: 0.9vw;
@@ -165,7 +138,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.2vw;
+  font-size: 1rem;
   color: #6f6f6f;
 }
 
@@ -177,7 +150,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.2vw;
+  font-size: 1rem;
   color: #5647ab;
 }
 
@@ -224,15 +197,15 @@ color: #331A55;
 
 .site-pop-end-inp{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin:1vw;
 }
 
 .site-pop-end-input{
     display: flex;
     justify-content: flex-start;
+    margin:1vw;
 }
-
-
 
 .input-box {
     display: flex;
@@ -251,5 +224,17 @@ color: #331A55;
     width: 35vw;
   }
 
+  .site-pop-end-btn{
+    display:flex;
+    margin-left: 3vw;
+    margin-top: 3.5vh;
+    background-color: #4ACD96;
+    color : white;
+    height: 30px;
+    width: 100px;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+  }
 
 

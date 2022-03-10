@@ -8,16 +8,14 @@ import ManuallyAddCookieView from "../content/manuallyAddCookieView";
 function ManualCookieView(props) {
   return (
       <div>
-            <Col
+            <div
               style={{
                 display: "flex",
-                alignItems: "center",
                 justifyContent: "flex-start",
               }}
-              span={12}
             >
               <h4 className="ct" style={{color: '#6F6F6F'}}>Manually Added Cookies</h4>
-            </Col>
+            </div>
             <ManuallyAddCookieView/>
           </div>
   );

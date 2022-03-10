@@ -22,11 +22,6 @@ const CookiemanagerScr = () => {
   const toggleScan = () => {
     setScan(!scan);
   };
-  if (scan) {
-    document.body.classList.add("active-add");
-  } else {
-    document.body.classList.remove("active-add");
-  }
 
   useEffect(()=>{
     if (toggle){

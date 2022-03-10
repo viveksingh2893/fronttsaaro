@@ -15,45 +15,26 @@ function CookieTypesView(props) {
   const toggleAdd = (props) => {
     setAdd(!add);
   };
-  if (add) {
-    document.body.classList.add("active-add");
-  } else {
-    document.body.classList.remove("active-add");
-  }
 
   const toggleModal = () => {
     setModal(!modal);
   };
 
-  if (modal) {
-    document.body.classList.add("active-modal");
-  } else {
-    document.body.classList.remove("active-modal");
-  }
-
   return (
     <>
       <div>
-        <Row>
-            <Col
+        <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
+            <div
               style={{
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "flex-start",
+                flexDirection:'row',
               }}
-              span={12}
             >
               <h4 className="ct">{props.type}</h4> 
               <div onClick={toggleModal}><SvgIcon name='edit'/></div>
-            </Col>
-            <Col
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-end",
-              }}
-              span={12}
-            >
+            </div>
+            <div>
               <div className="input">
                 <form>
                   <select id="cars" name="cars" className="language">
@@ -64,47 +45,28 @@ function CookieTypesView(props) {
                   </select>
                 </form>
               </div>
-            </Col>
-          </Row>
-          <Row>
-            <p>
+            </div>
+          </div>
+          <div>
+            <p >
               Scan your website for cookies and manage the discovered or
               self-declared cookies here.
             </p>
-          </Row>
+          </div>
           
-          <Row style={{display: 'flex'}}>
-            <Col
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-start",
-                // borderBottom:"5px solid #5647AB   
-              }}
-              span={12}
-            >
+          <div style={{display: 'flex', flexDirection:'row', justifyContent:'space-between'}}>
+            <div>
               <h3 className="ct"
               onClick={()=>console.log("Cookie List")}
-              style={{
-                    color: '#331A55',
+              style={{ color: '#331A55',
                     textDecorationLine: 'underline'
                     }} >
                   Cookie List
                   </h3>
-              
-            </Col>
-            <Col
-            onClick={toggleAdd}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-end",
-              }}
-              span={12}
-            >
+            </div>
+            <div onClick={toggleAdd} style={{display:'flex', flexDirection:'row'}}>
               <SvgIcon name='plus circle'/>
               <h3 className="ct"
-               
               style={{
                     display: "flex",
                     alignItems: "center",
@@ -114,9 +76,8 @@ function CookieTypesView(props) {
                     }} >
                   Add New Cookie
                   </h3>
-            </Col>
-            
-          </Row>
+            </div>
+          </div>
           <ManualCookieView/>
           {/* <NoCookieView/> */}
           </div>

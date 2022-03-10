@@ -7,14 +7,10 @@ import AddCookiePopView from "../popup/addCookiePopView";
 function ManuallyAddCookieView(props) {
   const [pop, setPop] = useState(false);
 
-  const togglePop = () => {
+  const editPop = () => {
     setPop(!pop);
   };
-  if (pop) {
-    document.body.classList.add("active-pop");
-  } else {
-    document.body.classList.remove("active-pop");
-  }
+
   return (
     <>
         <div className="mac">
@@ -22,7 +18,7 @@ function ManuallyAddCookieView(props) {
             <div className="macs">ID</div>
             <div className="macs">Domain</div>
             <div className="macs">Duration</div>
-            <div onClick={togglePop} className='macs' style={{justifyContent:'center'}} ><SvgIcon name='edit'/></div>
+            <div onClick={editPop} className='macs' style={{justifyContent:'center'}} ><SvgIcon name='edit'/></div>
             <div onClick={()=>console.log("delete")} className='macs' style={{justifyContent:'center'}}><SvgIcon name='delete cookie'/></div>
           </div>
           <div className="macc">
@@ -36,7 +32,7 @@ function ManuallyAddCookieView(props) {
             <div className="macs">Description</div>
             <div className="macs"></div>
             <div className="macs"></div>
-            <div onClick={togglePop} className='macs' style={{justifyContent:'center'}} ></div>
+            <div onClick={editPop} className='macs' style={{justifyContent:'center'}} ></div>
             <div className='macs' style={{justifyContent:'center'}}></div>
           </div>
           <div className="macc">

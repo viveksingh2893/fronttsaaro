@@ -38,38 +38,34 @@ body.active-modal {
 
 .modal-h3{
     color: #331A55;
-    margin: 1vw;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .close-modal1 {
-    position: absolute;
-    /* top: 10px; */
-    left: 30vw;
-    padding: 5px 7px;
+    background-color: #7A4EB6;
+    margin-right: 1vw;
 }
 
 .close-modal2 {
-    position: absolute;
-     /* top: 10px; */
-    left: 35vw;
-    padding: 5px 7px;
+    margin-left: 1vw;
 }
 
 .modal-head{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    width:40vw;
+    padding:1vw;
 }
 
 .modal-input1{
     width: 39vw;
-    margin-top: 1vw;
-    margin-bottom: 1vw;
     height: 3vw;
 }
 
 .modal-input2{
-    margin-top: 1vw;
-    margin-bottom: 1vw;
     width: 39vw;
     height: 17vw
 }
