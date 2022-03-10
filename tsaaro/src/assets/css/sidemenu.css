@@ -39,6 +39,7 @@
   .btn {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     /* align-items: flex-start; */
     
   }
@@ -53,8 +54,8 @@
     margin-right:2.0vw;
     border-radius: 0.2vw;
     margin-top:1.56vw;
-   
     
+  
     
   }
   .button-child{
@@ -63,6 +64,7 @@
     width:11vw;
     flex-direction:column;
     align-items:center;
+    overflow: hidden;
   }
   .button:hover{
     background: #7A4EB6;
@@ -94,6 +96,10 @@
   justify-content: flex-start;
   flex-direction: column;
   width:4.5vw;
+  }
+
+  .sidenav{
+    width:14vw;
   }
   
   /* .svg{

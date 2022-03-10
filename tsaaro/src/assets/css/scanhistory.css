@@ -1,0 +1,91 @@
+.scan-history-item{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    flex-direction: column;
+    width: 78vw;
+
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&display=swap");
+.scan-alert-box {
+  background-color: #fff8d9;
+  display: flex;
+  margin: 3vw;
+}
+
+.scan-alert-message {
+  font-size: 1rem;
+  margin: 0.8vw;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.scan-alert-svg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vw;
+}
+
+.scan-alert-close{
+    cursor: pointer;
+}
+
+.scan-alert-box.inactive{
+    display: none;
+}
+
+.scan-hist-status{
+    color: #4ACD96;
+    font-size: 1.3vw;
+}
+
+.scan-hist-item{
+    display:flex;
+  font-size: .8rem;
+  font-weight: bold;
+  width:14.12vw;
+  align-items: center;
+  justify-content: center;
+  background-color: #F6F6F6;
+  padding-top: 1vh;
+
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&display=swap');
+.container {  
+  display: flex;
+  flex-direction: row;
+  width:78vw;
+  justify-content: space-between;
+}
+
+.Scan-Status{
+  margin-left: 3vw;
+  color: #331A55;
+  font-size: 1.2vw;
+  font-weight: bold;
+}
+
+.Cookies{
+  color: #331A55;
+  font-size: 1.2vw;
+  font-weight: bold;
+
+}
+
+.Scan-Comp{
+  display:flex;
+  color: #331A55;
+  font-size: .8rem;
+  font-weight: bold;
+  width:14.12vw;
+  align-items: center;
+  justify-content: center;
+  
+}
+

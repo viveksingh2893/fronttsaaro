@@ -508,6 +508,141 @@ function SvgIcon(props) {
     </svg>
     );
   }
+  if (props.name === "no cookie") {
+    return (
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="6.8vw"
+      height="6.8vw"
+      fill="none"
+      viewBox="0 0 130 130"
+    >
+      <path
+        fill="#ADADAD"
+        d="M65.003 119.167c29.915 0 54.166-24.252 54.166-54.167 0-29.916-24.251-54.167-54.166-54.167-29.916 0-54.167 24.252-54.167 54.167 0 29.915 24.251 54.167 54.167 54.167z"
+      ></path>
+      <ellipse
+        cx="84.15"
+        cy="44.107"
+        fill="#fff"
+        rx="10.446"
+        ry="10.446"
+      ></ellipse>
+      <ellipse cx="43.641" cy="44.223" fill="#fff" rx="6.5" ry="6.5"></ellipse>
+      <ellipse cx="84.266" cy="87.17" fill="#fff" rx="6.5" ry="6.5"></ellipse>
+      <ellipse
+        cx="43.525"
+        cy="80.67"
+        fill="#fff"
+        rx="10.446"
+        ry="10.446"
+      ></ellipse>
+    </svg>
+    );
+  }
+  if (props.name === "delete cookie") {
+    return (
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1.5vw"
+      height="1.5vw"
+      fill="none"
+      viewBox="0 0 35 35"
+    >
+      <path
+        fill="#F51D2C"
+        d="M17.497 2.552a4.74 4.74 0 014.733 4.471l.007.269h7.656a1.094 1.094 0 01.149 2.177l-.149.01h-1.16l-1.867 18.988a4.01 4.01 0 01-3.735 3.608l-.257.008H12.121a4.011 4.011 0 01-3.958-3.364l-.034-.254L6.261 9.48H5.1a1.094 1.094 0 01-1.083-.945l-.01-.149a1.094 1.094 0 01.945-1.083l.149-.01h7.656a4.74 4.74 0 014.74-4.74zm9.038 6.927H8.459l1.847 18.772a1.822 1.822 0 001.63 1.636l.184.009h10.754c.875 0 1.618-.62 1.787-1.462l.029-.183 1.843-18.772h.002zm-6.486 4.01a1.093 1.093 0 011.084.945l.01.15v10.208a1.093 1.093 0 01-2.177.148l-.01-.148V14.583a1.094 1.094 0 011.093-1.094zm-5.104 0a1.093 1.093 0 011.084.945l.01.15v10.208a1.094 1.094 0 01-2.177.148l-.01-.148V14.583a1.094 1.094 0 011.093-1.094zm2.552-8.75a2.552 2.552 0 00-2.543 2.343l-.009.21h5.104a2.552 2.552 0 00-2.552-2.553z"
+      ></path>
+    </svg>
+    );
+  }
+  if (props.name === "cross") {
+    return (
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1.5vw"
+      height="1.5vw"
+      fill="none"
+      viewBox="0 0 28 28"
+    >
+      <path
+        stroke="#373737"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M21 7L7 21M7 7l14 14"
+      ></path>
+    </svg>
+    );
+  }
+  if (props.name ==='asterisk') {
+    return(
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width=".5vw"
+      height=".5vw"
+      fill="none"
+      viewBox="0 0 8 8"
+    >
+      <path
+        fill="#F51D2C"
+        d="M1.134 6.777L2.9 4.352.246 3.56.66 2.242l2.654.976L3.234.194H4.57l-.088 3.077 2.62-.976.404 1.345-2.698.8L6.539 6.82l-1.09.818-1.626-2.532-1.59 2.47-1.1-.8z"
+      ></path>
+    </svg>
+    )
+  }
+  if (props.name ==='help circle') {
+    return(
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1.5vw"
+      height="1.5vw"
+      fill="none"
+      viewBox="0 0 28 28"
+    >
+      <path
+        stroke="#ADADAD"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M14.003 25.667c6.443 0 11.666-5.224 11.666-11.667S20.446 2.333 14.003 2.333C7.559 2.333 2.336 7.557 2.336 14s5.223 11.667 11.667 11.667z"
+      ></path>
+      <path
+        stroke="#ADADAD"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M10.602 10.5a3.5 3.5 0 016.801 1.167c0 2.333-3.5 3.5-3.5 3.5M14 19.833h.012"
+      ></path>
+    </svg>
+    )
+  }
+  if (props.name ==='eye') {
+    return(
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke="#373737"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+      ></path>
+      <path
+        stroke="#373737"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M12 15a3 3 0 100-6 3 3 0 000 6z"
+      ></path>
+    </svg>
+    )
+  }
 }
 
 export default SvgIcon;
