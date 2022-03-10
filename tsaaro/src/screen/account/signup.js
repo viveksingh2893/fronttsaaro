@@ -16,14 +16,15 @@ const SignupScr = () => {
   const navigate=useNavigate()
   console.log(email,website,password);
   const postreq = async () => {
-    const auth = await Postapi("http://192.168.29.5:8001/auth/user/signup", {email:email,website:website,password:password,password2:verify},'login');
+  if(password===verify){
+    const auth = await Postapi("http://192.168.29.5:8001/auth/user/signup", {email:email,website:website,password:password,password2:verify},'signup');
     console.log("auth....", auth);
     if (auth) {
-      navigate("/");
+      navigate("/otp");
     } else {
       console.log("hello signup");
     }
-  };
+  }};
 
   return (
     <Row gutter={0} className="login-main">

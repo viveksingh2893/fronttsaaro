@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from "react";
 import "../../assets/css/cookieboard.css";
 import SvgIcon from "../../assets/Icon_apps";
-import { Menu, Dropdown, Row,Col } from 'antd';
 import ManualCookieView from "../header/ManualCookieView";
 import CookieEditPopView from "../popup/cookieEditPopView";
 import AddCookiePopView from "../popup/addCookiePopView";
-import NoCookieView from "./noCookieView";
  
  
 function CookieTypesView(props) {
