@@ -6,8 +6,9 @@ font-weight: 600;
 line-height: 2.2vw;
 letter-spacing: 0em;
 text-align: left;
-
+color:#331A55;
 }
+
 .cm-toggle-col{
     padding:0.5rem;
     display: flex;
@@ -31,7 +32,7 @@ text-align: left;
 font-family: Roboto;
 font-size: 1vw;
 font-style: normal;
-font-weight: 500;
+font-weight: 600;
 line-height: 1.2vw;
 letter-spacing: 0em;
 text-align: left;
@@ -39,11 +40,35 @@ margin:0
 
 }
 
+.description{
+  font-family:Roboto;
+font-style: normal;
+font-weight: 400;
+font-size: 1vw;
+line-height: 1.2vw;
+display: flex;
+align-items: center;
+color:#6F6F6F;
+ margin-Bottom:5vh;
+ 
+}
+
 .language {
 
     width: 10.6vw;
     height: 2.5vw;
-    
+    background-color: #F6F6F6;
+  }
+  
+  .cookie-description{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    display: flex;
+    align-items: flex-end;
+    color:#373737;
   }
 
   .ct{
@@ -54,12 +79,21 @@ margin:0
     line-height: 1.2vw;
     letter-spacing: 0em;
     text-align: left;
-    padding-right:10px
+    padding-right:10px;
+    color:#1E1A1A;
+    }
+
+    .primary-btn{
+      background-color:#7A4EB6;
+    }
+    .primary-btn:hover{
+      background-color:#7A4EB6;
     }
 
     .mac{
       display: flex; 
-        width: 80vw;
+      flex:1;
+        width: 75 vw;
         /* height: 40vh; */
         background-color: #F6F6F6;
         padding: 20px;
@@ -70,9 +104,9 @@ margin:0
 
     .macc{
       display:flex;
-      flex:1;
-      font-size: 1rem;
+      font-size: .8rem;
       width:70vw;
+      flex:1;
       /* align-Items: center; */
       flex-Direction: row;
       justify-content: space-between;
@@ -84,6 +118,16 @@ margin:0
     flex:1;
     width:12vw;
     justify-Content:flex-start;
+  }
+
+  .heading{
+    font-family:Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+    line-height: 1.2;
+    display: flex;
+    align-items: flex-end;
   }
 
   .input{

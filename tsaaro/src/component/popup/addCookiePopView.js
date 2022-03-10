@@ -1,16 +1,27 @@
-import React ,{useState} from 'react'
+import React ,{useEffect, useState} from 'react'
 import { Button } from "antd";
 import '../../assets/css/cookiepop.css';
 import SvgIcon from '../../assets/Icon_apps';
 
-function AddCookiePopView({closeAdd}) {
+const AddCookiePopView= (props)=> {
+  const [change, setChange] = useState(true);
+  const [close, setClose] = useState(false);
+
+  const toggle=()=>{
+    setChange(!change);
+  }
+
+  const closed=()=>{
+    setClose(true);
+  }
+
   return ( 
     <>
             <div className="add-head">
               <div>
                 <h3 className="add-h3">New Cookie</h3>
               </div>
-              <div className="add-box2" onClick={() => { closeAdd(false)}}>
+              <div className="add-box2" onClick={() => { props.closeAdd(false)}}>
                 <SvgIcon name='cross'/>
               </div>
             </div>
@@ -65,8 +76,12 @@ function AddCookiePopView({closeAdd}) {
               <div className="add-text">
                 Show Advance Option
               </div>
-              <SvgIcon name='down arrow'/>
+              <div onClick={toggle}>
+                {change?<SvgIcon name="up arrow"/>:<SvgIcon name="down arrow"/>}
+              </div>
             </div>
+
+            {change?
             <div style={{display:'flex', flexDirection:'column', width:'40vw', margin:'1vw' }}>
               <div className="add-text1">
                 <div className="add-span">Script URL Pattern</div>
@@ -76,30 +91,35 @@ function AddCookiePopView({closeAdd}) {
                 URL pattern for blocking the third-party script setting this
                 cookie
               </p>
-            <div className="add-alert">
+
+              {close?null:
+              <div className="add-alert">
                 <p className="add-alert-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                   facilisi vestibulum ipsum, mauris erat gravida. Arcu, nisl,
                   urna vel dolor in ac cras.Arcu, nisl, urna vel dolor in ac
                   cras.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
-                <div className="add-close">
+                <div className="add-close" onClick={closed}>
                   <SvgIcon name='cross'/>
                 </div>
-              </div>
+              </div>}
+
               <div>
                   <input
                     type="text"
                     className="add-input3"
                   />
               </div>
+              </div>:null}
 
+              <div style={{display:'flex', flexDirection:'column', width:'40vw', margin:'1vw' }}>
               <div className="add-button">
                 <Button
                   type="primary"
                   ghost
                   onClick={() => {
-                    closeAdd(false);
+                    props.closeAdd(false);
                   }}
                   className="close-add1"
                 >
@@ -108,7 +128,7 @@ function AddCookiePopView({closeAdd}) {
                 <Button
                   type="primary"
                   onClick={() => {
-                    closeAdd(false);
+                    props.closeAdd(false);
                   }}
                   className="close-add2"
                 >

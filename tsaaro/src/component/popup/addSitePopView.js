@@ -1,10 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import InputView from "../input/inputView";
 import PlanListView from "../header/planListView";
 import "../../assets/css/addsitepop.css";
 import SvgIcon from '../../assets/Icon_apps';
 
 function AddSitePopView({ closeSite }) { 
+  const [change, setChange] = useState(false);
+
+  const toggle=()=>{
+    setChange(!change);
+  }
+
   return (
       <div className="site-content">
         <div className="site-pop-input">
@@ -76,7 +82,9 @@ function AddSitePopView({ closeSite }) {
           </div>
           <div className="site-pop-feature">
             Compare All Features
-            <SvgIcon name="down arrow"/>
+            <div onClick={toggle} style={{display:'flex',justifyContent:'center',}}>
+                {change?<SvgIcon name="up arrow"/>:<SvgIcon name="down arrow"/>}
+            </div>
           </div>
           <div className="site-pop-plan-end">
             If you have any question or issues, please feel free to

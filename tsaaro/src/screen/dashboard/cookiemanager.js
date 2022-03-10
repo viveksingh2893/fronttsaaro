@@ -5,11 +5,10 @@ import CookieView from "../../component/content/cookieView";
 import ScanHistoryView from "../../component/content/scanHistoryView";
 import ScanAgainPop from "../../component/popup/scanAgainPopView";
 
-const CookiemanagerScr = () => {
+const CookiemanagerScr = (props) => {
   const [scan, setScan] = useState(false);
   
   const [toggle, setToggle] = useState(false);
-  const [select, setSelect] = useState("cookie")
   const [choose, setChoose] = useState('')
 
   const handletoggle = (e) => {
@@ -42,13 +41,12 @@ const CookiemanagerScr = () => {
         width: "94.5vw",
         justifyContent: "center",
         alignItems: "center",
-        
       }}
     >
       <Row
         style={{
           display: "flex",
-          padding: "1rem",
+          marginTop:'5vh',
           alignItems: "center",
           justifyContent: "flex-start",
         }}
@@ -67,14 +65,14 @@ const CookiemanagerScr = () => {
           <Button onClick={toggleScan} type="primary" className="primary-btn">Scan Again</Button>
         </Col>
       </Row>
-      <Row style={{ padding: "1rem" }}>
-        <p>
+      <Row>
+        <p className="description">
           Scan your website for cookies and manage the discovered or
           self-declared cookies here.
         </p>
       </Row>
-      <Row>
-        <Col span={24} style={{ padding: "0.5rem"}}>
+      <Row style={{backgroundColor:'white', borderRadius:'4px'}}>
+        <Col span={24} style={{ padding: "0.5vw", }}>
           <Row>
             <Col
               // onChange={handletoggle}
@@ -84,7 +82,7 @@ const CookiemanagerScr = () => {
               span={5}
             >
               
-              <h3 className="cm-toggle">Cookie</h3>
+              <h3 className="cm-toggle" style={{color:toggle?'#6F6F6F':'#5647AB'}}>Cookie</h3>
             </Col>
             <Col
             //  onChange={handletoggle}
@@ -93,7 +91,7 @@ const CookiemanagerScr = () => {
               style={{ backgroundColor: toggle ? "#F0EDFF" : "#ffffff" }}
               span={5}
             >
-              <h3 className="cm-toggle">Scan History</h3>
+              <h3 className="cm-toggle" style={{color:toggle?'#5647AB':'#6F6F6F'}}>Scan History</h3>
             </Col>
           </Row>
           <div>{choose}</div>

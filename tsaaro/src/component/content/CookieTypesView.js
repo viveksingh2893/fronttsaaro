@@ -7,7 +7,7 @@ import CookieEditPopView from "../popup/cookieEditPopView";
 import AddCookiePopView from "../popup/addCookiePopView";
 import NoCookieView from "./noCookieView";
  
-
+ 
 function CookieTypesView(props) {
   const [modal, setModal] = useState(false);
   const [add, setAdd] = useState(false);
@@ -23,7 +23,7 @@ function CookieTypesView(props) {
   return (
     <>
       <div>
-        <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
+        <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', marginTop:'1vh'}}>
             <div
               style={{
                 display: "flex",
@@ -47,10 +47,9 @@ function CookieTypesView(props) {
               </div>
             </div>
           </div>
-          <div>
-            <p >
-              Scan your website for cookies and manage the discovered or
-              self-declared cookies here.
+          <div style={{display:'flex', width:'50vw'}}>
+            <p className="cookie-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi facilisi vestibulum ipsum, mauris erat gravida. Arcu, nisl, urna vel dolor in ac cras.Arcu, nisl, urna vel dolor in ac cras.
             </p>
           </div>
           
@@ -78,9 +77,9 @@ function CookieTypesView(props) {
                   </h3>
             </div>
           </div>
-          <ManualCookieView/>
+          <ManualCookieView inactive={props.inactive}/>
           {/* <NoCookieView/> */}
-          </div>
+      </div>
           {modal && (
             <div className="modal">
               <div className="modal-content">
