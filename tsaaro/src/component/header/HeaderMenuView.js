@@ -42,10 +42,10 @@ function HeaderMenuView(props) {
       </Menu.Item>
     </Menu>
   ); 
-
+ 
   return (
     <>
-    <div className="cont" style={{width:props.inactive?'93vw':'86vw'}}>
+    <div className="cont" style={{width:props.inactive?'92vw':'86vw'}}>
       <div className="menu" onClick={() => props.setInactive(!props.inactive)}>
        <SvgIcon name='burger'/>
       </div>
@@ -65,7 +65,7 @@ function HeaderMenuView(props) {
         </a>
       </div> 
       
-      <div className="acc" style={{marginLeft:props.inactive?'54vw':'47vw'}}>
+      <div className="acc" style={{marginLeft:props.inactive?'51vw':'45vw'}}>
         <Dropdown overlay={menu} trigger={['click']} onClick={()=>setChange(!change)} placement='bottomRight'>
           <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
           <SvgIcon name='account'/> {icon}

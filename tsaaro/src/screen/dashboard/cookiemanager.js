@@ -36,11 +36,13 @@ const CookiemanagerScr = (props) => {
   return (
     <Col
       style={{
-        marginLeft: "1rem",
+        marginLeft: "1vw",
         height: "calc(100vh - 60px)",
         width: "94.5vw",
         justifyContent: "center",
         alignItems: "center",
+        
+
       }}
     >
       <Row
@@ -62,7 +64,7 @@ const CookiemanagerScr = (props) => {
             justifyContent: "flex-end",
           }}
         >
-          <Button onClick={toggleScan} type="primary" className="primary-btn">Scan Again</Button>
+          <Button onClick={toggleScan} type="primary" className="primary-btn"><p className="scan-again">Scan Again</p></Button>
         </Col>
       </Row>
       <Row>
@@ -71,8 +73,8 @@ const CookiemanagerScr = (props) => {
           self-declared cookies here.
         </p>
       </Row>
-      <Row style={{backgroundColor:'white', borderRadius:'4px'}}>
-        <Col span={24} style={{ padding: "0.5vw", }}>
+      <Row style={{backgroundColor:'white', borderRadius:'4px', border:'2px solid #ADADAD'}}>
+        <Col span={24}>
           <Row>
             <Col
               // onChange={handletoggle}
@@ -82,7 +84,7 @@ const CookiemanagerScr = (props) => {
               span={5}
             >
               
-              <h3 className="cm-toggle" style={{color:toggle?'#6F6F6F':'#5647AB'}}>Cookie</h3>
+              <h3 className="cm-toggle" style={{color:toggle?'#6F6F6F':'#5647AB'}}>Cookies</h3>
             </Col>
             <Col
             //  onChange={handletoggle}

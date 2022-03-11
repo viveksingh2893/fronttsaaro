@@ -6,7 +6,7 @@ import SvgIcon from '../../assets/Icon_apps';
 
 function AddSitePopView({ closeSite }) { 
   const [change, setChange] = useState(false);
-
+ 
   const toggle=()=>{
     setChange(!change);
   }

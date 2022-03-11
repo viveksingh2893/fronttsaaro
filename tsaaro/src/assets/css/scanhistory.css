@@ -13,10 +13,12 @@
   background-color: #fff8d9;
   display: flex;
   margin: 3vw;
+  border-radius: 4px;
+  border: 1px solid #ADADAD;
 }
-
+ 
 .scan-alert-message {
-  font-size: 1rem;
+  font-size: 1vw;
   margin: 0.8vw;
   font-family: Roboto;
   font-style: normal;
@@ -28,6 +30,7 @@
     justify-content: center;
     align-items: center;
     margin: 1vw;
+    cursor: pointer;
 }
 
 .scan-alert-close{
@@ -45,13 +48,14 @@
 
 .scan-hist-item{
     display:flex;
-  font-size: .8rem;
+  font-size: 1vw;
   font-weight: bold;
   width:14.12vw;
+  height:6.3vh;
   align-items: center;
   justify-content: center;
   background-color: #F6F6F6;
-  padding-top: 1vh;
+  margin:0;
 
 
 }
@@ -60,7 +64,7 @@
 .container {  
   display: flex;
   flex-direction: row;
-  width:78vw;
+  width:74vw;
   justify-content: space-between;
   margin-top: 1vw;
   margin-bottom: 1vw;
@@ -83,14 +87,14 @@
 .Scan-Comp{
   display:flex;
   color: #331A55;
-  font-size: .8rem;
+  font-size: 1vw;
   font-weight: 700;
   width:14.12vw;
   align-items: center;
   justify-content: center;
   font-family:Roboto;
   font-style: normal;
-  line-height: .9rem;
+  line-height:1.2vw;
   
 }
 

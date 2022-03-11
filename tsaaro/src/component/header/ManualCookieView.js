@@ -9,6 +9,7 @@ function ManualCookieView(props) {
               style={{
                 display: "flex",
                 justifyContent: "flex-start",
+                marginTop:"2vh",
               }}
             >
               <h4 className="ct" style={{color: '#6F6F6F'}}>Manually Added Cookies</h4>
