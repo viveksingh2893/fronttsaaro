@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SvgIcon from "../../assets/Icon_apps";
 import "../../assets/css/addsitepop.css";
 import AddSiteTick from "./addSiteTick";
@@ -6,9 +6,15 @@ import AddSiteCross from "./addSiteCross";
 
 
 const PlanListView=(props)=> {
+  const [color, setColor] = useState(false);
+
+  const toggle=()=>{
+    setColor(!color)
+  }
+
+
   return (
-    <div>
-      <div style={{display:'flex',flexDirection:"column", border:'1px solid #5647AB',padding:'1vw',backgroundColor: 'white' }}>
+      <div onClick={toggle} className="plan-list-style" style={{backgroundColor:color?'#F0EDFF':'white'}}>
         <p className="plan-title">{props.title}</p>
         <p className="plan-subhead">{props.subhead}</p>
         <AddSiteTick/>
@@ -23,7 +29,6 @@ const PlanListView=(props)=> {
         <AddSiteCross/>
         <AddSiteCross/>
       </div>
-    </div>
   );
 }
 

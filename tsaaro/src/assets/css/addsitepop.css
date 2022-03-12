@@ -399,3 +399,12 @@
   margin-left: 1vw;
   border-radius: 4px;
  }
+
+ .plan-list-style{
+  display:flex;
+  flex-Direction:column;
+   border:1px solid #5647AB;
+   padding:1vw;
+   background-Color:white;
+   cursor: pointer;
+ }
