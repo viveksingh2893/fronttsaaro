@@ -280,6 +280,7 @@ body.active-pop {
 
 .add-modal{
   overflow-y: scroll;
+  display: flex;
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -291,7 +292,7 @@ body.active-pop {
 }
 
 .add-content {
-  top:20vh;
+  top:3vh;
   left:22vw;
   display:flex;
   outline:none;
@@ -299,13 +300,14 @@ body.active-pop {
   justify-content: center;
   align-items: center;
   line-height: 1.4;
-  background: white;
+  /* background: white; */
   padding: 2vw;
   border-radius: 4px;
-  width:55.47vw;
-  height:49.26vh;
+  /* width:55.47vw; */
+  /* height:100vh; */
 }
 .modal{
+  
   overflow-y: scroll;
   width: 100vw;
   height: 100vh;

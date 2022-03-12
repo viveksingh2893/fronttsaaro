@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "../../assets/css/cookieboard.css";
-import ManuallyAddCookieView from "../content/manuallyAddCookieView";
+import ManuallyAddCookieView from "./manuallyAddCookieView";
 
 function ManualCookieView(props) {
   return (
