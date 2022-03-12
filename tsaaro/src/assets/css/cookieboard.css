@@ -14,6 +14,7 @@ color:#331A55;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 .cm-toggle{
 font-family: Roboto;
@@ -25,6 +26,7 @@ letter-spacing: 0em;
 margin:0;
 text-align: left;
 cursor: pointer;
+
 }
 .cm-cookie-selection{
 
@@ -35,7 +37,6 @@ font-weight: 500;
 line-height: 1.2vw;
 letter-spacing: 0em;
 text-align: left;
-margin:0;
 cursor: pointer;
 }
 
@@ -197,7 +198,7 @@ body.active-pop {
   font-size: 18px;
 }
 
-.pop-modal, .pop-overlay {
+.pop-modal{
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -205,11 +206,9 @@ body.active-pop {
   right: 0;
   bottom: 0;
   position: fixed;
-}
-
-.pop-overlay {
   background: rgba(49,49,49,0.8);
 }
+
 .pop-content {
   position: absolute;
   top: 40%;
@@ -280,10 +279,9 @@ body.active-pop {
 }
 
 .add-modal{
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
+  z-index: 2;
   display:flex;
-  width: 100vw;
-  height: 100vh;
   top: 0;
   left: 0;
   right: 0;
@@ -294,12 +292,42 @@ body.active-pop {
 
 .add-content {
   display:flex;
-  padding: 50px;
-  top:50px;
+  position: absolute;
   flex-direction: column ;
-  background: #f1f1f1;
-  padding: 14px 28px;
-  border-radius: 3px;
+  align-items:center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  outline:none;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.modal{
+  overflow-y: scroll;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background: rgba(49,49,49,0.8);
+}
+.modal-content {
+  top:20vh;
+  left:22vw;
+  display:flex;
+  outline:none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.4;
+  background: white;
+  padding: 2vw;
+  border-radius: 4px;
+  width:55.47vw;
+  height:49.26vh;
 }
 
  .no-cookie{

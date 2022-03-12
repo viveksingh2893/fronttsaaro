@@ -79,7 +79,7 @@ const CookiemanagerScr = (props) => {
               onClick={handletoggle}
               className="cm-toggle-col"
               style={{ backgroundColor: toggle ? "#ffffff" : "#F0EDFF" }}
-              span={5}
+              span={3}
             >
               
               <h3 className="cm-toggle" style={{color:toggle?'#6F6F6F':'#5647AB'}}>Cookies</h3>
@@ -89,7 +89,7 @@ const CookiemanagerScr = (props) => {
               onClick={handletoggle}
               className="cm-toggle-col" 
               style={{ backgroundColor: toggle ? "#F0EDFF" : "#ffffff" }}
-              span={5}
+              span={3}
             >
               <h3 className="cm-toggle" style={{color:toggle?'#5647AB':'#6F6F6F'}}>Scan History</h3>
             </Col>

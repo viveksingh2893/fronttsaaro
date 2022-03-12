@@ -43,7 +43,7 @@ const CookieView = (props) => {
               span={4}
             >
               <h4 className="cm-cookie-selection" style={{color:switchcookies[0]?'#5647AB':'#1E1A1A'}}>Neccessary (1Cookie)</h4>
-              
+               
             </div>
             <div
               onClick={() => handleswitch("fc")}
