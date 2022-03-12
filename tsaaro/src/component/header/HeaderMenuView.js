@@ -46,7 +46,7 @@ function HeaderMenuView(props) {
   return (
     <>
     <div className="cont" style={{width:props.inactive?'92vw':'86vw'}}>
-      <div className="menu" onClick={() => props.setInactive(!props.inactive)}>
+      <div className="menu" style={{display:'flex',justifyContent:'flex-end'}}  onClick={() => props.setInactive(!props.inactive)}>
        <SvgIcon name='burger'/>
       </div>
       <div className="input">
