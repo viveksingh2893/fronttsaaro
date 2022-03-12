@@ -74,8 +74,8 @@ function HeaderMenuView(props) {
       </div> 
     </div>
     {site && (
-      <div className="add-modal">
-        <div className="add-content">
+      <div className="addsite-modal">
+        <div className="addsite-content">
           <AddSitePopView closeSite={setSite}/>
         </div>
       </div>

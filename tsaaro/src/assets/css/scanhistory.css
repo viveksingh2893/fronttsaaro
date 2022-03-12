@@ -12,7 +12,7 @@
 .scan-alert-box {
   background-color: #fff8d9;
   display: flex;
-  margin: 3vw;
+  margin: 2vw;
   border-radius: 4px;
   border: 1px solid #ADADAD;
 }
@@ -60,14 +60,14 @@
 
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&display=swap');
-.container {  
-  display: flex;
-  flex-direction: row;
-  width:74vw;
-  justify-content: space-between;
-  margin-top: 1vw;
-  margin-bottom: 1vw;
+.container-scan {  
+    display: flex;
+    flex-direction: row;
+    max-width:74vw;
+    min-width:74vw;
+    height:3vh;
+    justify-content: space-between;
+    margin-bottom: 2vw;
 }
 
 .Scan-Status{
@@ -89,7 +89,7 @@
   color: #331A55;
   font-size: 1vw;
   font-weight: 700;
-  width:14.12vw;
+  width:9vw;
   align-items: center;
   justify-content: center;
   font-family:Roboto;

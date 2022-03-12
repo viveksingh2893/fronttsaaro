@@ -1,14 +1,14 @@
 .container{
   display: flex;
-  /* width:55.47vw; */
-  height: 110vh;
+  width:55.47vw;
+  /* height: 110vh; */
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   background-color: white;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   padding: 1.5vw;
-  max-width: 55.47vw;
+  /* max-width: 55.47vw; */
 }
 
 .add-head {

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "../../assets/css/cookieboard.css";
 import SvgIcon from "../../assets/Icon_apps";
-import ManualCookieView from "../header/ManualCookieView";
+import ManualCookieView from "../content/ManualCookieView";
 import CookieEditPopView from "../popup/cookieEditPopView";
 import AddCookiePopView from "../popup/addCookiePopView";
 import NoCookieView from '../content/noCookieView';
@@ -84,7 +84,7 @@ function CookieTypesView(props) {
               <div className="modal-content">
                 <CookieEditPopView closeModal={setModal}/>
               </div>
-            </div>
+            </div> 
           )}
           {add && (
         <div className="add-modal">
@@ -93,7 +93,7 @@ function CookieTypesView(props) {
         </div>
         </div>
       )}
-          </>
+    </>
   );
 }
 
