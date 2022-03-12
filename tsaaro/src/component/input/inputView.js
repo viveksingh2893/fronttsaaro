@@ -12,7 +12,7 @@ function InputView(props) {
           </div>
           <input
             type="text"
-            className="input-inp"
+            className={"input-inp"}
           />
       </div>
     </div>

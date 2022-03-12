@@ -1,11 +1,42 @@
 import React, {useState} from "react";
 import InputView from "../input/inputView";
-import PlanListView from "../header/planListView";
+import PlanListView from "./planListView";
 import "../../assets/css/addsitepop.css";
 import SvgIcon from '../../assets/Icon_apps';
 
 function AddSitePopView({ closeSite }) { 
   const [change, setChange] = useState(false);
+  const [plan1, setPlan1] = useState(false);
+  const [plan2, setPlan2] = useState(false);
+  const [btn1 , setBtn1] = useState(false);
+  const [btn2 , setBtn2] = useState(false);
+  const [btn3 , setBtn3] = useState(false);
+
+  const moneyA = () => {
+    setBtn1(true);
+    setBtn2(false);
+    setBtn3(false);
+  }
+  const moneyB = () => {
+    setBtn1(false);
+    setBtn2(true);
+    setBtn3(false);
+  };
+  const moneyC = () => {
+    setBtn1(false);
+    setBtn2(false);
+    setBtn3(true);
+  };
+
+  const planA=()=>{
+    setPlan1(true);
+    setPlan2(false);
+  }
+
+  const planB=()=>{
+    setPlan1(false);
+    setPlan2(true);
+  }
  
   const toggle=()=>{
     setChange(!change);
@@ -14,75 +45,47 @@ function AddSitePopView({ closeSite }) {
   return (
       <div className="site-content">
         <div className="site-pop-input">
-          <div className="site-pop-inp-box">
-            <InputView name="URL" className="site-pop-inp" />
-          </div>
-          <div className="site-pop-inp-box">
-            <InputView name="Website Name" className="site-pop-inp" />
-          </div>
+            <InputView name="URL" />
+            <InputView name="Website Name" />
         </div>
-        <div>
+        <div className="mid-content">
           <div className="site-pop-head">
-            <h3 className="site-pop-h3">Choose Your Plan</h3>
+            <p className="site-pop-p">Choose Your Plan</p>
             <div className="site-pop-2btn">
-              <button className="site-pop-btn">Monthly</button>
-              <button className="site-pop-btn">Annual</button>
+              <button className={"site-pop-btn"} style={{backgroundColor:plan1?'#7a4eb6':'white'}} onClick={planA}>
+                <p className="plan" style={{color:plan1?'white':'#7a4eb6'}}>Monthly</p>
+              </button>
+              <button className={'site-pop-btn'} style={{backgroundColor:plan2?'#7a4eb6':'white'}} onClick={planB}>
+                <p className="plan" style={{color:plan2?'white':'#7a4eb6'}}>Annual</p>
+              </button>
             </div>
-            <div className="site-pop-curve">
-              <ul className="site-pop-ul">
-                <li className="site-pop-li1">
-                  <a href="#" className="site-pop-a1">
-                    USD
-                  </a>
-                </li>
-                <li className="site-pop-li2">
-                  <a href="#" className="site-pop-a2">
-                    GBP
-                  </a>
-                </li>
-                <li className="site-pop-li3">
-                  <a href="#" className="site-pop-a3">
+            <div className="currency">
+                <button className="currency-btn1" style={{backgroundColor:btn1?'#7a4eb6':'white'}} onClick={moneyA}>
+                  <p className="currency-p" style={{color:btn1?'white':'#7a4eb6'}}>
+                    USD $
+                  </p>
+                </button>
+                <button className="currency-btn2" style={{backgroundColor:btn2?'#7a4eb6':'white'}} onClick={moneyB}>
+                  <p className="currency-p" style={{color:btn2?'white':'#7a4eb6'}}>
+                    GBP $
+                  </p>
+                </button>
+                <button className="currency-btn3" style={{backgroundColor:btn3?'#7a4eb6':'white'}} onClick={moneyC}>
+                  <p className="currency-p" style={{color:btn3?'white':'#7a4eb6'}}>
                     EURO
-                  </a>
-                </li>
-              </ul>
+                  </p>
+                </button>
             </div>
           </div>
           <div className="site-pop-plan-main">
-            <div className="site-pop-plan">
-              <span className="site-pop-plan-type">Free</span>
-              <br />
-              <span className="site-pop-plan-price">$0 per Domain/Month</span>
-              <PlanListView />
-            </div>
-            <div className="site-pop-plan">
-              <span className="site-pop-plan-type">Basic</span>
-              <br />
-              <span className="site-pop-plan-price">
-                $10 per Domain/Month
-              </span>{" "}
-              <PlanListView />
-            </div>
-            <div className="site-pop-plan">
-              <span className="site-pop-plan-type">Pro</span>
-              <br />
-              <span className="site-pop-plan-price">
-                $20 per Domain/Month
-              </span>{" "}
-              <PlanListView />
-            </div>
-            <div className="site-pop-plan">
-              <span className="site-pop-plan-type">Ultimate</span>
-              <br />
-              <span className="site-pop-plan-price">
-                $40 per Domain/Month
-              </span>{" "}
-              <PlanListView />
-            </div>
+              <PlanListView title='FREE' subhead='$0 per Domain/Month'/>
+              <PlanListView title='Basic' subhead='$10 per Domain/Month'/>
+              <PlanListView title='Pro' subhead='$20 per Domain/Month'/>
+              <PlanListView title='Ultimate' subhead='$40 per Domain/Month'/>
           </div>
-          <div className="site-pop-feature">
-            Compare All Features
-            <div onClick={toggle} style={{display:'flex',justifyContent:'center',}}>
+          <div className="site-pop-feature" onClick={()=>console.log('clicked')}>
+            <p className="features">Compare All Features</p>
+            <div onClick={toggle} style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                 {change?<SvgIcon name="up arrow"/>:<SvgIcon name="down arrow"/>}
             </div>
           </div>
@@ -91,24 +94,21 @@ function AddSitePopView({ closeSite }) {
              <a href="#" className="site-pop-a">contact us</a>,and we’ll get right back to you.
           </div>
         </div>
-        <div >
+        <div className='billing'>
             <h4 className="site-pop-h4">Price are in USD excl VAT.</h4>
             <h3 className="site-pop-h">Billing Details</h3>
-            <div className="site-pop-end-inp">
-                <div><InputView name="Name"/></div>
-                <div><InputView name="Website Name"/></div>
+            <div className="site-pop-input">
+                <InputView name="Name"/>
+                <InputView name="Website Name"/>
             </div>
+            <p className="coupon">Coupon</p>
             <div className="site-pop-end-input">
-            <div><InputView name="Coupon"/></div>
-            <div><button className="site-pop-end-btn">Apply</button></div>
+                <input style={{display:'flex', width:'23vw',height: '5.1vh'}}/>
+                <button className="site-pop-end-btn">Apply</button>
             </div>
-            <div style={{display:'flex', marginLeft:'60vw'}}>
-              <div className="scan-btn">
-                  <button onClick={() => {closeSite(false)}} className="scan-ok">Cancel</button>
-              </div>
-              <div className="scan-btn">
-                  <button onClick={() => {closeSite(false)}} className="scan-ok">Submit</button>
-              </div> 
+            <div className="submitpop">
+                  <button onClick={() => {closeSite(false)}} className="cancel">Cancel</button>
+                  <button onClick={() => {closeSite(false)}} className="submit">Submit</button>
             </div>
       </div>
     </div>

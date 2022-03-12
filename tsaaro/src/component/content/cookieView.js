@@ -1,7 +1,7 @@
 import { Col, Button, Row } from "antd";
 import { useState } from "react";
 import "../../assets/css/cookieboard.css";
-import CookieTypesView from "./CookieTypesView";
+import CookieTypesView from "./cookieTypesView";
 
 
 const CookieView = (props) => {

@@ -34,7 +34,7 @@ const Screen=()=>{
       }, []);
 
     return(
-        <div style={{display:'flex', flexDirection:'row',backgroundColor:'#E5E5E5',overflowY:'scroll'}}>
+        <div style={{display:'flex', flexDirection:'row',backgroundColor:'#E5E5E5',overflowY:'auto'}}>
             <div className={`sidenav ${inactive ? "inactive" : ""}`} >
                 <SideMenuView inactive={inactive}/>
             </div>
