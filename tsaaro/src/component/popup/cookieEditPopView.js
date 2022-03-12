@@ -10,7 +10,7 @@ function CookieEditPopView({closeModal}) {
     <div className="containerpop">
         <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', width:'51.3vw', marginTop:'2vh'}}>
               <h3 className="modal-h3">Edit Category</h3>
-              <div onClick={() => {closeModal(false)}}>
+              <div onClick={() => {closeModal(false)}} style={{cursor:'pointer'}}>
                   <SvgIcon name='cross'/>
               </div>
         </div>
