@@ -23,7 +23,7 @@ const CookieView = (props) => {
       setCookieType('Performance');
     } else if (id === "ad") {
       setSwitch([0, 0, 0, 0, 1]);
-      setCookieType('Advertisment');
+      setCookieType('Advertisement');
     // } else if (id === "ot") {
     //   setSwitch([0, 0, 0, 0, 0, 1]);
     //   setCookieType('Others');

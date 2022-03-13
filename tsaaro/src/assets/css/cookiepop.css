@@ -128,11 +128,11 @@
 
 .add-alert-text{
   padding: 1vw;
-  font-family: Roboto;
+  font-family: Roboto; 
   font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.2rem;
+  font-size: 1vw;
+  line-height: 1.2vw;
   display: flex;
   align-items: flex-start;
   color: #373737;

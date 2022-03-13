@@ -48,7 +48,7 @@ function AddSitePopView({ closeSite }) {
             <InputView name="URL" />
             <InputView name="Website Name" />
         </div>
-        <div className="mid-content">
+        <div className="mid-content"> 
           <div className="site-pop-head">
             <p className="site-pop-p">Choose Your Plan</p>
             <div className="site-pop-2btn">

@@ -346,6 +346,11 @@
     border:1px solid #4ACD96;
     cursor: pointer;
     height: 5.1vh;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 1.2vw;
   }
 
  .input-label{
