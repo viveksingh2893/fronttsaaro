@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {motion} from 'framer-motion'
 import { Col, Button, Row } from "antd";
 import "../../assets/css/cookieboard.css";
 import CookieView from "../../component/content/cookieView";
@@ -32,14 +33,15 @@ const CookiemanagerScr = (props) => {
   },[toggle])
   
   return (
-    <Col
+    <motion.div
       style={{
         marginLeft: "1vw",
         height: "calc(100vh - 60px)",
         width: "94.5vw",
         justifyContent: "center",
         alignItems: "center",
-        
+        overflowY:'scroll',
+        paddingRight:'2.5vw',
 
       }}
     >
@@ -98,7 +100,7 @@ const CookiemanagerScr = (props) => {
         </Col>
       </Row>
       {scan && (<ScanAgainPop closeScan={setScan}/>)}
-    </Col>
+    </motion.div>
     
   );
 };

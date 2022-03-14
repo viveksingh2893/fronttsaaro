@@ -2,9 +2,9 @@ import React, {useState, useEffect} from 'react';
 import HeaderMenuView from '../../component/header/HeaderMenuView';
 import SideMenuView from '../../component/header/SideMenuView';
 import {
-    BrowserRouter,
     Routes,
-    Route
+    Route,
+    useLocation
   } from "react-router-dom";
 import CookiemanagerScr from './cookiemanager';
 import ConsentbannerScr from './consentbanner';
@@ -13,12 +13,14 @@ import PrivacypolicyScr from './privacypolicy';
 import ConsentlogScr from './consentlog';
 import DashboardScr from './dashboard';
 import SitesettingScr from './sitesetting';
-import '../../assets/css/sidemenu.css'
+import { motion,AnimatePresence} from 'framer-motion';
+import '../../assets/css/sidemenu.css';
  
 const Screen=()=>{
     const [inactive, setInactive] = useState(false);
     const [viewPortWidth, setWidth] = useState(0);
     const [viewPortHeight, setHeight] = useState(0)
+    const location=useLocation();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -32,17 +34,32 @@ const Screen=()=>{
           setHeight(window.innerHeight);
         });
       }, []);
+      const variants = { 
+    
+        hidden:{opacity:0,
+        x:'100vw'},
+        visible:{
+          opacity:1,
+          x:0,
+          transition:{ease:'easeOut',duration:0.5
+    
+          },
+          exit:{
+            x:'-100vw',
+            transition:{ease:'easeInOut'}
+          }
+        }
+      };
 
     return(
-        <div style={{display:'flex', flexDirection:'row',backgroundColor:'#E5E5E5',overflowY:'auto'}}>
+        <div style={{display:'flex', flexDirection:'row',backgroundColor:'#E5E5E5'}}>
             <div className={`sidenav ${inactive ? "inactive" : ""}`} >
                 <SideMenuView inactive={inactive}/>
             </div>
             <div style={{display:'flex', flexDirection:'column'}}>
                 <HeaderMenuView inactive={inactive} setInactive={setInactive}/>
-                <div style={{display:'flex', height: viewPortHeight}}>
-                    <div style={{display:'flex', width:inactive?'86.1vw':'80vw', marginLeft:'2vw'}}>
-                    <Routes>
+                  <div style={{display:'flex', width:inactive?'91vw':'84vw', marginLeft:'2vw', position:'absolute', top:'8vh'}}>
+                    <Routes location={location} key={location.key}>
                         <Route path="/dash" element={<DashboardScr/>}/>
                         <Route path="/cm" element={<CookiemanagerScr/>}/>
                         <Route path="/cb" element={<ConsentbannerScr/>}/>
@@ -51,8 +68,7 @@ const Screen=()=>{
                         <Route path="/pp" element={<PrivacypolicyScr/>}/>
                         <Route path="/ss" element={<SitesettingScr/>}/>
                     </Routes>
-                    </div>
-                </div>
+                  </div>
             </div>
         </div>
     );
