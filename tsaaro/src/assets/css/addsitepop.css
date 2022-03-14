@@ -15,7 +15,7 @@
   flex-direction: row;
   display: flex;
   width: 70vw;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -306,7 +306,6 @@
     display: flex;
     align-Items:flex-start;
      margin-top:1vw;
-     width:40vw;
   }
   
   .input-svg {
