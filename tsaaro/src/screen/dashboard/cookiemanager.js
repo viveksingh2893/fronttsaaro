@@ -35,14 +35,15 @@ const CookiemanagerScr = (props) => {
   return (
     <motion.div
       style={{
-        marginLeft: "1vw",
-        height: "calc(100vh - 60px)",
-        width: "94.5vw",
+        marginLeft: "3vw",
+        height: "calc(100vh - 8vh)",
+        width: "96.5vw",
         justifyContent: "center",
         // position:'absolute',
         alignItems: "center",
         overflowY:'scroll',
         paddingRight:'2.5vw',
+        paddingBottom:'5vh'
 
       }}
     >
