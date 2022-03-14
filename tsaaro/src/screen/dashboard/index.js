@@ -41,7 +41,7 @@ const Screen=()=>{
             <div style={{display:'flex', flexDirection:'column'}}>
                 <HeaderMenuView inactive={inactive} setInactive={setInactive}/>
                 <div style={{display:'flex', height: viewPortHeight}}>
-                    <div style={{display:'flex', width:inactive?'86vw':'80vw', marginLeft:'2vw'}}>
+                    <div style={{display:'flex', width:inactive?'86.1vw':'80vw', marginLeft:'2vw'}}>
                     <Routes>
                         <Route path="/dash" element={<DashboardScr/>}/>
                         <Route path="/cm" element={<CookiemanagerScr/>}/>
