@@ -16,22 +16,7 @@ import SvgIcon from "../../assets/Icon_apps";
 const Screen = () => {
   const [inactive, setInactive] = useState(false);
   const [cbvisible, setCbvisible] = useState(false);
-  // const [viewPortWidth, setWidth] = useState(0);
-  // const [viewPortHeight, setHeight] = useState(0)
-
-  // useEffect(() => {
-  //     window.scrollTo(0, 0);
-  //   }, []);
-
-  //   useEffect(() => {
-  //     setWidth(window.innerWidth);
-  //     window.addEventListener("resize", (e) => {
-  //       console.log("size", e.target);
-  //       setWidth(window.innerWidth);
-  //       setHeight(window.innerHeight);
-  //     });
-  //   }, []);
-
+  
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
       {cbvisible ? (
