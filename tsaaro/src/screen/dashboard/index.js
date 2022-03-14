@@ -14,7 +14,7 @@ import ConsentlogScr from './consentlog';
 import DashboardScr from './dashboard';
 import SitesettingScr from './sitesetting';
 import { motion,AnimatePresence} from 'framer-motion';
-import '../../assets/css/sidemenu.css'
+import '../../assets/css/sidemenu.css';
  
 const Screen=()=>{
     const [inactive, setInactive] = useState(false);
