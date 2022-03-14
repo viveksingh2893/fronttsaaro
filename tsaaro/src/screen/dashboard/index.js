@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import HeaderMenuView from "../../component/header/HeaderMenuView";
 import SideMenuView from "../../component/header/SideMenuView";
@@ -62,6 +63,7 @@ const Screen = () => {
               <Route path="/ss" element={<SitesettingScr />} />
             </Routes>
           </div>
+
         </div>
       </div>
     </div>

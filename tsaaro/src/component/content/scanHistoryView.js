@@ -7,14 +7,10 @@ import "../../assets/css/scanhistory.css";
  
 function ScanHistoryView() {
   return (
-    <div style={{display:'flex',alignItems:'center', flexDirection:'column' }}>
-      <div>
-        <ScanAlertView />
-      </div>
-      <div>
-        <ScanTableHeadView />
-      </div>
-      <div>
+    <div style={{display:'flex',alignItems:'center', flexDirection:'column', borderTop:'2px solid #F0EDFF', marginBottom:'5vh'}}>
+      <ScanAlertView />
+      <ScanTableHeadView />
+      <div style={{marginBottom:'2vh'}}>
         <div className="scan-history-item">
           <ScanHistoryItem 
             time="14-02-2022, 08:02:22" 

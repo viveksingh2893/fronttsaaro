@@ -13,13 +13,13 @@ function ManuallyAddCookieView(props) {
 
   return (
     <>
-        <div className="mac">
+        <div className="mac" style={{marginTop:'1vh', marginBottom:'2vh'}}>
           <div className="macc">
             <div className="macs"><p className="heading">ID</p></div>
             <div className="macs"><p className="heading">Domain</p></div>
             <div className="macs"><p className="heading">Duration</p></div>
-            <div onClick={editPop} className='macs' style={{justifyContent:'center'}} ><SvgIcon name='edit'/></div>
-            <div onClick={()=>console.log("delete")} className='macs' style={{justifyContent:'center'}}><SvgIcon name='delete cookie'/></div>
+            <div onClick={editPop} className='macs' style={{justifyContent:'center', cursor:'pointer'}} ><SvgIcon name='edit'/></div>
+            <div className='macs' style={{justifyContent:'center',cursor:'pointer'}}><SvgIcon name='delete cookie'/></div>
           </div>
           <div className="macc">
             <div className="macs"><p className="input">Lorem ipsum dolor sit amet, consectetur adip</p></div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Col, Image, Row } from "antd";
 import "../../assets/css/sidemenu.css";
 import logo from "../../assets/images/img1.png";
@@ -6,9 +6,11 @@ import SmButton from "./smButton";
 import { NavLink } from "react-router-dom";
 
 function SideMenuView(props) {
+
   return (
+
     <div className="box">
-      <div className="img">
+      <div className="img" style={{display:'flex',margin:'2vh'}}>
         <div className="img1">
           <Image src={logo} preview={false} />
         </div>

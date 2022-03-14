@@ -42,11 +42,11 @@ function HeaderMenuView(props) {
       </Menu.Item>
     </Menu>
   ); 
-
+ 
   return (
     <>
-    <div className="cont" style={{width:props.inactive?'93vw':'86vw'}}>
-      <div className="menu" onClick={() => props.setInactive(!props.inactive)}>
+    <div className="cont" style={{width:props.inactive?'93vw':'86vw', position:'absolute'}}>
+      <div className="menu" style={{display:'flex',justifyContent:'flex-end'}}  onClick={() => props.setInactive(!props.inactive)}>
        <SvgIcon name='burger'/>
       </div>
       <div className="input">
@@ -65,7 +65,7 @@ function HeaderMenuView(props) {
         </a>
       </div> 
       
-      <div className="acc" style={{marginLeft:props.inactive?'54vw':'47vw'}}>
+      <div className="acc" style={{marginLeft:props.inactive?'52.5vw':'45.5vw'}}>
         <Dropdown overlay={menu} trigger={['click']} onClick={()=>setChange(!change)} placement='bottomRight'>
           <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
           <SvgIcon name='account'/> {icon}
@@ -74,8 +74,8 @@ function HeaderMenuView(props) {
       </div> 
     </div>
     {site && (
-      <div className="add-modal">
-        <div className="add-content">
+      <div className="addsite-modal">
+        <div className="addsite-content">
           <AddSitePopView closeSite={setSite}/>
         </div>
       </div>

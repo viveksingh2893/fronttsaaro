@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {motion} from 'framer-motion'
 import { Col, Button, Row } from "antd";
 import "../../assets/css/cookieboard.css";
 import CookieView from "../../component/content/cookieView";
@@ -24,23 +25,24 @@ const CookiemanagerScr = (props) => {
 
   useEffect(()=>{
     if (toggle){
-        console.log('scan');
         setChoose(<ScanHistoryView/>)
       
     }else{
-      console.log('cookie')
       setChoose(<CookieView/>)
     } 
   },[toggle])
   
   return (
-    <Col
+    <motion.div
       style={{
-        marginLeft: "1rem",
+        marginLeft: "1vw",
         height: "calc(100vh - 60px)",
         width: "94.5vw",
         justifyContent: "center",
         alignItems: "center",
+        overflowY:'scroll',
+        paddingRight:'2.5vw',
+
       }}
     >
       <Row
@@ -62,7 +64,7 @@ const CookiemanagerScr = (props) => {
             justifyContent: "flex-end",
           }}
         >
-          <Button onClick={toggleScan} type="primary" className="primary-btn">Scan Again</Button>
+          <Button onClick={toggleScan} type="primary" className="primary-btn"><p className="scan-again">Scan Again</p></Button>
         </Col>
       </Row>
       <Row>
@@ -71,25 +73,25 @@ const CookiemanagerScr = (props) => {
           self-declared cookies here.
         </p>
       </Row>
-      <Row style={{backgroundColor:'white', borderRadius:'4px'}}>
-        <Col span={24} style={{ padding: "0.5vw", }}>
+      <Row style={{backgroundColor:'white', borderRadius:'4px', border:'2px solid #ADADAD'}}>
+        <Col span={24}>
           <Row>
             <Col
               // onChange={handletoggle}
               onClick={handletoggle}
               className="cm-toggle-col"
               style={{ backgroundColor: toggle ? "#ffffff" : "#F0EDFF" }}
-              span={5}
+              span={3}
             >
               
-              <h3 className="cm-toggle" style={{color:toggle?'#6F6F6F':'#5647AB'}}>Cookie</h3>
+              <h3 className="cm-toggle" style={{color:toggle?'#6F6F6F':'#5647AB'}}>Cookies</h3>
             </Col>
             <Col
             //  onChange={handletoggle}
               onClick={handletoggle}
               className="cm-toggle-col" 
               style={{ backgroundColor: toggle ? "#F0EDFF" : "#ffffff" }}
-              span={5}
+              span={3}
             >
               <h3 className="cm-toggle" style={{color:toggle?'#5647AB':'#6F6F6F'}}>Scan History</h3>
             </Col>
@@ -98,7 +100,7 @@ const CookiemanagerScr = (props) => {
         </Col>
       </Row>
       {scan && (<ScanAgainPop closeScan={setScan}/>)}
-    </Col>
+    </motion.div>
     
   );
 };
