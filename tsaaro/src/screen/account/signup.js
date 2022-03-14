@@ -1,4 +1,4 @@
-import { Row, Col, Image } from "antd";
+import { Row, Col, Image,Alert } from "antd";
 import logo from "../../assets/images/img1.png";
 import tsaaro from "../../assets/images/tsaaro.png";
 import "../../assets/css/login.css";
@@ -8,26 +8,55 @@ import LbuttonView from "../../component/button/lbutton";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Postapi from "../../api/Postapi";
+import { motion} from "framer-motion";
+import Password from "antd/lib/input/Password";
 const SignupScr = () => {
   const [email, setEmail] = useState();
   const [website, setWebsite] = useState();
   const [password, setPassword] = useState();
   const [verify, setVerify] = useState();
+  const [loading,setLoading] = useState(false);
+  const [alertMessage, setMessage] = useState();
+  const [wrongcred, setWrongcred] = useState(false);
   const navigate=useNavigate()
   console.log(email,website,password);
   const postreq = async () => {
   if(password===verify){
-    const auth = await Postapi("http://192.168.29.5:8001/auth/user/signup", {email:email,website:website,password:password,password2:verify},'signup');
+    setLoading(!loading)
+    const auth = await Postapi("http://192.168.29.5:8001/auth/user/signup", {email:email,website:website,password:password,password2:verify});
     console.log("auth....", auth);
     if (auth) {
+      setLoading(!loading)
       navigate("/otp");
     } else {
       console.log("hello signup");
     }
+  }else{
+    setMessage('password mismatch')
   }};
+  const variants = { 
+    
+    hidden:{opacity:0,
+    x:'-100vw'},
+    visible:{
+      opacity:1,
+      x:0,
+      transition:{ease:'easeOut',duration:0.5
+
+      },
+      exit:{
+        x:'100vw',
+        transition:{ease:'easeInOut'}
+      }
+    }
+  };
 
   return (
-    <Row gutter={0} className="login-main">
+    <motion.div 
+    initial='hidden' 
+    animate='visible'
+    exit='exit'
+    variants={variants} className="login-main">
       <Col className="login-col1" span={10}>
         <Row className="login-r1">
           <Image className="login-image1" preview={false} src={logo}></Image>
@@ -56,21 +85,28 @@ const SignupScr = () => {
 
           <InputView  onChange={(e)=>setPassword(e.target.value)}label="Password" />
           <InputView  onChange={(e)=>setVerify(e.target.value)}label="Confirm Password" />
-
+          <Alert
+             style={{width:'21vw',background:'#F6F6F6'}}
+             description='Password Mismatch'
+             type="error"
+             showIcon
+             closable
+             onClose={()=>setWrongcred(false)}
+             />
           <InputView
             checkbox={true}
             text="I Accept the"
             clickable={"Terms & Conditions & Privacy Policy "}
           />
-
-          <LbuttonView title="Sign Up" action={postreq}/>
+        
+          <LbuttonView title="Sign Up" action={email&&password&&verify&&website?postreq:null} visible={loading}/>
 
           <InputView text="Already have an Account ?" clickable="Login here" action={()=>navigate('/')} />
 
           <LbuttonView icon="googleicon" title="Sign Up with google" />
         </Col>
       </Col>
-    </Row>
+    </motion.div>
   );
 };
 export default SignupScr;

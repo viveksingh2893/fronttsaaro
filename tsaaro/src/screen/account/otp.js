@@ -10,15 +10,36 @@ import Postapi from "../../api/Postapi";
 import axios from "axios";
 import { useState,useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const OtpScr=()=>{
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
     const [wrongcred, setWrongcred] = useState(false);
     const navigate = useNavigate();
+    const variants = { 
+    
+      hidden:{opacity:0,
+      x:'100vw'},
+      visible:{
+        opacity:1,
+        x:0,
+        transition:{ease:'easeOut',duration:0.5
+      },
+        exit:{
+          x:'-100vw',
+          transition:{ease:'easeInOut'}
+        }
+      }
+    };
 
     return(
-        <Row gutter={0} className="login-main">
+        <motion.div 
+        initial='hidden' 
+    animate='visible'
+    exit='exit'
+    variants={variants}
+        gutter={0} className="login-main">
         <Col className="login-col1" span={10}>
           <Row className="login-r1">
             <Image className="login-image1" preview={false} src={logo}></Image>
@@ -51,7 +72,7 @@ const OtpScr=()=>{
             <LbuttonView title="Submit" value={username} />
           </Col>
         </Col>
-      </Row>
+      </motion.div>
     );
     
 }
