@@ -1,76 +1,72 @@
-import React, {useState, useEffect} from 'react';
-import HeaderMenuView from '../../component/header/HeaderMenuView';
-import SideMenuView from '../../component/header/SideMenuView';
-import {
-    Routes,
-    Route,
-    useLocation
-  } from "react-router-dom";
-import CookiemanagerScr from './cookiemanager';
-import ConsentbannerScr from './consentbanner';
-import CookiepolicyScr from './cookiepolicy';
-import PrivacypolicyScr from './privacypolicy';
-import ConsentlogScr from './consentlog';
-import DashboardScr from './dashboard';
-import SitesettingScr from './sitesetting';
-import { motion,AnimatePresence} from 'framer-motion';
-import '../../assets/css/sidemenu.css';
- 
-const Screen=()=>{
-    const [inactive, setInactive] = useState(false);
-    const [viewPortWidth, setWidth] = useState(0);
-    const [viewPortHeight, setHeight] = useState(0)
-    const location=useLocation();
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-      }, []);
-    
-      useEffect(() => {
-        setWidth(window.innerWidth);
-        window.addEventListener("resize", (e) => {
-          console.log("size", e.target);
-          setWidth(window.innerWidth);
-          setHeight(window.innerHeight);
-        });
-      }, []);
-      const variants = { 
-    
-        hidden:{opacity:0,
-        x:'100vw'},
-        visible:{
-          opacity:1,
-          x:0,
-          transition:{ease:'easeOut',duration:0.5
-    
-          },
-          exit:{
-            x:'-100vw',
-            transition:{ease:'easeInOut'}
-          }
-        }
-      };
+import React, { useState, useEffect } from "react";
+import HeaderMenuView from "../../component/header/HeaderMenuView";
+import SideMenuView from "../../component/header/SideMenuView";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CookiemanagerScr from "./cookiemanager";
+import ConsentbannerScr from "./consentbanner";
+import CookiepolicyScr from "./cookiepolicy";
+import PrivacypolicyScr from "./privacypolicy";
+import ConsentlogScr from "./consentlog";
+import DashboardScr from "./dashboard";
+import SitesettingScr from "./sitesetting";
+import "../../assets/css/sidemenu.css";
+import SvgIcon from "../../assets/Icon_apps";
 
-    return(
-        <div style={{display:'flex', flexDirection:'row',backgroundColor:'#E5E5E5'}}>
-            <div className={`sidenav ${inactive ? "inactive" : ""}`} >
-                <SideMenuView inactive={inactive}/>
-            </div>
-            <div style={{display:'flex', flexDirection:'column'}}>
-                <HeaderMenuView inactive={inactive} setInactive={setInactive}/>
-                  <div style={{display:'flex', width:inactive?'91vw':'84vw', marginLeft:'2vw', position:'absolute', top:'8vh'}}>
-                    <Routes location={location} key={location.key}>
-                        <Route path="/dash" element={<DashboardScr/>}/>
-                        <Route path="/cm" element={<CookiemanagerScr/>}/>
-                        <Route path="/cb" element={<ConsentbannerScr/>}/>
-                        <Route path="/cl" element={<ConsentlogScr/>}/>
-                        <Route path="/cp" element={<CookiepolicyScr/>}/>
-                        <Route path="/pp" element={<PrivacypolicyScr/>}/>
-                        <Route path="/ss" element={<SitesettingScr/>}/>
-                    </Routes>
-                  </div>
-            </div>
+const Screen = () => {
+  const [inactive, setInactive] = useState(false);
+  const [cbvisible, setCbvisible] = useState(false);
+  // const [viewPortWidth, setWidth] = useState(0);
+  // const [viewPortHeight, setHeight] = useState(0)
+
+  // useEffect(() => {
+  //     window.scrollTo(0, 0);
+  //   }, []);
+
+  //   useEffect(() => {
+  //     setWidth(window.innerWidth);
+  //     window.addEventListener("resize", (e) => {
+  //       console.log("size", e.target);
+  //       setWidth(window.innerWidth);
+  //       setHeight(window.innerHeight);
+  //     });
+  //   }, []);
+
+  return (
+    <div style={{ display: "flex", flexDirection: "row" }}>
+      {cbvisible ? (
+        <ConsentbannerScr
+          callcb={() => {
+            setCbvisible(!cbvisible);
+          }}
+        />
+      ) : null}
+      <div className={`sidenav ${inactive ? "inactive" : ""}`}>
+        <SideMenuView
+          inactive={inactive}
+          callcb={() => {
+            setCbvisible(!cbvisible);
+          }}
+        />
+      </div>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <HeaderMenuView inactive={inactive} setInactive={setInactive} />
+        <div style={{ display: "flex", backgroundColor: "#E5E5E5" }}>
+          <div style={{ display: "flex", width: inactive ? "89vw" : "82vw" }}>
+            <Routes>
+              <Route path="/dash" element={<DashboardScr />} />
+              <Route path="/cm" element={<CookiemanagerScr />} />
+              <Route path="/cb" element={<ConsentbannerScr />} />
+              <Route path="/cl" element={<ConsentlogScr />} />
+              <Route path="/cp" element={<CookiepolicyScr />} />
+              <Route path="/pp" element={<PrivacypolicyScr />} />
+              <Route path="/ss" element={<SitesettingScr />} />
+            </Routes>
+          </div>
+
         </div>
-    );
-}
+      </div>
+    </div>
+  );
+};
 export default Screen;
