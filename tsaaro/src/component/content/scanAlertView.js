@@ -1,7 +1,7 @@
 import React ,{useState} from "react";
 import "../../assets/css/scanhistory.css";
 import SvgIcon from "../../assets/Icon_apps";
-
+ 
 function ScanAlertView() {
     const [close, setClose] = useState(false);
   return (

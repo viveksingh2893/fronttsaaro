@@ -1,39 +1,38 @@
 import { Col, Button, Row } from "antd";
 import { useState } from "react";
 import "../../assets/css/cookieboard.css";
-import SvgIcon from "../../assets/Icon_apps";
 import CookieTypesView from "./cookieTypesView";
 
 
-const CookieView = () => {
+const CookieView = (props) => {
   const [cookietype, setCookieType] = useState("Neccessary")
   const [switchcookies, setSwitch] = useState([1, 0, 0, 0, 0, 0]);
 
   const handleswitch = (id) => {
     if (id === "nc") {
-      setSwitch([1, 0, 0, 0, 0, 0]);
+      setSwitch([1, 0, 0, 0, 0]);
       setCookieType('Neccessary');
     } else if (id === "fc") {
-      setSwitch([0, 1, 0, 0, 0, 0]);
+      setSwitch([0, 1, 0, 0, 0]);
       setCookieType('Functional');
     } else if (id === "an") {
-      setSwitch([0, 0, 1, 0, 0, 0]);
+      setSwitch([0, 0, 1, 0, 0]);
       setCookieType('Analytics');
     } else if (id === "pr") {
-      setSwitch([0, 0, 0, 1, 0, 0]);
+      setSwitch([0, 0, 0, 1, 0]);
       setCookieType('Performance');
     } else if (id === "ad") {
-      setSwitch([0, 0, 0, 0, 1, 0]);
-      setCookieType('Advertisment');
-    } else if (id === "ot") {
-      setSwitch([0, 0, 0, 0, 0, 1]);
-      setCookieType('Others');
+      setSwitch([0, 0, 0, 0, 1]);
+      setCookieType('Advertisement');
+    // } else if (id === "ot") {
+    //   setSwitch([0, 0, 0, 0, 0, 1]);
+    //   setCookieType('Others');
     }
   };
   
   return (
-    <>
-          <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
+    <div style={{display:'flex', flexDirection:'column'}}>
+          <div style={{display:'flex', flexDirection:'row', justifyContent:'space-around', border:'2px solid #F0EDFF', paddingTop:'2.5vh' }}>
             <div
               onClick={() => handleswitch("nc")}
               className="cm-toggle-col"
@@ -43,8 +42,8 @@ const CookieView = () => {
               }}
               span={4}
             >
-              <h4 className="cm-cookie-selection">Neccessary(1)</h4>
-              
+              <h4 className="cm-cookie-selection" style={{color:switchcookies[0]?'#5647AB':'#1E1A1A'}}>Neccessary (1Cookie)</h4>
+               
             </div>
             <div
               onClick={() => handleswitch("fc")}
@@ -55,7 +54,7 @@ const CookieView = () => {
               className="cm-toggle-col"
               span={4}
             >
-              <h4 className="cm-cookie-selection">Functional(1)</h4>
+              <h4 className="cm-cookie-selection" style={{color:switchcookies[1]?'#5647AB':'#1E1A1A'}}>Functional (1Cookie)</h4>
             </div>
             <div
               onClick={() => handleswitch("an")}
@@ -66,7 +65,7 @@ const CookieView = () => {
               }}
               span={4}
             >
-              <h4 className="cm-cookie-selection">Analytics(1)</h4>
+              <h4 className="cm-cookie-selection" style={{color:switchcookies[2]?'#5647AB':'#1E1A1A'}}>Analytics (1Cookie)</h4>
             </div>
             <div
               onClick={() => handleswitch("pr")}
@@ -77,7 +76,7 @@ const CookieView = () => {
               }}
               span={4}
             >
-              <h4 className="cm-cookie-selection">Performance(1)</h4>
+              <h4 className="cm-cookie-selection" style={{color:switchcookies[3]?'#5647AB':'#1E1A1A'}}>Performance (1Cookie)</h4>
             </div>
             <div
               onClick={() => handleswitch("ad")}
@@ -88,9 +87,9 @@ const CookieView = () => {
               className="cm-toggle-col"
               span={4}
             >
-              <h4 className="cm-cookie-selection">Advertisment(1)</h4>
+              <h4 className="cm-cookie-selection" style={{color:switchcookies[4]?'#5647AB':'#1E1A1A'}}>Advertisement (1Cookie)</h4>
             </div>
-            <div
+            {/* <div
               onClick={() => handleswitch("ot")}
               style={{
                 borderBottom:
@@ -99,11 +98,11 @@ const CookieView = () => {
               className="cm-toggle-col"
               span={4}
             >
-              <h4 className="cm-cookie-selection">Others(1)</h4>
-            </div>
+              <h4 className="cm-cookie-selection" style={{color:switchcookies[5]?'#5647AB':'#1E1A1A'}}>Others (1Cookie)</h4>
+            </div> */}
           </div>
-          <CookieTypesView type={cookietype}/>
-          </>
+          <CookieTypesView type={cookietype} inactive={props.inactive}/>
+          </div>
   );
 };
 export default CookieView;

@@ -13,7 +13,8 @@ import AccountScr from './screen/account';
 function App() {
   return (
  
-  <AccountScr/>
+  // <AccountScr/>
+  <Screen/>
 
 
 

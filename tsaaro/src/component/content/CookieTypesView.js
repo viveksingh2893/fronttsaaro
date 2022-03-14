@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from "react";
 import "../../assets/css/cookieboard.css";
 import SvgIcon from "../../assets/Icon_apps";
-import ManualCookieView from "../header/ManualCookieView";
+import ManualCookieView from "../content/ManualCookieView";
 import CookieEditPopView from "../popup/cookieEditPopView";
 import AddCookiePopView from "../popup/addCookiePopView";
+import NoCookieView from '../content/noCookieView';
  
-
+ 
 function CookieTypesView(props) {
   const [modal, setModal] = useState(false);
   const [add, setAdd] = useState(false);
@@ -13,15 +14,15 @@ function CookieTypesView(props) {
   const toggleAdd = (props) => {
     setAdd(!add);
   };
-
+ 
   const toggleModal = () => {
     setModal(!modal);
   };
 
   return (
     <>
-      <div>
-        <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
+      <div style={{marginLeft:'3vw', marginRight:'3vw', marginTop:'2vw'}}>
+        <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', marginTop:'1vh'}}>
             <div
               style={{
                 display: "flex",
@@ -30,13 +31,13 @@ function CookieTypesView(props) {
               }}
             >
               <h4 className="ct">{props.type}</h4> 
-              <div onClick={toggleModal}><SvgIcon name='edit'/></div>
+              <div onClick={toggleModal} style={{cursor:'pointer'}}><SvgIcon name='edit'/></div>
             </div>
             <div>
               <div className="input">
                 <form>
                   <select id="cars" name="cars" className="language">
-                    <option value="english" >English</option>
+                    <option value="english">English</option>
                     <option value="hindi" >Hindi</option>
                     <option value="bulgarian" >Bulgarian</option>
                     <option value="catalan">Catalan</option>
@@ -45,14 +46,13 @@ function CookieTypesView(props) {
               </div>
             </div>
           </div>
-          <div>
-            <p >
-              Scan your website for cookies and manage the discovered or
-              self-declared cookies here.
+          <div style={{display:'flex', width:'50vw', marginTop:'2vh'}}>
+            <p className="cookie-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi facilisi vestibulum ipsum, mauris erat gravida. Arcu, nisl, urna vel dolor in ac cras.Arcu, nisl, urna vel dolor in ac cras.
             </p>
           </div>
           
-          <div style={{display: 'flex', flexDirection:'row', justifyContent:'space-between'}}>
+          <div style={{display: 'flex', flexDirection:'row',marginTop:'2vh', justifyContent:'space-between'}}>
             <div>
               <h3 className="ct"
               onClick={()=>console.log("Cookie List")}
@@ -62,7 +62,7 @@ function CookieTypesView(props) {
                   Cookie List
                   </h3>
             </div>
-            <div onClick={toggleAdd} style={{display:'flex', flexDirection:'row'}}>
+            <div onClick={toggleAdd} style={{display:'flex', flexDirection:'row', cursor:'pointer'}}>
               <SvgIcon name='plus circle'/>
               <h3 className="ct"
               style={{
@@ -76,15 +76,15 @@ function CookieTypesView(props) {
                   </h3>
             </div>
           </div>
-          <ManualCookieView/>
+          <ManualCookieView inactive={props.inactive}/>
           {/* <NoCookieView/> */}
-          </div>
+      </div>
           {modal && (
             <div className="modal">
               <div className="modal-content">
                 <CookieEditPopView closeModal={setModal}/>
               </div>
-            </div>
+            </div> 
           )}
           {add && (
         <div className="add-modal">
@@ -93,7 +93,7 @@ function CookieTypesView(props) {
         </div>
         </div>
       )}
-          </>
+    </>
   );
 }
 

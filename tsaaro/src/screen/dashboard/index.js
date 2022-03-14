@@ -52,29 +52,24 @@ const Screen=()=>{
       };
 
     return(
-        <div
-        // initial='hidden' 
-        // animate='visible'
-        // exit='exit'
-        // variants={variants}
-        style={{display:'flex', flexDirection:'row'}}>
+        <div style={{display:'flex', flexDirection:'row',backgroundColor:'#E5E5E5',overflowY:'auto'}}>
             <div className={`sidenav ${inactive ? "inactive" : ""}`} >
-                <SideMenuView/>
+                <SideMenuView inactive={inactive}/>
             </div>
             <div style={{display:'flex', flexDirection:'column'}}>
                 <HeaderMenuView inactive={inactive} setInactive={setInactive}/>
-                <div style={{display:'flex', width:inactive?'90vw':'80vw'}}>
-                
-                <Routes location={location} key={location.key}>
-                    <Route path="/" element={<DashboardScr/>}/>
-                    <Route path="/cm" element={<CookiemanagerScr/>}/>
-                    <Route path="/cb" element={<ConsentbannerScr/>}/>
-                    <Route path="/cl" element={<ConsentlogScr/>}/>
-                    <Route path="/cp" element={<CookiepolicyScr/>}/>
-                    <Route path="/pp" element={<PrivacypolicyScr/>}/>
-                    <Route path="/ss" element={<SitesettingScr/>}/>
-                </Routes>
-               
+                <div style={{display:'flex', height: viewPortHeight}}>
+                    <div style={{display:'flex', width:inactive?'86vw':'80vw', marginLeft:'2vw'}}>
+                    <Routes location={location} key={location.key}>
+                        <Route path="/dash" element={<DashboardScr/>}/>
+                        <Route path="/cm" element={<CookiemanagerScr/>}/>
+                        <Route path="/cb" element={<ConsentbannerScr/>}/>
+                        <Route path="/cl" element={<ConsentlogScr/>}/>
+                        <Route path="/cp" element={<CookiepolicyScr/>}/>
+                        <Route path="/pp" element={<PrivacypolicyScr/>}/>
+                        <Route path="/ss" element={<SitesettingScr/>}/>
+                    </Routes>
+                    </div>
                 </div>
             </div>
         </div>

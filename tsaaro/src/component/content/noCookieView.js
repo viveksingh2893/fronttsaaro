@@ -6,7 +6,7 @@ const NoCookieView=()=>{
         <div style={{justifyContent:"center", padding: '3vw'}}>
             <div style={{display:'flex',flexDirection:'column', alignItems:'center'}}>
                 <SvgIcon name='no cookie'/>
-                <p>No Cookies found for this category</p>
+                <p className="no-cookie">No Cookies found for this category</p>
 
             </div>
 

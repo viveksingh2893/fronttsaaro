@@ -1,57 +1,38 @@
 import React, { useState } from "react";
-import { Button } from "antd";
+import { Input } from "antd";
 import "../../assets/css/cookieedit.css";
 import SvgIcon from "../../assets/Icon_apps";
-
+import TextArea from "antd/lib/input/TextArea";
+  
 function CookieEditPopView({closeModal}) {
 
-  return (
-    <>
-     <div className="modal-head">
-        <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
+  return ( 
+    <div className="containerpop">
+        <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', width:'51.3vw', marginTop:'2vh'}}>
               <h3 className="modal-h3">Edit Category</h3>
-              <div className="modal-box2" onClick={() => {closeModal(false)}}>
+              <div onClick={() => {closeModal(false)}} style={{cursor:'pointer'}}>
                   <SvgIcon name='cross'/>
               </div>
         </div>
-
-        <div style={{display:'flex',flexDirection:'column', marginTop:'2vh'}}>
-          <div style={{display:'flex',flexDirection:'row'}}>
-            <p>Name</p>
-          <div style={{display:'flex', justifyContent:'flex-start'}}><SvgIcon name='asterisk'/></div>
-          </div>
-          <input type="text" className="modal-input1" />
-          <div style={{display:'flex',flexDirection:'column', marginTop:'5vh'}}>
-              <div style={{display:'flex',flexDirection:'row'}}>
-                <p>Description</p>
-              <div style={{display:'flex', justifyContent:'flex-start'}}><SvgIcon name='asterisk'/></div>
-          </div>
-              <input type="text" className="modal-input2"/>
+        <div style={{display:'flex',flexDirection:'row', alignItems:'flex-start', marginTop:'2vh'}}>
+            <p className="name">Name</p>
+            <div style={{display:'flex', justifyContent:'flex-start'}}><SvgIcon name='asterisk'/></div>
+        </div>
+        <Input className="modal-input1" />
+        <div style={{display:'flex',flexDirection:'column', marginTop:'3vh'}}>
+            <div style={{display:'flex',flexDirection:'row'}}>
+                <p className="name">Description</p>
+                <div style={{display:'flex', justifyContent:'flex-start'}}><SvgIcon name='asterisk'/></div>
             </div>
+            <TextArea className="modal-input2"/>
+        </div>
+        <div style={{display:'flex', flexDirection:'row', justifyContent:'flex-end', width:'51.3vw'}}>
+            <div className="submitpop">
+                  <button onClick={() => {closeModal(false)}} className="cancel">Cancel</button>
+                  <button onClick={() => {closeModal(false)}} className="submit">Submit</button>
             </div>
-            </div>
-            <div style={{display:'flex', flexDirection:'row', justifyContent:'flex-end'}}>
-            <Button
-              type="primary"
-              ghost
-              onClick={() => {
-                closeModal(false);
-              }}
-              className="close-modal1"
-            >
-              Cancel
-            </Button>
-            <Button
-              type="primary"
-              onClick={() => {
-                closeModal(false);
-              }}
-              className="close-modal2"
-            >
-              Submit
-            </Button> 
-            </div>
-    </>
+    </div>
+    </div>
   )
 }
 

@@ -621,8 +621,8 @@ function SvgIcon(props) {
     return(
       <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="1.5vw"
+      height="1.5vw"
       fill="none"
       viewBox="0 0 24 24"
     >
@@ -639,6 +639,44 @@ function SvgIcon(props) {
         strokeLinejoin="round"
         strokeWidth="2"
         d="M12 15a3 3 0 100-6 3 3 0 000 6z"
+      ></path>
+    </svg>
+    )
+  }
+  if (props.name ==='green tick') {
+    return(
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1.2vw"
+      height="1.2vw"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke="#4ACD96"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M20 6L9 17l-5-5"
+      ></path>
+    </svg>
+    )
+  }
+  if (props.name ==='red cross') {
+    return(
+      <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1.2vw"
+      height="1.2vw"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke="#F51D2C"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M18 6L6 18M6 6l12 12"
       ></path>
     </svg>
     )

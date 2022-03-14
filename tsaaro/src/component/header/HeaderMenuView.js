@@ -9,7 +9,8 @@ function HeaderMenuView(props) {
   const [change, setChange] = useState(false);
   const [icon, setIcon] = useState("")
   const [site, setSite] = useState(false);
-
+  const [click, setClick] = useState('')
+ 
   const toggleSite = () => {
     setSite(!site);
   };
@@ -27,17 +28,25 @@ function HeaderMenuView(props) {
   
   const menu = (
     <Menu>
-      <Menu.Item key="0" onClick={()=>console.log("contact")} className="ant-select-selection">Contact</Menu.Item>
-      <Menu.Item key="1" onClick={()=>console.log("setting")} className="ant-select-selection">Account Setting</Menu.Item>
-      <Menu.Item key="2" onClick={()=>console.log("password")} className="ant-select-selection">Change Password</Menu.Item>
-      <Menu.Item key="3" onClick={()=>console.log("logout")} className="ant-select-selection">Logout</Menu.Item>
+      <Menu.Item key="0" onMouseEnter={()=>setClick('co')} onMouseLeave={()=>setClick('')} className="ant-menu">
+        <p className="acc-default" style={{color:click=='co'?'white':'#ADADAD'}}>Contact</p>
+      </Menu.Item>
+      <Menu.Item key="1" onMouseEnter={()=>setClick('ac')} onMouseLeave={()=>setClick('')} className="ant-menu">
+        <p className="acc-default" style={{color:click=='ac'?'white':'#ADADAD'}}>Account Setting</p>
+      </Menu.Item>
+      <Menu.Item key="2" onMouseEnter={()=>setClick('cp')} onMouseLeave={()=>setClick('')} className="ant-menu">
+       <p className="acc-default" style={{color:click=='cp'?'white':'#ADADAD'}}>Change Password</p>
+      </Menu.Item>
+      <Menu.Item key="3" onMouseEnter={()=>setClick('lo')} onMouseLeave={()=>setClick('')} className="ant-menu">
+       <p className="acc-default" style={{color:click=='lo'?'white':'#ADADAD'}}>Logout</p>
+      </Menu.Item>
     </Menu>
   ); 
-
+ 
   return (
     <>
-    <div className="cont" style={{width:props.inactive?'95.5vw':'86vw'}}>
-      <div className="menu" onClick={() => props.setInactive(!props.inactive)}>
+    <div className="cont" style={{width:props.inactive?'92vw':'86vw'}}>
+      <div className="menu" style={{display:'flex',justifyContent:'flex-end'}}  onClick={() => props.setInactive(!props.inactive)}>
        <SvgIcon name='burger'/>
       </div>
       <div className="input">
@@ -54,9 +63,9 @@ function HeaderMenuView(props) {
         <a href="#" className="a2" onClick={toggleSite}>
           + Add Site
         </a>
-      </div>
+      </div> 
       
-      <div className="acc" style={{marginLeft:props.inactive?'54vw':''}}>
+      <div className="acc" style={{marginLeft:props.inactive?'51vw':'45vw'}}>
         <Dropdown overlay={menu} trigger={['click']} onClick={()=>setChange(!change)} placement='bottomRight'>
           <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
           <SvgIcon name='account'/> {icon}
@@ -65,8 +74,8 @@ function HeaderMenuView(props) {
       </div> 
     </div>
     {site && (
-      <div className="add-modal">
-        <div className="add-content">
+      <div className="addsite-modal">
+        <div className="addsite-content">
           <AddSitePopView closeSite={setSite}/>
         </div>
       </div>

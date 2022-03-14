@@ -1,9 +1,10 @@
 body.active-scan {
-    overflow-y: hidden;
+    overflow-y: scroll;
   }
   
   .scan,
   .scan-overlay {
+    display:flex;
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -17,31 +18,32 @@ body.active-scan {
     background: rgba(49, 49, 49, 0.8);
   }
   .scan-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    line-height: 1.4;
+    top: 32vh;
+    left: 32vw;
     background: #f1f1f1;
-    padding: 14px 28px;
-    border-radius: 3px;
-    max-width: 600px;
-    min-width: 300px;
+    border-radius: 4px;
+    width:32.56vw;
+    height:32.4vh;
+    padding:1.5vw;
   }
   
   .scan-img {
     justify-content: center;
     align-items: center;
     display: flex;
-    margin: 1vw;
   }
   
-  img{
+  img{display: flex;
       width: 2vw;
       height: 2vw;
   }
   
-  .scan-heading > h3 {
+  .scan-heading{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,24 +58,40 @@ body.active-scan {
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: .9vw;
+    line-height: 1vw;
+    display: flex;
+    text-align: center;
+    color: #6F6F6F;
   }
   
   .scan-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem;
+    bottom: 1vh;
+    margin: 1vw;
   }
   
   .scan-ok {
     background: #7a4eb6;
-    box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    width: 4vw;
-    height: 2vw;
+    width: 5.2vw;
+    height: 4.8vh;
     color: white;
+    border:1px solid #7A4EB6;
     align-items: center;
     justify-content: center;
     text-align: center;
+    cursor: pointer;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    display: flex;
   }
   
