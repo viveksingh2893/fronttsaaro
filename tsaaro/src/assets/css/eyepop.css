@@ -1,0 +1,110 @@
+.eye-container {
+    display:flex;
+    position: absolute; 
+    top:0;
+    background: #ffffff;
+    padding: 3vw;
+    border-radius: 3px;
+    width:80vw;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #E5E5E5;
+  }
+  
+  .detail-container{
+    display:flex;
+    flex-Direction:column;
+    height:17vw;
+    width:17vw;
+    align-Items:center;
+    justify-Content:space-between;
+    background-color: white;
+    padding:2vw;
+    margin-right:2vw;
+    border-radius: 4px;
+  }
+
+  .eye-title{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    display: flex;
+    align-items: center;
+    color: black;
+    margin: 0;
+  }
+
+  .title-scan{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    display: flex;
+    align-items: center;
+    color: black;
+  }
+
+  .eye-content-container{
+    display:flex;
+    flex-Direction:row;
+    background-Color:white;
+    width:74vw;
+    margin-Top:2vh;
+    border:.5px solid  #ADADAD
+  }
+
+  .eye-textbox{
+    display:flex;
+     flex-Direction:column;
+     align-Items:center;
+     justify-Content:center;
+     width:7vh;
+     min-Height:10vh;
+     border-right:.5px solid #ADADAD
+  }
+
+  .eye-text-category{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    display: flex;
+    align-items: center;
+    color: black;
+    display:flex;
+    transform:rotate(-90deg)
+  }
+
+  .eye-text-title{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    width:16vw;
+    display: flex;
+    align-items: center;
+    color: #6F6F6F;
+    display:flex;
+    padding:1vw
+  }
+
+  .eye-text-content{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    width:16vw;
+    display: flex;
+    align-items: center;
+    color:#331A55;
+    display:flex;
+    padding: 1vw;
+    margin: 0;
+  }

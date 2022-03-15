@@ -3,7 +3,7 @@ const Dashtckicon=(props)=>{
     if(props.name==='cookie'){
         return(
 
-            <svg width="91" height="91" viewBox="0 0 91 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width={props.width?props.width:'91'} height={props.height?props.height:'91'} viewBox="0 0 91 91" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="45.5" cy="45.5" r="45.5" fill="#4971FE" fill-opacity="0.2"/>
 <path d="M43.9198 15.686C45.0995 15.6957 45.836 16.8251 45.5277 17.9639C44.9345 20.1554 44.0956 23.3668 44.0489 24.1672C43.6175 31.5685 44.8832 32.7287 48.1728 36.652C51.662 40.8132 59.2834 42.4261 64.665 42.8965C67.146 43.1133 70.4099 42.3017 72.5944 41.6294C73.8249 41.2507 75.1409 42.0318 75.2638 43.3133C75.5593 46.3934 75.8612 51.675 74.9747 55.3812C73.7072 60.6801 72.3907 63.8035 68.7889 67.8659C64.46 72.7483 60.6315 74.514 54.3553 76.1891C48.1275 77.8511 44.0875 77.8511 37.8597 76.1891C31.5835 74.514 28.0167 72.4984 23.4261 67.8659C18.8356 63.2334 16.8382 59.634 15.1784 53.3004C13.5313 47.0157 13.191 42.8378 15.1784 36.6541C16.6269 32.147 18.2058 29.7562 21.3642 26.2502C25.2702 21.9143 28.4486 20.3493 33.7358 17.927C37.9245 16.008 41.6737 15.6675 43.9198 15.686Z" fill="#4971FE"/>
 <ellipse cx="34.75" cy="30.105" rx="3.5625" ry="3.5625" fill="white"/>
@@ -31,7 +31,7 @@ const Dashtckicon=(props)=>{
 
     if(props.name==='categories'){
         return(
-            <svg width="91" height="91" viewBox="0 0 91 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width={props.width?props.width:'91'} height={props.height?props.height:'91'} viewBox="0 0 91 91" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="45.5" cy="45.5" r="45.5" fill="#B132FF" fill-opacity="0.2"/>
 <g clip-path="url(#clip0_682_15079)">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M18 34.4999C20.9804 30.2156 25.7739 24.0273 31 24.0273H70.0922C75.3183 24.0273 79.5549 28.2806 79.5549 33.5273V57.2773C79.5549 62.5241 75.3183 66.7773 70.0922 66.7773H31C25.7739 66.7773 22 62.4999 18 57.2773L11.8138 48.8384C10.1657 46.5901 10.2832 43.5028 12.0973 41.3863L18 34.4999Z" fill="#B132FF"/>
@@ -53,7 +53,7 @@ const Dashtckicon=(props)=>{
     }
     if(props.name==='script'){
         return(
-            <svg width="91" height="91" viewBox="0 0 91 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width={props.width?props.width:'91'} height={props.height?props.height:'91'} viewBox="0 0 91 91" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="45.5" cy="45.5" r="45.5" fill="#FF5D29" fill-opacity="0.2"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M71 30H22V75L46.5 66L71 75V30Z" fill="#FF5D29"/>
 <path d="M26 34H66V70L46 62.125L26 70V34Z" fill="url(#paint0_linear_682_15081)"/>
@@ -73,7 +73,7 @@ const Dashtckicon=(props)=>{
     }
     if(props.name==='scan'){
         return(
-            <svg width="91" height="95" viewBox="0 0 91 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width={props.width?props.width:'91'} height={props.height?props.height:'91'} viewBox="0 0 91 95" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="45.5" cy="49.5" r="45.5" fill="#03B8B8" fill-opacity="0.2"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M75 35C75 29.4772 70.5229 25 65 25H27C21.4772 25 17 29.4772 17 35V68.5C17 76.5082 21.7213 83 27.5455 83H64.4545C70.2787 83 75 76.5082 75 68.5V35ZM27.5455 43.125C27.5455 41.1229 28.7258 39.5 30.1818 39.5H61.8182C63.2742 39.5 64.4545 41.1229 64.4545 43.125C64.4545 45.1271 63.2742 46.75 61.8182 46.75H30.1818C28.7258 46.75 27.5455 45.1271 27.5455 43.125ZM27.5455 61.25C27.5455 59.2479 28.7258 57.625 30.1818 57.625H51.2727C52.7288 57.625 53.9091 59.2479 53.9091 61.25C53.9091 63.2521 52.7288 64.875 51.2727 64.875H30.1818C28.7258 64.875 27.5455 63.2521 27.5455 61.25Z" fill="#03B8B8"/>
 <path d="M23 39.8125C23 34.9455 26.4325 31 30.6667 31H61.3333C65.5675 31 69 34.9455 69 39.8125V69.1875C69 74.0545 65.5675 78 61.3333 78H30.6667C26.4325 78 23 74.0545 23 69.1875V39.8125Z" fill="url(#paint0_linear_682_15078)"/>

@@ -102,7 +102,6 @@ const CookiemanagerScr = (props) => {
       </Row>
       {scan && (<ScanAgainPop closeScan={setScan}/>)}
     </motion.div>
-    
   );
 };
 export default CookiemanagerScr;
