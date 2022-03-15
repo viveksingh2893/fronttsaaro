@@ -4,7 +4,7 @@ import SvgIcon from "../../assets/Icon_apps";
 
 function ScanHistoryItem(props) {
   return (
-    <div style={{display:'flex',flexDirection:'row', width:'75vw', marginTop:'2vh', border:'2px solid #ADADAD', borderRadius:'4px'}}>
+    <div style={{display:'flex',flexDirection:'row', width:'75vw', marginTop:'2vh', border:'.5px solid #ADADAD', borderRadius:'4px'}}>
       <div className="scan-hist-item">{props.time}</div>
       <div className="scan-hist-item" style={{color:'#4ACD96'}}>{props.status}</div>
       <div className="scan-hist-item">{props.url}</div>

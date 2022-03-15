@@ -2,6 +2,7 @@ import React ,{useEffect, useState} from 'react'
 import '../../assets/css/cookiepop.css';
 import SvgIcon from '../../assets/Icon_apps';
 import TextArea from "antd/lib/input/TextArea";
+import { Input } from 'antd';
 
 const AddCookiePopView= (props)=> {
   const [change, setChange] = useState(true);
@@ -29,20 +30,14 @@ const AddCookiePopView= (props)=> {
                       <p className='text'>Cookie ID</p>
                     <div style={{display:'flex', justifyContent:'flex-start'}}><SvgIcon name='asterisk'/></div>
                   </div>
-                  <input
-                      type="text"
-                      className="add-input1"
-                  />
+                  <Input className="add-input1" placeholder='Cookie ID'/>
                 </div>
                 <div style={{display:'flex',flexDirection:'column'}}>
                     <div style={{display:'flex',flexDirection:'row'}}>
                       <p className='text'>Domain</p>
                     <div style={{display:'flex', justifyContent:'flex-start'}}><SvgIcon name='asterisk'/></div>
                     </div>
-                    <input
-                          type="text"
-                          className="add-input1"
-                        />
+                    <Input className="add-input1" placeholder='Domain'/>
                   </div>
             </div>
             <div style={{display:'flex',alignItems:'flex-start', marginTop:'3vh', width:'30vw'}}>
@@ -51,10 +46,7 @@ const AddCookiePopView= (props)=> {
                       <p className='text'>Duration</p>
                       <div style={{display:'flex', justifyContent:'flex-start'}}><SvgIcon name='asterisk'/></div>
                     </div>
-                    <input
-                      type="text"
-                      className="add-input1"
-                    />
+                    <Input className="add-input1" placeholder='Duration'/>
               </div>
               </div>
 
@@ -63,7 +55,10 @@ const AddCookiePopView= (props)=> {
                           <p className='text'>Description</p>
                           <div style={{display:'flex', justifyContent:'flex-start'}}><SvgIcon name='asterisk'/></div>
                 </div>
-                <TextArea className='input2'/>
+                  <TextArea className='input2' 
+                  placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  Morbi facilisi vestibulum ipsum, mauris erat gravida.'
+                  />
                 </div>
             <div className="add-box3">
               <p className="add-text">Show Advance Option</p>
@@ -99,10 +94,9 @@ const AddCookiePopView= (props)=> {
               </div>}
 
               <div>
-                  <input
-                    type="text"
-                    className="add-input3"
-                  />
+                <Input className="add-input3" 
+                placeholder='Please enter a valid ‘Script URL Pattern’. EG: google-analytics.com'
+                />
               </div>
               </div>:null}
 

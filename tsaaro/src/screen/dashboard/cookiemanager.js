@@ -49,12 +49,15 @@ const CookiemanagerScr = (props) => {
   return (
     <motion.div
       style={{
-        marginLeft: "1vw",
-        height: "calc(100vh - 60px)",
-        width: "94.5vw",
+        marginLeft: "3vw",
+        height: "calc(100vh - 8vh)",
+        width: "96.5vw",
         justifyContent: "center",
+        // position:'absolute',
         alignItems: "center",
-        
+        overflowY:'scroll',
+        paddingRight:'2.5vw',
+        paddingBottom:'5vh'
 
       }}
     >
@@ -86,7 +89,7 @@ const CookiemanagerScr = (props) => {
           self-declared cookies here.
         </p>
       </Row>
-      <Row style={{backgroundColor:'white', borderRadius:'4px', border:'2px solid #ADADAD'}}>
+      <Row style={{backgroundColor:'white', borderRadius:'4px',boxShadow:'0px 0.5px 4px rgba(0, 0, 0, 0.2)'}}>
         <Col span={24}>
           <Row>
             <Col

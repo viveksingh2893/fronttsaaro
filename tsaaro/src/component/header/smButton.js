@@ -3,6 +3,11 @@ import SvgIcon from "../../assets/Icon_apps";
 import '../../assets/css/sidemenu.css';
  
 const SmButton= (props)=>{
+  // const [color, setColor] = useState(false); 
+
+  // const toggle=()=>{
+  //   setColor(!color)
+  // }
   
 return(
     <div className="button">
@@ -12,4 +17,4 @@ return(
       </div>
     </div>  
 )}
-export default SmButton;
+export default SmButton; 

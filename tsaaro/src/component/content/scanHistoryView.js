@@ -7,13 +7,9 @@ import "../../assets/css/scanhistory.css";
  
 function ScanHistoryView() {
   return (
-    <div style={{display:'flex',alignItems:'center', flexDirection:'column', borderTop:'2px solid #F0EDFF'}}>
-      <div>
-        <ScanAlertView />
-      </div>
-      <div>
-        <ScanTableHeadView />
-      </div>
+    <div style={{display:'flex',alignItems:'center', flexDirection:'column', borderTop:'2px solid #F0EDFF', marginBottom:'5vh'}}>
+      <ScanAlertView />
+      <ScanTableHeadView />
       <div style={{marginBottom:'2vh'}}>
         <div className="scan-history-item">
           <ScanHistoryItem 
