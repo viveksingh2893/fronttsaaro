@@ -5,9 +5,12 @@ import "../../assets/css/cookieboard.css";
 import CookieView from "../../component/content/cookieView";
 import ScanHistoryView from "../../component/content/scanHistoryView";
 import ScanAgainPop from "../../component/popup/scanAgainPopView";
+import Postapi from "../../api/Postapi";
 
 const CookiemanagerScr = (props) => {
   const [scan, setScan] = useState(false);
+  const [message,setMessage]=useState();
+  const [scantitle,setTitle]=useState()
   
   const [toggle, setToggle] = useState(false);
   const [choose, setChoose] = useState('')
@@ -19,7 +22,18 @@ const CookiemanagerScr = (props) => {
     setToggle(!toggle); 
   };
 
-  const toggleScan = () => {
+  const toggleScan =async () => {
+    const response=await Postapi('/auth/scanner',{website:'website',email:'email'});
+    console.log('response........',response.status);
+    if(response.status){
+      if(response.status===401){
+        setMessage('Message set........')
+        setTitle('......Scan')
+      }
+    }else{
+      setMessage('Message set........')
+        setTitle('......Scan')
+    }
     setScan(!scan);
   };
 
@@ -98,7 +112,7 @@ const CookiemanagerScr = (props) => {
           <div>{choose}</div>
         </Col>
       </Row>
-      {scan && (<ScanAgainPop closeScan={setScan}/>)}
+      {scan && (<ScanAgainPop title={scantitle} message={message} closeScan={setScan}/>)}
     </motion.div>
     
   );
