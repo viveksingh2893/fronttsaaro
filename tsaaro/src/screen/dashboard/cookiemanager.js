@@ -39,7 +39,6 @@ const CookiemanagerScr = (props) => {
         height: "calc(100vh - 8vh)",
         width: "96.5vw",
         justifyContent: "center",
-        // position:'absolute',
         alignItems: "center",
         overflowY:'scroll',
         paddingRight:'2.5vw',

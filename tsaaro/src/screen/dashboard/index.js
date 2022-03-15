@@ -36,8 +36,7 @@ const Screen = () => {
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
         <HeaderMenuView inactive={inactive} setInactive={setInactive} />
-        <div style={{ display: "flex", backgroundColor: "#E5E5E5" }}>
-          <div style={{ display: "flex", width: inactive ? "93vw" : "86vw", marginTop:'8vh' }}>
+          <div style={{ display:"flex", width:inactive ? "93vw":"86vw", marginTop:'8vh', backgroundColor:"#E5E5E5"}}>
             <Routes>
               <Route path="/dash" element={<DashboardScr />} />
               <Route path="/cm" element={<CookiemanagerScr />} />
@@ -48,8 +47,6 @@ const Screen = () => {
               <Route path="/ss" element={<SitesettingScr />} />
             </Routes>
           </div>
-
-        </div>
       </div>
     </div>
   );
