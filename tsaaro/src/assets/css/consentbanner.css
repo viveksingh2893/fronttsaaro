@@ -1,0 +1,32 @@
+.cb-btn {
+  display: flex;
+  background-color: #7a4eb6;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-txt {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  letter-spacing: 0em;
+}
+
+.prvbtn-txt {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  letter-spacing: 0em;
+  color: black;
+}
