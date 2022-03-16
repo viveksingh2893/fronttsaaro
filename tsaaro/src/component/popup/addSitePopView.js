@@ -3,6 +3,7 @@ import InputView from "../input/inputView";
 import PlanListView from "./planListView";
 import "../../assets/css/addsitepop.css";
 import SvgIcon from '../../assets/Icon_apps';
+import { Input } from "antd";
 
 function AddSitePopView({ closeSite }) { 
   const [change, setChange] = useState(false);
@@ -45,8 +46,8 @@ function AddSitePopView({ closeSite }) {
   return (
       <div className="site-content">
         <div className="site-pop-input">
-            <InputView name="URL" />
-            <InputView name="Website Name" />
+            <InputView name="URL" placeholder='example.com'/>
+            <InputView name="Website Name" placeholder='My Website' />
         </div>
         <div className="mid-content"> 
           <div className="site-pop-head">
@@ -94,16 +95,16 @@ function AddSitePopView({ closeSite }) {
              <a href="#" className="site-pop-a">contact us</a>,and we’ll get right back to you.
           </div>
         </div>
-        <div className='billing'>
+        <div className='billing'> 
             <h4 className="site-pop-h4">Price are in USD excl VAT.</h4>
             <h3 className="site-pop-h">Billing Details</h3>
             <div className="site-pop-input">
-                <InputView name="Name"/>
-                <InputView name="Website Name"/>
+                <InputView name="Name" placeholder='example.com'/>
+                <InputView name="Website Name" placeholder='My Website'/>
             </div>
             <p className="coupon">Coupon</p>
             <div className="site-pop-end-input">
-                <input style={{display:'flex', width:'23vw',height: '5.1vh'}}/>
+              <Input style={{width:'23vw', height: '5.1vh'}} placeholder="Flat5"/>
                 <button className="site-pop-end-btn">Apply</button>
             </div>
             <div className="submitpop">

@@ -9,7 +9,7 @@ function ScanHistoryView() {
   return (
     <div style={{display:'flex',alignItems:'center', flexDirection:'column', borderTop:'2px solid #F0EDFF', marginBottom:'5vh'}}>
       <ScanAlertView />
-      <ScanTableHeadView />
+      <ScanTableHeadView />  
       <div style={{marginBottom:'2vh'}}>
         <div className="scan-history-item">
           <ScanHistoryItem 

@@ -1,7 +1,7 @@
 import { Col, Button, Row } from "antd";
 import { useState } from "react";
 import "../../assets/css/cookieboard.css";
-import CookieTypesView from "./CookieTypesView";
+import CookieTypesView from "./cookieTypesView";
 
 const CookieView = (props) => {
   const [cookietype, setCookieType] = useState("Neccessary");
@@ -23,9 +23,6 @@ const CookieView = (props) => {
     } else if (id === "ad") {
       setSwitch([0, 0, 0, 0, 1]);
       setCookieType("Advertisement");
-      // } else if (id === "ot") {
-      //   setSwitch([0, 0, 0, 0, 0, 1]);
-      //   setCookieType('Others');
     }
   };
 
@@ -36,7 +33,8 @@ const CookieView = (props) => {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-around",
-          border: "2px solid #F0EDFF",
+          borderTop: "2px solid #F0EDFF",
+          borderBottom : "2px solid #F0EDFF",
           paddingTop: "2.5vh",
         }}
       >
@@ -115,20 +113,10 @@ const CookieView = (props) => {
             Advertisement (1Cookie)
           </h4>
         </div>
-        {/* <div
-              onClick={() => handleswitch("ot")}
-              style={{
-                borderBottom:
-                  switchcookies[5] === 1 ? "5px solid #5647AB" : "none",
-              }}
-              className="cm-toggle-col"
-              span={4}
-            >
-              <h4 className="cm-cookie-selection" style={{color:switchcookies[5]?'#5647AB':'#1E1A1A'}}>Others (1Cookie)</h4>
-            </div> */}
       </div>
       <CookieTypesView type={cookietype} inactive={props.inactive} />
     </div>
-  );
+  )
 };
+
 export default CookieView;

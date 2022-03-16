@@ -4,6 +4,7 @@ import SvgIcon from "../../assets/Icon_apps";
  
 function ScanAlertView() {
     const [close, setClose] = useState(false);
+    
   return (
     <div className={ close? "scan-alert-box inactive" : "scan-alert-box" }>
       <div className="scan-alert-message">
