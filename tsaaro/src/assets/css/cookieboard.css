@@ -95,6 +95,7 @@ color:#6F6F6F;
       align-items: center;
       text-align: center;
       justify-content: center;
+      border:1px solid #7A4EB6;
     }
     .primary-btn:hover{
       background-color:#7A4EB6;
@@ -107,19 +108,17 @@ color:#6F6F6F;
       font-weight: 500;
       font-size: 1.2vw;
       line-height: 1.3px;
-      display: flex;
       align-items: center;
       margin: 0;
       letter-spacing: 0em;
+      
     }
 
     .mac{
       display: flex; 
-      flex:1;
-        width: 75 vw;
-        /* height: 40vh; */
+        width: 73vw;
         background-color: #F6F6F6;
-        padding: 20px;
+        padding: 2vw;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -127,10 +126,8 @@ color:#6F6F6F;
 
     .macc{
       display:flex;
-      font-size: .8rem;
-      width:70vw;
-      flex:1;
-      /* align-Items: center; */
+      font-size: .8vw;
+      width:67vw;
       flex-Direction: row;
       justify-content: space-between;
     }
@@ -138,7 +135,6 @@ color:#6F6F6F;
   .macs{
     color: #6F6F6F;
     display:flex;
-    flex:1;
     width:12vw;
     justify-Content:flex-start;
   }
@@ -164,8 +160,6 @@ color:#6F6F6F;
     
   }
 
-
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400&display=swap');
 table {
     table-layout: fixed;
     width: 100%;
@@ -306,8 +300,8 @@ body.active-pop {
   width:55.47vw;
   height:100vh;
 }
+
 .modal{
-  
   overflow-y: scroll;
   width: 100vw;
   height: 100vh;

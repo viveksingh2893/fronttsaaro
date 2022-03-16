@@ -7,7 +7,7 @@ import AddCookiePopView from "../popup/addCookiePopView";
 function ManuallyAddCookieView(props) {
   const [pop, setPop] = useState(false);
 
-  const editPop = () => {
+  const editPop = () => { 
     setPop(!pop);
   };
 

@@ -17,7 +17,7 @@ const AddCookiePopView= (props)=> {
   }
 
   return ( 
-    <div className='container'>
+    <div className='container-pop'>
             <div className="add-head">
                 <h3 className="add-h3">New Cookie</h3>
                 <div style={{cursor:'pointer'}} onClick={() => { props.closeAdd(false)}}>
