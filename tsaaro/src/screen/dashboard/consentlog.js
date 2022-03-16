@@ -6,7 +6,7 @@ import ConsentPopView from "../../component/popup/consentPopView";
 
 const ConsentlogScr = (props) => {
   const [scan, setScan] = useState(false);
-  const [accept, setAccept] = useState(true)
+  const [accept, setAccept] = useState(false)
 
   const toggleScan = () => {
     setScan(!scan);
@@ -59,7 +59,7 @@ const ConsentlogScr = (props) => {
             time='14-02-2022, 08:02:22'
         />
         <ConsentLogView  
-            accept={false}
+            accept={accept}
             ip='49.26.451.0'
             country='India'
             status={accept?'accepted':'rejected'}
