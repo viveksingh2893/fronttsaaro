@@ -57,6 +57,11 @@ const ConsentlogScr = (props) => {
             country='India'
             status={accept?'Accepted':'Rejected'}
             time='14-02-2022, 08:02:22'
+            nc='Yes'
+            fc='No'
+            an='No'
+            pr='Yes'
+            ad='Yes'
         />
         <ConsentLogView  
             accept={accept}
@@ -64,6 +69,11 @@ const ConsentlogScr = (props) => {
             country='India'
             status={accept?'Accepted':'Rejected'}
             time='14-02-2022, 08:02:22'
+            nc='Yes'
+            fc='Yes'
+            an='Yes'
+            pr='No'
+            ad='No'
         />
       </div>
       <p className="consentlog-btmline">You can view up to 100 visitor consents logged here. Use the export option if you want to download the historical log data.</p>
