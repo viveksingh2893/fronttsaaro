@@ -1,41 +1,37 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import ScanAlertView from "./scanAlertView";
 import ScanTableHeadView from "./scanTableHeadView";
 import ScanHistoryItem from "./scanHistoryItem";
 
 import "../../assets/css/scanhistory.css";
  
-function ScanHistoryView() {
+function ScanHistoryView(props) {
+  const [prevdata,setData]=useState()
+  // useEffect(()=>{
+  //   setData(props.scandata)
+
+  // },[props.scandata])
+
+  console.log(".................inside child",props.scandata);
   return (
     <div style={{display:'flex',alignItems:'center', flexDirection:'column', borderTop:'2px solid #F0EDFF', marginBottom:'5vh'}}>
       <ScanAlertView />
       <ScanTableHeadView />  
       <div style={{marginBottom:'2vh'}}>
         <div className="scan-history-item">
-          <ScanHistoryItem 
-            time="14-02-2022, 08:02:22" 
-            status="completed" 
-            url="3" 
-            category="3" 
-            cookies="3" 
-            scripts="3"
-          />
-          <ScanHistoryItem 
-            time="18-05-2022, 15:12:52" 
-            status="completed" 
-            url="7" 
-            category="5" 
-            cookies="4" 
-            scripts="9"
-          />
-          <ScanHistoryItem 
-            time="14-02-2022, 08:02:22" 
-            status="completed" 
-            url="3" 
-            category="3" 
-            cookies="3" 
-            scripts="3"
-          />
+          {props.scandata?
+          props.scandata.map((value,index)=>{
+            return (
+            <ScanHistoryItem key={index}
+            time={value.created_date.split('.')[0]}
+            status={value.scan_status}
+            url={value.pages_scanned} 
+            category={value.total_category} 
+            cookies={value.total_cookie} 
+            scripts={value.total_script}
+          />)
+            
+            return}):null}
         </div>
       </div>
     </div>

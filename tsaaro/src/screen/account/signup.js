@@ -6,7 +6,7 @@ import Loginleftsvg from "../../assets/loginleftside";
 import InputView from "../../component/input/linput";
 import LbuttonView from "../../component/button/lbutton";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState,useCallback } from "react";
 import Postapi from "../../api/Postapi";
 import { motion} from "framer-motion";
 import Password from "antd/lib/input/Password";
@@ -20,10 +20,33 @@ const SignupScr = () => {
   const [wrongcred, setWrongcred] = useState(false);
   const navigate=useNavigate()
   console.log(email,website,password);
+  const { REACT_APP_GOOGLE_CLIENT_ID, REACT_APP_BASE_BACKEND_URL } = process.env;
+const openGoogleLoginPage = useCallback(() => {
+    const googleAuthUrl = 'https://accounts.google.com/o/oauth2/v2/auth';
+    const redirectUri = 'auth/google/';
+
+    const scope = [
+      'https://www.googleapis.com/auth/userinfo.email',
+      'https://www.googleapis.com/auth/userinfo.profile'
+    ].join(' ');
+
+    const params = {
+      response_type: 'code',
+      client_id: '476617142718-lluvm3mkk189lkp2968vqv8l2l8sig1q.apps.googleusercontent.com',
+      redirect_uri: `http://3.6.243.234:8001/${redirectUri}`,
+      prompt: 'select_account',
+      access_type: 'offline',
+      scope
+    };
+    
+    const urlParams = new URLSearchParams(params).toString();
+console.log(urlParams)
+    window.location = `${googleAuthUrl}?${urlParams}`;
+  }, []);
   const postreq = async () => {
   if(password===verify){
     setLoading(!loading)
-    const auth = await Postapi("http://192.168.29.5:8001/auth/user/signup", {email:email,website:website,password:password,password2:verify});
+    const auth = await Postapi("/auth/user/signup", {email:email,website:website,password:password,password2:verify});
     console.log("auth....", auth);
     if (auth) {
       setLoading(!loading)
@@ -85,14 +108,14 @@ const SignupScr = () => {
 
           <InputView  onChange={(e)=>setPassword(e.target.value)}label="Password" />
           <InputView  onChange={(e)=>setVerify(e.target.value)}label="Confirm Password" />
-          <Alert
+          {password!==verify?<Alert
              style={{width:'21vw',background:'#F6F6F6'}}
              description='Password Mismatch'
              type="error"
              showIcon
              closable
              onClose={()=>setWrongcred(false)}
-             />
+            />:null}
           <InputView
             checkbox={true}
             text="I Accept the"
@@ -103,7 +126,7 @@ const SignupScr = () => {
 
           <InputView text="Already have an Account ?" clickable="Login here" action={()=>navigate('/')} />
 
-          <LbuttonView icon="googleicon" title="Sign Up with google" />
+          <LbuttonView icon="googleicon" title="Sign Up with google" action={openGoogleLoginPage} />
         </Col>
       </Col>
     </motion.div>

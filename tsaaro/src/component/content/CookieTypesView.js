@@ -1,17 +1,17 @@
 import React, {useState, useEffect} from "react";
 import "../../assets/css/cookieboard.css";
 import SvgIcon from "../../assets/Icon_apps";
-import ManualCookieView from "../content/ManualCookieView";
+import ManualCookieView from "./ManualCookieView";
 import CookieEditPopView from "../popup/cookieEditPopView";
 import AddCookiePopView from "../popup/addCookiePopView";
-import NoCookieView from '../content/noCookieView';
+import NoCookieView from './noCookieView';
  
  
 function CookieTypesView(props) {
   const [modal, setModal] = useState(false);
   const [add, setAdd] = useState(false);
 
-  const toggleAdd = () => {
+  const toggleAdd = (props) => {
     setAdd(!add);
   };
  
@@ -21,7 +21,7 @@ function CookieTypesView(props) {
 
   return (
     <>
-      <div style={{display:'flex',marginLeft:'3vw', marginRight:'3vw', marginTop:'2vw', flexDirection:'column'}}>
+      <div style={{marginLeft:'3vw', marginRight:'3vw', marginTop:'2vw'}}>
         <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', marginTop:'1vh'}}>
             <div
               style={{
@@ -78,7 +78,7 @@ function CookieTypesView(props) {
           </div>
           <ManualCookieView inactive={props.inactive}/>
           {/* <NoCookieView/> */}
-      </div> 
+      </div>
           {modal && (
             <div className="modal">
               <div className="modal-content">
