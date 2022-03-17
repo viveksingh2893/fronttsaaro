@@ -176,6 +176,7 @@
     display: flex;
     align-items: center;
     color: #373737;
+    margin: 0;
 }
 
 .consent-submitpop{
