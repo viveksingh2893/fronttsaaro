@@ -1,0 +1,225 @@
+.consentlog-maincontainer{
+    margin-Left:3vw;
+        height: calc(100vh - 8vh);
+        width:96.5vw;
+        justify-Content: center;
+        align-Items: center;
+        overflow-Y:auto;
+        padding-Right:2.5vw;
+        padding-Bottom:5vh;
+}
+
+.consentlog-heading{
+    font-family: Roboto;
+    font-size: 2vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.2vw;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#331A55;
+    }
+
+.consentlog-scanbtn{
+    display:flex;
+    background-color:#7A4EB6;
+    border-radius: 4px;
+    width:10.4vw;
+    height:5vh;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border:1px solid #7A4EB6;
+  }
+  .consentlog-scanbtn:hover{
+    background-color:#7A4EB6;
+  }
+
+  .consentlog-scanagain{
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2vw;
+    line-height: 1.3px;
+    align-items: center;
+    margin: 0;
+    letter-spacing: 0em;
+  }
+
+  .consentlog-description{
+    font-family:Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1vw;
+  line-height: 1.2vw;
+  display: flex;
+  align-items: center;
+  color:#6F6F6F;
+   margin-Bottom:5vh;
+  }
+
+  .consentlog-title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    display: flex;
+    align-items: flex-end;
+    color: #331A55;
+    padding-left:2vw;
+    width: 20vw;
+    margin:0
+  }
+
+  .consent-ip{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    display: flex;
+    align-items: center;
+    color: #373737;
+    padding:2vw;
+    width: 17vw;
+    margin: 0;
+  }
+
+  .consentlog-block{
+    display:flex;
+    height: 8vh;
+    border:.5 solid #ADADAD;
+    background-Color:#F6F6F6;
+    border-radius: 4px;
+    margin-top:4vh;
+    flex-Direction:row;
+    align-Items:center;
+    justify-Content:space-between;
+  }
+
+  .consentlog-eye{
+    display:flex;
+    height:6.3vh;
+    cursor: pointer;
+    align-items: center;
+}
+
+.consentlog-btmline{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: .9vw;
+    line-height: 1.2vw;
+    display: flex;
+    align-items: center;
+    color: #6F6F6F;
+    margin-top: 5vh;
+}
+
+.consentlog-modal{
+    overflow-y: scroll;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background: rgba(49,49,49,0.8);
+  }
+  .consentlog-modalcontent {
+    top:30vh;
+    left:32vw;
+    display:flex;
+    outline:none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.4;
+    background: white;
+    padding: 2vw;
+    border-radius: 4px;
+    width:32.6vw;
+    height:31vh;
+  }
+
+  .consent-containerpop{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 32.6vw;
+    height: 31vh;
+    padding:1vw;
+    margin:0;
+}
+
+.consent-poptitle{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    display: flex;
+    align-items: center;
+    color: #331A55;
+}
+
+.consent-contentpop{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    display: flex;
+    align-items: center;
+    color: #373737;
+}
+
+.consent-submitpop{
+    display:flex;
+    justify-Content:flex-end;
+     width:70vw;
+     margin-Top:1vw;
+     flex-Direction:row;
+   }
+  
+   .consent-cancel{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border: 1px solid #7A4EB6;
+     background-color: white;
+     width:8.65vw;
+     height:4.81vh;
+     cursor: pointer;
+     border-radius:4px ;
+     color:#7A4EB6;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: 500;
+     font-size: 1vw;
+     line-height: 1.2vw;
+   }
+  
+   .consent-submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7A4EB6;
+    border: 1px solid #7A4EB6;
+    width:8.65vw;
+    height:4.81vh;
+    cursor: pointer;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    display: flex;
+    color: #FFFFFF;
+    margin-left: 1vw;
+    border-radius: 4px;
+   }

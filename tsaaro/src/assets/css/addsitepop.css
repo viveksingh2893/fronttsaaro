@@ -414,7 +414,7 @@
   display:flex;
   flex-Direction:column;
    border:1px solid #5647AB;
-   padding:1vw;
+   padding:.7vw;
    background-Color:white;
    cursor: pointer;
  }
