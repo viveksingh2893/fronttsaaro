@@ -223,3 +223,62 @@
     margin-left: 1vw;
     border-radius: 4px;
    }
+
+  .consent-eyepop-menu{
+    display:flex;
+    flex-Direction:row;
+    width:13vw;
+    border-Bottom:1px solid #ADADAD;
+  } 
+
+   .consent-eyepop-title1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #7A4EB6;
+    width:9vw;
+   }
+
+   .consent-eyepop-title2{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #7A4EB6;
+    width:4vw;
+   }
+
+   .consent-eyepop-content1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    display: flex;
+    align-items: flex-start;
+    color: #6F6F6F;
+    width:9vw;
+    justify-content: flex-start;
+   }
+
+   .consent-eyepop-content2{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    display: flex;
+    align-items: center;
+    color: #6F6F6F;
+    width:4vw;
+    justify-content: flex-start;
+   }
