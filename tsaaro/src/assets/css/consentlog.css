@@ -4,7 +4,7 @@
         width:96.5vw;
         justify-Content: center;
         align-Items: center;
-        overflow-Y:scroll;
+        overflow-Y:auto;
         padding-Right:2.5vw;
         padding-Bottom:5vh;
 }
