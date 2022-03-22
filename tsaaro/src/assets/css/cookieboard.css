@@ -116,7 +116,6 @@ color:#6F6F6F;
 
     .mac{
       display: flex; 
-        width: 73vw;
         background-color: #F6F6F6;
         padding: 2vw;
         flex-direction: column;
@@ -302,7 +301,7 @@ body.active-pop {
 }
 
 .modal{
-  overflow-y: scroll;
+  overflow-y: auto;
   width: 100vw;
   height: 100vh;
   top: 0;

@@ -44,7 +44,6 @@ const CookieView = (props) => {
           style={{
             borderBottom: switchcookies[0] === 1 ? "5px solid #5647AB" : "none",
           }}
-          span={4}
         >
           <h4
             className="cm-cookie-selection"
@@ -59,7 +58,6 @@ const CookieView = (props) => {
             borderBottom: switchcookies[1] === 1 ? "5px solid #5647AB" : "none",
           }}
           className="cm-toggle-col"
-          span={4}
         >
           <h4
             className="cm-cookie-selection"
@@ -74,7 +72,6 @@ const CookieView = (props) => {
           style={{
             borderBottom: switchcookies[2] === 1 ? "5px solid #5647AB" : "none",
           }}
-          span={4}
         >
           <h4
             className="cm-cookie-selection"

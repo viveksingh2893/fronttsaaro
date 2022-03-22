@@ -1,8 +1,9 @@
 import React from "react";
 import img from "../../assets/images/check.png";
 import "../../assets/css/scanagainpop.css";
+import { OmitProps } from "antd/lib/transfer/ListBody";
 
-function ScanAgainPop({ closeScan }) {
+function ScanAgainPop({ closeScan,title,message }) {
   return (
     <div className="scan">
       <div onClick={() => {closeScan(false)}} className="scan-overlay"></div>
@@ -10,12 +11,9 @@ function ScanAgainPop({ closeScan }) {
         <div className="scan-img">
             <img src={img}/>
         </div>
-          <h3 className="scan-heading">Scanning initiated successfully</h3>
+          <h3 className="scan-heading">{title}</h3>
         <div className="scan-text">
-          It might take a few minutes to a few hours to complete the scanning of
-          your website. This depends on the number of pages to scan and the
-          website speed. The cookies and their details will be added to the
-          cookie list automatically once the scanning is completed.
+         {message}
         </div>
         <div className="scan-btn">
             <button onClick={() => {closeScan(false)}} className="scan-ok">OK</button>

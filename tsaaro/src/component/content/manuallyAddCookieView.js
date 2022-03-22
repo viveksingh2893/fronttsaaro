@@ -10,7 +10,7 @@ function ManuallyAddCookieView(props) {
   const editPop = () => { 
     setPop(!pop);
   };
-
+ 
   return (
     <>
         <div className="mac" style={{marginTop:'1vh', marginBottom:'2vh'}}>
