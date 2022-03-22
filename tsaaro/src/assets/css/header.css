@@ -1,38 +1,38 @@
 .cont {
-  height:8vh;
+  height: 8vh;
   background: #ffffff;
-  width:calc(100vw - 14vw);
+  width: calc(100vw - 14vw);
   display: flex;
   flex-direction: row;
-  border:1px solid black;
+  border: 1px solid black;
   align-items: center;
   box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.2);
-} 
+}
 
 .menu {
-  margin-left: 3vw; 
+  margin-left: 3vw;
   margin-right: 2rem;
   cursor: pointer;
   justify-content: flex-end;
 }
- 
+
 .inp {
-  display:flex;
+  display: flex;
   width: 17.6vw;
   height: 4.26vh;
-  background-color: #F6F6F6;
-  border:1px solid #ADADAD;
+  background-color: #f6f6f6;
+  border: 1px solid #adadad;
   border-radius: 4px;
   cursor: pointer;
 }
-.btn1{
-    margin-left:2.5vw;
-    align-items: center;
+.btn1 {
+  margin-left: 2.5vw;
+  align-items: center;
 }
 .a2 {
   text-decoration: none;
   width: 6vw;
-  height:1.2vw ;
+  height: 1.2vw;
   text-align: center;
   font-family: Roboto;
   font-style: normal;
@@ -43,38 +43,37 @@
   color: #5647ab;
   margin: 0;
 }
- 
-.a2:hover{
+
+.a2:hover {
   color: #5647ab;
 }
 
-.acc{
-    display:flex;
-    color: #5647ab;
-    justify-content: flex-end;
-    flex-direction: row;
+.acc {
+  display: flex;
+  color: #5647ab;
+  justify-content: flex-end;
+  flex-direction: row;
 }
 
-.svg{
-    margin-left: 0.4rem;
+.svg {
+  margin-left: 0.4rem;
 }
 
 .ant-menu:not(.ant-menu-horizontal) {
   background-color: white;
-  border: 1px solid #ADADAD;
+  border: 1px solid #adadad;
 }
 .ant-menu:not(.ant-menu-horizontal):hover {
-	background-color: #7A4EB6;
-
+  background-color: #7a4eb6;
 }
 
-.acc-default{
-  color:#ADADAD;
+.acc-default {
+  color: #adadad;
   font-family: Roboto;
   font-style: normal;
   font-weight: 700;
   font-size: 2.5vh;
-  line-height:3vh;
+  line-height: 3vh;
   display: flex;
   align-items: center;
   text-align: center;
@@ -82,12 +81,12 @@
   margin: 0;
 }
 
-.addsite-modal{
+.addsite-modal {
   overflow-y: scroll;
   z-index: 1;
-  display:flex;
-  width:100vw;
-  height:100vh;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
   top: 0;
   left: 0;
   right: 0;
@@ -95,22 +94,22 @@
   position: fixed;
   background: rgba(49, 49, 49, 0.8);
 }
- 
+
 .addsite-content {
-  left:50vw;
-  display:flex;
+  left: 50vw;
+  display: flex;
   position: absolute;
-  flex-direction: column ;
-  align-items:center;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   border-radius: 4px;
   border: 1px solid #ccc;
   background: #fff;
-  outline:none;
+  outline: none;
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.input{
-    display: flex;
+.input {
+  display: flex;
 }

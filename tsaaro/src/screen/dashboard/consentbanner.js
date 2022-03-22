@@ -1,8 +1,9 @@
 import SvgIcon from "../../assets/Icon_apps";
 import Navbutton from "../../component/consentbanner/navbutton";
-import Dropmenu from "../../component/consentbanner/dropmenu";
+// import { Menu, Dropdown } from "antd";
 import React, { useState } from "react";
 import "../../assets/css/consentbanner.css";
+import Dropmenu from "../../component/consentbanner/dropmenu";
 
 const ConsentbannerScr = (props) => {
   const [toggle, setToggle] = useState(false);
@@ -132,9 +133,19 @@ const ConsentbannerScr = (props) => {
             </p>
           </div>
         </div>
-        <Dropmenu topmargin="0px" />
-        <Dropmenu topmargin="15px" />
-        <Dropmenu topmargin="15px" />
+
+        <Dropmenu topmargin="0px" opthead="Comply With" />
+        <Dropmenu topmargin="15px" opthead="Default Language" />
+        <Dropmenu topmargin="15px" opthead="Consent Type" />
+        <div
+          style={{
+            marginTop: "15px",
+            width: "100%",
+            height: "400px",
+            backgroundColor: "#fff",
+            borderRadius: "5px",
+          }}
+        ></div>
       </div>
       <div
         style={{

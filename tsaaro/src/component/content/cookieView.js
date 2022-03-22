@@ -1,7 +1,7 @@
 import { Col, Button, Row } from "antd";
 import { useState } from "react";
 import "../../assets/css/cookieboard.css";
-import CookieTypesView from "./cookieTypesView";
+import CookieTypesView from "./CookieTypesView";
 
 const CookieView = (props) => {
   const [cookietype, setCookieType] = useState("Neccessary");
@@ -34,7 +34,7 @@ const CookieView = (props) => {
           flexDirection: "row",
           justifyContent: "space-around",
           borderTop: "2px solid #F0EDFF",
-          borderBottom : "2px solid #F0EDFF",
+          borderBottom: "2px solid #F0EDFF",
           paddingTop: "2.5vh",
         }}
       >
@@ -116,7 +116,7 @@ const CookieView = (props) => {
       </div>
       <CookieTypesView type={cookietype} inactive={props.inactive} />
     </div>
-  )
+  );
 };
 
 export default CookieView;
