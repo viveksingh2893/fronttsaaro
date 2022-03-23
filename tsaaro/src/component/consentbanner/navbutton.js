@@ -5,6 +5,7 @@ const Navbutton = (props) => {
     <div
       style={{
         display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         height: "80px",
@@ -17,6 +18,20 @@ const Navbutton = (props) => {
       }}
     >
       <SvgIcon name={props.iconname} />
+      <p
+        style={{
+          fontStyle: "normal",
+          fontWeight: "500",
+          fontSize: "12px",
+          lineHeight: "14px",
+          display: "flex",
+          alignItems: "center",
+          textAlign: "center",
+          color: `${props.textcolor}`,
+        }}
+      >
+        {props.menuname}
+      </p>
     </div>
   );
 };
