@@ -52,11 +52,12 @@ console.log(urlParams)
   console.log(data);
   const postreq = async () => {
     setLoading(true)
-    const auth = await Postapi("http://192.168.29.5:8001/auth/token/", data,);
+    const auth = await Postapi("/auth/token/", data,);
     console.log("auth......", auth);
+    if (auth!=undefined){
     if (auth.status===200) {
       axios.defaults.headers.common['Authorization']=`Bearer ${auth.data.access}`
-      setLoading(!loading)
+      setLoading(!loading);
       navigate("/dashboard");
     } else if(auth.status===202) {
       setLoading(!loading)
@@ -64,13 +65,16 @@ console.log(urlParams)
       
     }else if(auth.status===400){
       
-      setLoading(false)
+      setLoading(false);
       setWrongcred(true);
       setMessage("You don't have account")
     }else if (auth.status===401){
       setLoading(false)
       setWrongcred(true);
       setMessage("Your email or password is incorrect.")
+    }}else{
+      setLoading(false);
+      setMessage('Request Failed.....')
     }
   };
   const variants = { 

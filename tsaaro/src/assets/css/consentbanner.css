@@ -30,3 +30,52 @@
   letter-spacing: 0em;
   color: black;
 }
+
+.drpdwn-option {
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  letter-spacing: 0em;
+  color: black;
+  cursor: pointer;
+}
+
+.drpdwn-title {
+  font-family: "Calibri";
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  letter-spacing: 0em;
+  color: black;
+}
+
+.input {
+  display: flex;
+}
+
+.inp {
+  display: flex;
+  width: 17.6vw;
+  height: 4.26vh;
+  background-color: #f6f6f6;
+  border: 0px solid #adadad;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.drpdwn {
+  display: flex;
+  width: 120px;
+  height: 40px;
+  background-color: #fff;
+  border: 0px solid #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}

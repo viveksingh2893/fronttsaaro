@@ -5,27 +5,59 @@ import "../../assets/css/cookieboard.css";
 import CookieView from "../../component/content/cookieView";
 import ScanHistoryView from "../../component/content/scanHistoryView";
 import ScanAgainPop from "../../component/popup/scanAgainPopView";
+import Postapi from "../../api/Postapi";
 
 const CookiemanagerScr = (props) => {
   const [scan, setScan] = useState(false);
+  const [message,setMessage]=useState();
+  const [scantitle,setTitle]=useState();
+  const [scandata,setScanData]=useState();
   
   const [toggle, setToggle] = useState(false);
   const [choose, setChoose] = useState('')
+
+
+  const scanHistory=async ()=>{
+
+    const response=await Postapi('/auth/scanhistory',{email:'c@a.com',website:'http://netflix.com/in'})
+    // console.log('response.........',response)
+    if (response.status){
+      if(response.status===202){
+          setScanData(response.data)
+          setChoose(<ScanHistoryView scandata={scandata}/>)
+      }
+    }
+  }
+
 
   const handletoggle = (e) => {
     console.log("toggle..........");
     window.addEventListener('click',()=>{
     }) 
     setToggle(!toggle); 
+
   };
 
-  const toggleScan = () => {
+  const toggleScan =async () => {
+    const response=await Postapi('/auth/scanner',{email:'c@a.com',website:'http://netflix.com/in'});
+    console.log('response........',response.status);
+    if(response.status){
+      if(response.status===401){
+        setMessage('Message set........')
+        setTitle('......Scan')
+      }else{
+      console.log('scanning..........')
+      setMessage(response.data.msg +'............')
+        setTitle('Status')
+    }
     setScan(!scan);
-  };
+  }};
 
   useEffect(()=>{
     if (toggle){
-        setChoose(<ScanHistoryView/>)
+      scanHistory();
+
+       
       
     }else{
       setChoose(<CookieView/>)
@@ -79,7 +111,7 @@ const CookiemanagerScr = (props) => {
           <Row>
             <Col
               // onChange={handletoggle}
-              onClick={handletoggle}
+              onClick={(e)=>handletoggle(e,'cookie')}
               className="cm-toggle-col"
               style={{ backgroundColor: toggle ? "#ffffff" : "#F0EDFF" }}
               span={3}
@@ -100,7 +132,7 @@ const CookiemanagerScr = (props) => {
           <div>{choose}</div>
         </Col>
       </Row>
-      {scan && (<ScanAgainPop closeScan={setScan}/>)}
+      {scan && (<ScanAgainPop title={scantitle} message={message} closeScan={setScan}/>)}
     </motion.div>
   );
 };

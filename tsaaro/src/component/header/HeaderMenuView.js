@@ -53,7 +53,7 @@ function HeaderMenuView(props) {
       <div className="input">
         <form>
           <select id="cars" name="cars" className="inp">
-            <option value="volvo">Volvo</option>
+            <option value="netflex">https://netflix.com/in</option>
             <option value="saab">Saab</option>
             <option value="fiat">Fiat</option>
             <option value="audi">Audi</option>
