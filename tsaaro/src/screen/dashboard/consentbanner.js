@@ -2,7 +2,7 @@ import SvgIcon from "../../assets/Icon_apps";
 import Navbutton from "../../component/consentbanner/navbutton";
 import React, { useState } from "react";
 import "../../assets/css/consentbanner.css";
-import Dropmenu from "../../component/consentbanner/dropmenu";
+import Cbcolour from "../../component/consentbanner/cbcolour";
 import Cblayout from "../../component/consentbanner/cblayout";
 
 const ConsentbannerScr = (props) => {
@@ -144,6 +144,11 @@ const ConsentbannerScr = (props) => {
 
         {bannermenu[0] === 1 ? (
           <Cblayout />
+        ) : (
+          <div style={{ width: "394px" }}></div>
+        )}
+        {bannermenu[2] === 1 ? (
+          <Cbcolour />
         ) : (
           <div style={{ width: "394px" }}></div>
         )}

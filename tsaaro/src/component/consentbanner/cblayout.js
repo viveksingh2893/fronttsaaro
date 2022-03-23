@@ -67,6 +67,7 @@ const Cblayout = (props) => {
                 justifyContent: "center",
                 alignItems: "flex-end",
                 padding: "15px",
+                cursor: "pointer",
               }}
               onClick={() => {
                 handleLayout("bf");
@@ -93,6 +94,7 @@ const Cblayout = (props) => {
                 justifyContent: "center",
                 alignItems: "flex-start",
                 padding: "15px",
+                cursor: "pointer",
               }}
               onClick={() => {
                 handleLayout("tf");
@@ -126,6 +128,7 @@ const Cblayout = (props) => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "flex-end",
+                cursor: "pointer",
               }}
               onClick={() => {
                 handleLayout("btm");
@@ -152,6 +155,7 @@ const Cblayout = (props) => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "flex-start",
+                cursor: "pointer",
               }}
               onClick={() => {
                 handleLayout("top");
