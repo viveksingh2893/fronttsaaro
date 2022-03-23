@@ -11,7 +11,7 @@ function HeaderMenuView(props) {
   const [site, setSite] = useState(false);
   const [click, setClick] = useState('')
  
-  const toggleSite = () => {
+  const toggleSite = () => { 
     setSite(!site);
   };
 
@@ -22,6 +22,7 @@ function HeaderMenuView(props) {
       setIcon(<SvgIcon name='down arrow'/>) 
     }
   }
+  
   useEffect(()=>{
     toggle()
   },[change])

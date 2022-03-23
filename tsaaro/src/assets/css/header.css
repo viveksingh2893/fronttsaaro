@@ -61,10 +61,11 @@
 
 .ant-menu:not(.ant-menu-horizontal) {
   background-color: white;
-  border: 1px solid #adadad;
+  border-top: 1px solid #ADADAD;
 }
+
 .ant-menu:not(.ant-menu-horizontal):hover {
-  background-color: #7a4eb6;
+	background-color: #7A4EB6;
 }
 
 .acc-default {
