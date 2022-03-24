@@ -50,9 +50,9 @@ function HeaderMenuView(props) {
       <div className="menu" style={{display:'flex',justifyContent:'flex-end'}}  onClick={() => props.setInactive(!props.inactive)}>
        <SvgIcon name='burger'/>
       </div>
-      <div className="input">
+      <div className="input"> 
         <form>
-          <select id="cars" name="cars" className="inp">
+          <select id="cars" name="cars" className="inps">
             <option value="netflex">https://netflix.com/in</option>
             <option value="saab">Saab</option>
             <option value="fiat">Fiat</option>
