@@ -55,9 +55,11 @@ const ConsentLogView=(props)=>{
         <div className="consentlog-block">
           <p className="consent-ip">{props.ip}</p>
           <p className="consent-ip">{props.country}</p>
-          <div className="consent-ip" style={{display:'flex', flexDirection:'row',justifyContent:'space-between'}}>
+          <div className="consent-ip" style={{display:'flex', flexDirection:'row',
+          justifyContent:'space-between'}}>
             <p style={{color:props.accept?'green':'red',margin:'0vw'}}>{props.status}</p>
-            <Dropdown overlay={menu(props.nc,props.fc,props.an,props.pr,props.ad)} trigger={['click']} placement="bottomLeft" arrow={{ pointAtCenter: true }}>
+            <Dropdown overlay={menu(props.nc,props.fc,props.an,props.pr,props.ad)} 
+            trigger={['click']} placement="bottomLeft" arrow={{ pointAtCenter: true }}>
               <div className="consentlog-eye">
                 <SvgIcon name='eye'/>
               </div>
