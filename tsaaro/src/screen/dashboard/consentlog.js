@@ -34,7 +34,7 @@ const ConsentlogScr = (props) => {
           }}
         >
             <Button onClick={toggleScan} type="primary" className="consentlog-scanbtn">
-              <p className="consentlog-scanagain">Scan Again</p>
+              <p className="consentlog-scanagain">Export as CSV</p>
             </Button>
         </Col>
       </Row>

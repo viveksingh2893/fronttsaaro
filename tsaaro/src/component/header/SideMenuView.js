@@ -29,7 +29,7 @@ function SideMenuView(props) {
 
       <div className="btn">
         <NavLink to=".\dash">
-          <SmButton id="dsboard" name="Dashboard" inactive={props.inactive} />
+          <SmButton id="dsboard" name="Dashboard" inactive={props.inactive}/>
         </NavLink>
         <div
           style={{ cursor: "pointer" }}
