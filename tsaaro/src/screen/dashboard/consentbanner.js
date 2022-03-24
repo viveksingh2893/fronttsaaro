@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import "../../assets/css/consentbanner.css";
 import Cbcolour from "../../component/consentbanner/cbcolour";
 import Cblayout from "../../component/consentbanner/cblayout";
+import Cbcontent from "../../component/consentbanner/cbcontent";
+import Cbbehaviour from "../../component/consentbanner/cbbehaviour";
 
 const ConsentbannerScr = (props) => {
   const [toggle, setToggle] = useState(false);
@@ -147,8 +149,18 @@ const ConsentbannerScr = (props) => {
         ) : (
           <div style={{ width: "394px" }}></div>
         )}
+        {bannermenu[1] === 1 ? (
+          <Cbcontent />
+        ) : (
+          <div style={{ width: "394px" }}></div>
+        )}
         {bannermenu[2] === 1 ? (
           <Cbcolour />
+        ) : (
+          <div style={{ width: "394px" }}></div>
+        )}
+        {bannermenu[3] === 1 ? (
+          <Cbbehaviour />
         ) : (
           <div style={{ width: "394px" }}></div>
         )}
