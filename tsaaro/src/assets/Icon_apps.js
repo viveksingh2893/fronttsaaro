@@ -811,6 +811,142 @@ function SvgIcon(props) {
     );
   }
 
+  if (props.name === "lightdrop") {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="#CCACF8"
+          d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zM7.83 14c.37 0 .67.26.74.62.41 2.22 2.28 2.98 3.64 2.87.43-.02.79.32.79.75 0 .4-.32.73-.72.75-2.13.13-4.62-1.09-5.19-4.12a.75.75 0 01.74-.87z"
+        ></path>
+      </svg>
+    );
+  }
+  if (props.name === "darkdrop") {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="#7A4EB6"
+          d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zM7.83 14c.37 0 .67.26.74.62.41 2.22 2.28 2.98 3.64 2.87.43-.02.79.32.79.75 0 .4-.32.73-.72.75-2.13.13-4.62-1.09-5.19-4.12a.75.75 0 01.74-.87z"
+        ></path>
+      </svg>
+    );
+  }
+  if (props.name === "lightoff") {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <g clipPath="url(#clip0_914_15811)">
+          <path
+            fill="#CCACF8"
+            d="M16.5 4.5a7.5 7.5 0 010 15h-9a7.5 7.5 0 010-15h9zM7.5 18a6 6 0 100-12 6 6 0 000 12z"
+          ></path>
+        </g>
+        <defs>
+          <clipPath id="clip0_914_15811">
+            <path
+              fill="#fff"
+              d="M0 0H24V24H0z"
+              transform="matrix(-1 0 0 1 24 0)"
+            ></path>
+          </clipPath>
+        </defs>
+      </svg>
+    );
+  }
+
+  if (props.name === "lighton") {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <g clipPath="url(#clip0_914_15320)">
+          <path
+            fill="#CCACF8"
+            d="M7.5 4.5a7.5 7.5 0 000 15h9a7.5 7.5 0 000-15h-9zm9 13.5a6 6 0 110-12 6 6 0 010 12z"
+          ></path>
+        </g>
+        <defs>
+          <clipPath id="clip0_914_15320">
+            <path fill="#fff" d="M0 0H24V24H0z"></path>
+          </clipPath>
+        </defs>
+      </svg>
+    );
+  }
+
+  if (props.name === "darkoff") {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <g clipPath="url(#clip0_914_15811)">
+          <path
+            fill="#7A4EB6"
+            d="M16.5 4.5a7.5 7.5 0 010 15h-9a7.5 7.5 0 010-15h9zM7.5 18a6 6 0 100-12 6 6 0 000 12z"
+          ></path>
+        </g>
+        <defs>
+          <clipPath id="clip0_914_15811">
+            <path
+              fill="#fff"
+              d="M0 0H24V24H0z"
+              transform="matrix(-1 0 0 1 24 0)"
+            ></path>
+          </clipPath>
+        </defs>
+      </svg>
+    );
+  }
+
+  if (props.name === "darkon") {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <g clipPath="url(#clip0_914_15320)">
+          <path
+            fill="#7A4EB6"
+            d="M7.5 4.5a7.5 7.5 0 000 15h9a7.5 7.5 0 000-15h-9zm9 13.5a6 6 0 110-12 6 6 0 010 12z"
+          ></path>
+        </g>
+        <defs>
+          <clipPath id="clip0_914_15320">
+            <path fill="#fff" d="M0 0H24V24H0z"></path>
+          </clipPath>
+        </defs>
+      </svg>
+    );
+  }
+
   if (props.name === "green tick") {
     return (
       <svg

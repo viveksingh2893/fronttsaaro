@@ -1,9 +1,9 @@
 import SvgIcon from "../../assets/Icon_apps";
 import Navbutton from "../../component/consentbanner/navbutton";
-// import { Menu, Dropdown } from "antd";
 import React, { useState } from "react";
 import "../../assets/css/consentbanner.css";
-import Dropmenu from "../../component/consentbanner/dropmenu";
+import Cbcolour from "../../component/consentbanner/cbcolour";
+import Cblayout from "../../component/consentbanner/cblayout";
 
 const ConsentbannerScr = (props) => {
   const [toggle, setToggle] = useState(false);
@@ -70,6 +70,8 @@ const ConsentbannerScr = (props) => {
         </div>
         <Navbutton
           iconname={bannermenu[0] === 1 ? "layoutactive" : "bannerlayout"}
+          textcolor={bannermenu[0] === 1 ? "#7A4EB6" : "black"}
+          menuname="Layout"
           backcolor={bannermenu[0] === 1 ? "#F0EDFF" : "#FFF"}
           onClick={() => {
             handleMenu("lay");
@@ -77,6 +79,8 @@ const ConsentbannerScr = (props) => {
         />
         <Navbutton
           iconname={bannermenu[1] === 1 ? "contentactive" : "bannercontent"}
+          textcolor={bannermenu[1] === 1 ? "#7A4EB6" : "black"}
+          menuname="Content"
           backcolor={bannermenu[1] === 1 ? "#F0EDFF" : "#FFF"}
           onClick={() => {
             handleMenu("con");
@@ -84,6 +88,8 @@ const ConsentbannerScr = (props) => {
         />
         <Navbutton
           iconname={bannermenu[2] === 1 ? "coloractive" : "bannercolor"}
+          textcolor={bannermenu[2] === 1 ? "#7A4EB6" : "black"}
+          menuname="Color"
           backcolor={bannermenu[2] === 1 ? "#F0EDFF" : "#FFF"}
           onClick={() => {
             handleMenu("col");
@@ -91,6 +97,8 @@ const ConsentbannerScr = (props) => {
         />
         <Navbutton
           iconname={bannermenu[3] === 1 ? "behaviouractive" : "bannerbehaviour"}
+          textcolor={bannermenu[3] === 1 ? "#7A4EB6" : "black"}
+          menuname="Behaviour"
           backcolor={bannermenu[3] === 1 ? "#F0EDFF" : "#FFF"}
           onClick={() => {
             handleMenu("beh");
@@ -134,18 +142,16 @@ const ConsentbannerScr = (props) => {
           </div>
         </div>
 
-        <Dropmenu topmargin="0px" opthead="Comply With" />
-        <Dropmenu topmargin="15px" opthead="Default Language" />
-        <Dropmenu topmargin="15px" opthead="Consent Type" />
-        <div
-          style={{
-            marginTop: "15px",
-            width: "100%",
-            height: "400px",
-            backgroundColor: "#fff",
-            borderRadius: "5px",
-          }}
-        ></div>
+        {bannermenu[0] === 1 ? (
+          <Cblayout />
+        ) : (
+          <div style={{ width: "394px" }}></div>
+        )}
+        {bannermenu[2] === 1 ? (
+          <Cbcolour />
+        ) : (
+          <div style={{ width: "394px" }}></div>
+        )}
       </div>
       <div
         style={{
