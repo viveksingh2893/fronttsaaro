@@ -45,7 +45,7 @@ const ConsentlogScr = (props) => {
         </p>
       </Row>
       <div style={{display:'flex',flexDirection:'column',padding:'2vw', backgroundColor:'white', borderRadius:'4px',boxShadow:'0px 0.5px 4px rgba(0, 0, 0, 0.2)'}}>
-        <div style={{display:'flex', flexDirection:'row', alignItems:'center',justifyContent:'flex-start'}}>
+        <div style={{display:'flex', flexDirection:'row', alignItems:'center',justifyContent:'space-between'}}>
             <p className="consentlog-title">IP Address</p>
             <p className="consentlog-title">Country</p>
             <p className="consentlog-title">Consent Status</p>
