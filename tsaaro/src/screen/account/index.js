@@ -7,7 +7,6 @@ import SignupScr from "./signup";
 
 const AccountScr=()=>{
     const location =useLocation();
-
     return(
         <div style={{overflow:'hidden'}}>
         <AnimatePresence exitBeforeEnter>
@@ -16,7 +15,6 @@ const AccountScr=()=>{
             <Route path="/signup" element={<SignupScr/>} />
             <Route path="/otp" element={<OtpScr/>} />
             <Route path="/dashboard/*" element={<Screen/>} />
-            
         </Routes>
         </AnimatePresence>
         </div>

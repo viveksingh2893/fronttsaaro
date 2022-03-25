@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import { Col, Image, Row } from "antd";
 import "../../assets/css/sidemenu.css";
 import logo from "../../assets/images/img1.png";
@@ -6,8 +6,6 @@ import SmButton from "./smButton";
 import { NavLink } from "react-router-dom";
 
 const SideMenuView=(props)=> {
-  const [color, setColor]= useState(false);
-
   const [color1, setColor1] = useState(false); 
   const [color2, setColor2] = useState(false); 
   const [color3, setColor3] = useState(false); 
@@ -79,6 +77,14 @@ const SideMenuView=(props)=> {
       setColor6(false);
       setColor7(true);
   }
+
+  console.log('color1',color1);
+  console.log('color2',color2);
+  console.log('color3',color3);
+  console.log('color4',color4);
+  console.log('color5',color5);
+  console.log('color6',color6);
+  console.log('color7',color7);
 
   return (
 
