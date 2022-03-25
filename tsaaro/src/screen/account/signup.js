@@ -50,7 +50,7 @@ console.log(urlParams)
     console.log("auth....", auth);
     if (auth) {
       setLoading(!loading)
-      navigate("/otp");
+      navigate("/otp",{state:{email:email}});
     } else {
       console.log("hello signup");
     }

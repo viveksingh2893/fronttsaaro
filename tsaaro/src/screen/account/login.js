@@ -58,7 +58,7 @@ console.log(urlParams)
     if (auth.status===200) {
       axios.defaults.headers.common['Authorization']=`Bearer ${auth.data.access}`
       setLoading(!loading);
-      navigate("/dashboard");
+      navigate("/dashboard/dash/");
     } else if(auth.status===202) {
       setLoading(!loading)
       navigate('/otp')

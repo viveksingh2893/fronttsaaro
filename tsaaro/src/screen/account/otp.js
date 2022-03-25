@@ -9,14 +9,18 @@ import LbuttonView from "../../component/button/lbutton";
 import Postapi from "../../api/Postapi";
 import axios from "axios";
 import { useState,useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const OtpScr=()=>{
-    const [username, setUsername] = useState();
+    const [otp, setOtp] = useState();
     const [password, setPassword] = useState();
     const [wrongcred, setWrongcred] = useState(false);
     const navigate = useNavigate();
+    
+    const location =useLocation();
+    console.log("...................",location.state)
+    const data ={email:location.state.email,otp:otp}
     const variants = { 
     
       hidden:{opacity:0,
@@ -29,6 +33,18 @@ const OtpScr=()=>{
         exit:{
           x:'-100vw',
           transition:{ease:'easeInOut'}
+        }
+      }
+    };
+
+    const postreq = async () => {
+     
+      const valid = await Postapi("/auth/email/otp/validate", data,);
+      console.log("auth......", valid);
+      if (valid!=undefined){
+
+        if(valid.status===200){
+          navigate('/dashboard')
         }
       }
     };
@@ -65,11 +81,11 @@ const OtpScr=()=>{
             <h5>OTP sent to your email</h5>
             <InputView
               label="OTP"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
             />
             <h5 className="login-fg-pwd">Didn't recieve OTP?<Button type='text'className="login-fg-pwd" >Resend</Button> </h5>
-            <LbuttonView title="Submit" value={username} />
+            <LbuttonView title="Submit" action={postreq} />
           </Col>
         </Col>
       </motion.div>
