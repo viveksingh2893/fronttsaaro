@@ -6,7 +6,7 @@ import SmButton from "./smButton";
 import { NavLink } from "react-router-dom";
 
 const SideMenuView=(props)=> {
-  const [color1, setColor1] = useState(false); 
+  const [color1, setColor1] = useState(true); 
   const [color2, setColor2] = useState(false); 
   const [color3, setColor3] = useState(false); 
   const [color4, setColor4] = useState(false); 
@@ -117,7 +117,7 @@ const SideMenuView=(props)=> {
             toggle2();
           }}
         >
-          <SmButton id="cb" name="Consent Banner" inactive={props.inactive} color={color2} />
+          <SmButton id="cb" name="Consent Banner" inactive={props.inactive} color={color2}/>
         </div>
         <NavLink to=".\cm" onClick={toggle3}>
           <SmButton id="cm" name="Cookie Manager" inactive={props.inactive} color={color3}/>

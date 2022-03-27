@@ -11,7 +11,6 @@ import ConsentlogScr from "./consentlog";
 import DashboardScr from "./dashboard";
 import SitesettingScr from "./sitesetting";
 import "../../assets/css/sidemenu.css";
-import SvgIcon from "../../assets/Icon_apps";
 
 const Screen = () => {
   const [inactive, setInactive] = useState(false);

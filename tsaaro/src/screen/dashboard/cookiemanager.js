@@ -19,7 +19,7 @@ const CookiemanagerScr = (props) => {
 
   const scanHistory=async ()=>{
 
-    const response=await Postapi('/auth/scanhistory',{email:'c@a.com',website:'http://netflix.com/in'})
+    const response=await Postapi('/auth/scanhistory',{email:"c@a.com",website:"http://netflix.com/in"})
     // console.log('response.........',response)
     if (response.status){
       if(response.status===202){
@@ -55,7 +55,10 @@ const CookiemanagerScr = (props) => {
 
   useEffect(()=>{
     if (toggle){
-      setChoose(<ScanHistoryView/>)
+      scanHistory();
+
+       
+      
     }else{
       setChoose(<CookieView/>)
     } 

@@ -5,18 +5,13 @@ import '../../assets/css/dashboard.css';
 import Dashtckicon from "../../assets/dashtckicon";
 const DashboardTck=(props)=>{
     return(
-        <Row className="dashboardtck">
-
-            <Col className="dashboardtck-icon">
-
-            <Dashtckicon name={props.name}/>
-
-            </Col>
-            <Col className="dashboardtck-stat">
+        <div className="dashboardtck">
+            <Dashtckicon name={props.name}/> 
+            <div className="dashboardtck-stat">
                 <p className="dashboardtck-p">{props.number}</p>
                 <p className="dashboardtck-p">{props.total}</p>
-            </Col>
-        </Row>
+            </div>
+        </div>
     )
 
 
