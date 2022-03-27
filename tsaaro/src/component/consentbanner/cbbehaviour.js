@@ -5,8 +5,9 @@ import SvgIcon from "../../assets/Icon_apps";
 
 const Cbbehaviour = (props) => {
   const [toggle, setToggle] = useState("lighton");
+
   const handleToggle = (key) => {
-    if (toggle == "lighton") {
+    if (toggle === "lighton") {
       setToggle("lightoff");
     } else {
       setToggle("lighton");
@@ -84,7 +85,11 @@ const Cbbehaviour = (props) => {
                 handleToggle(toggle);
               }}
             >
-              <SvgIcon name="lighton" />
+              {toggle === "lighton" ? (
+                <SvgIcon name="lighton" />
+              ) : (
+                <SvgIcon name="lightoff" />
+              )}
             </div>
           </div>
         </div>
