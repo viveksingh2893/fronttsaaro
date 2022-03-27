@@ -9,7 +9,7 @@ import DashboardLogView from "../../component/dashboard/dashboardLogView";
 
 const DashboardScr = () => {
   const [activate, setActivate]=useState(false);
-  const [accept, setAccept] = useState(false);
+  const [accept, setAccept] = useState(true);
 
   const toggle=()=>{
     setActivate(true);
@@ -49,32 +49,32 @@ const DashboardScr = () => {
     <div style={{display:'flex', flexDirection:'row',flexDirection:'row', alignItems:'center', justifyContent:'space-between', marginTop:'2vh'}}> 
           <div style={{display:'flex', flexDirection:'column'}}>
             <DashboardTck 
-            name="cookie" 
-            number="2000" 
-            total="Total Cookies" 
+              name="cookie" 
+              number="2000" 
+              total="Total Cookies" 
             />
             <DashboardTck 
-          name="script" 
-          number="2000" 
-          total="Total Scripts" 
-          />
+              name="script" 
+              number="2000" 
+              total="Total Scripts" 
+            />
           </div>
         <div style={{display:'flex', flexDirection:'column'}}>
             <DashboardTck
-                name="categories" 
-                number="2000"
-                total="Total Categories"
+              name="categories" 
+              number="2000"
+              total="Total Categories"
             />
             <DashboardTck 
-            name="scan" 
-            number="2000" 
-            total="Pages Scanned" 
+              name="scan" 
+              number="2000" 
+              total="Pages Scanned" 
             />
         </div>
         <DashPieChart
-        accepted='35'
-        partially_accepted='35'
-        rejected='30'
+          accepted='35'
+          partially_accepted='35'
+          rejected='30'
         />
       </div>
     <p className="dashboard-loghead">Recent Logs</p>
