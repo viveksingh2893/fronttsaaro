@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import '../../assets/css/sitesetting.css';
-import {Typography, Switch} from 'antd';
-import {ReloadOutlined} from '@ant-design/icons';
+import SvgIcon from "../../assets/Icon_apps";
+import {Typography, Switch, Popover, Button} from 'antd';
+import Icon, {ReloadOutlined, CheckCircleTwoTone} from '@ant-design/icons';
 
 const { Paragraph } = Typography;
 
@@ -23,6 +24,29 @@ const SiteSettingScr=()=>{
     const toggle=()=>{
         setAction(!action);
     }
+
+    const BS = (
+        <div style={{display:'flex', flexDirection:'row', justifyContent:'center',alignItems:'center', width:'20vw'}}>
+          <Icon component={CheckCircleTwoTone}/>
+          <p style={{marginLeft:'1vw'}}>Indicates if the cookie notice bar is Active or Inactive in the registered site.</p>
+        </div>
+    );
+
+    const ESL = (
+        <div style={{display:'flex', flexDirection:'row', justifyContent:'center',alignItems:'center', width:'20vw'}}>
+          <Icon component={CheckCircleTwoTone}/>
+          <p style={{marginLeft:'1vw'}}>Enable the button to log your website visitor consent into CookieYes, 
+          so you can have a report of visitor consents.</p>
+        </div>
+    );
+
+    const RBL = (
+        <div style={{display:'flex', flexDirection:'row', justifyContent:'center',alignItems:'center', width:'20vw'}}>
+          <Icon component={CheckCircleTwoTone}/>
+          <p style={{marginLeft:'1vw'}}>Select only the languages that you need so that your CookieYes 
+          script is tailored just for the required languages. You can always change this later.</p>
+        </div>
+    );
     
     return (
       <div className="sitesetting-maincontainer">
@@ -56,8 +80,15 @@ const SiteSettingScr=()=>{
                 <p className="sitesetting-title">Plan :</p>
                 <p className="sitesetting-content">Ultimate</p>
             </div>
-            <div style={{display:'flex', flexDirection:'row',marginTop:'4vh', alignItems:'center', justifyContent:'flex-start'}}>
-                <p className="sitesetting-title">Banner Status :</p>
+            <div style={{display:'flex', flexDirection:'row',marginTop:'3vh', alignItems:'center', justifyContent:'flex-start'}}>
+                <div className="sitesetting-title" style={{alignItems:'center', height:'5vh'}}>
+                <p style={{margin:0}}>Banner Status :</p>
+                <Popover placement="right" content={BS}>
+                    <Button style={{border:'white', height:'4vh', width:'2vw', margin:0}}>
+                      <SvgIcon name='help circle'/>
+                    </Button>
+                </Popover>
+                </div>
                 <p className="sitesetting-content" style={{width:'4vw'}}>{active}</p>
                 {action?
                 <ReloadOutlined spin onClick={toggle} style={{ fontSize: '1.3vw', fontWeight:'bold', color:'black'}}/>:
@@ -75,11 +106,26 @@ const SiteSettingScr=()=>{
                 </form>
             </div>
             <div style={{display:'flex', flexDirection:'row',marginTop:'3vh', alignItems:'center', justifyContent:'flex-start'}}>
-                <p className="sitesetting-title">Enable consent log :</p>
+                <div className="sitesetting-title" style={{alignItems:'center', height:'5vh'}}>
+                    <p style={{margin:0}}>Enable consent log :</p>
+                    <Popover placement="right" content={ESL}>
+                        <Button style={{border:'white', height:'4vh', width:'2vw', margin:0}}>
+                        <SvgIcon name='help circle'/>
+                        </Button>
+                    </Popover>
+                </div>
                 <Switch size="small"/>
             </div>
             <div style={{display:'flex', flexDirection:'row',marginTop:'4vh', alignItems:'center', justifyContent:'flex-start'}}>
-                <p className="sitesetting-title">Required Banner languages :</p>
+                <div className="sitesetting-title" style={{alignItems:'center', height:'5vh'}}>
+                    <p style={{margin:0}}>Required Banner languages :</p>
+                    <Popover placement="right" content={RBL}>
+                        <Button style={{border:'white', height:'4vh', width:'2vw', margin:0}}>
+                        <SvgIcon name='help circle'/>
+                        </Button>
+                    </Popover>
+                </div>
+                <p style={{margin:0}}>Coming soon...</p>
                 {/* <form>
                   <select id="lang" name="language" className="schedule-scan">
                     <option value="english">English</option>

@@ -20,10 +20,10 @@ const AddCookiePopView= (props)=> {
   const content = (
     <div style={{display:'flex', flexDirection:'row', justifyContent:'center',alignItems:'center', width:'20vw'}}>
       <Icon component={CheckCircleTwoTone}/>
-      <p style={{marginLeft:'1vw'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                  facilisi vestibulum ipsum, mauris erat gravida. Arcu, nisl,
-                  urna vel dolor in ac cras.Arcu, nisl, urna vel dolor in ac
-                  cras.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p style={{marginLeft:'1vw'}}>Our auto-blocking mechanism will use the Script URL 
+      Pattern to identify the third-party script (setting a cookie) by purpose category, 
+      and consequently, the associated cookie will be automatically blocked prior to receiving 
+      user consent for the respective category.</p>
     </div>
   );
 
