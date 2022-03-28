@@ -17,12 +17,12 @@ const CookieView = (props) => {
     } else if (id === "an") {
       setSwitch([0, 0, 1, 0, 0]);
       setCookieType("Analytics");
-    } else if (id === "pr") {
-      setSwitch([0, 0, 0, 1, 0]);
-      setCookieType("Performance");
     } else if (id === "ad") {
-      setSwitch([0, 0, 0, 0, 1]);
+      setSwitch([0, 0, 0, 1, 0]);
       setCookieType("Advertisement");
+    } else if (id === "ot") {
+      setSwitch([0, 0, 0, 0, 1]);
+      setCookieType("Others");
     }
   };
 
@@ -81,7 +81,7 @@ const CookieView = (props) => {
           </h4>
         </div>
         <div
-          onClick={() => handleswitch("pr")}
+          onClick={() => handleswitch("ad")}
           className="cm-toggle-col"
           style={{
             borderBottom: switchcookies[3] === 1 ? "5px solid #5647AB" : "none",
@@ -92,11 +92,11 @@ const CookieView = (props) => {
             className="cm-cookie-selection"
             style={{ color: switchcookies[3] ? "#5647AB" : "#1E1A1A" }}
           >
-            Performance (1Cookie)
+            Advertisement (1Cookie)
           </h4>
         </div>
         <div
-          onClick={() => handleswitch("ad")}
+          onClick={() => handleswitch("ot")}
           style={{
             borderBottom: switchcookies[4] === 1 ? "5px solid #5647AB" : "none",
           }}
@@ -107,7 +107,7 @@ const CookieView = (props) => {
             className="cm-cookie-selection"
             style={{ color: switchcookies[4] ? "#5647AB" : "#1E1A1A" }}
           >
-            Advertisement (1Cookie)
+            Others (1Cookie)
           </h4>
         </div>
       </div>

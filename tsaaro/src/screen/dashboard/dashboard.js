@@ -109,6 +109,7 @@ const DashboardScr = () => {
             ip='49.26.451.0'
             country='India'
             status={accept?'Accepted':'Rejected'}
+            time='14-02-2022, 08:02:22'
             nc='Yes'
             fc='No'
             an='No'
