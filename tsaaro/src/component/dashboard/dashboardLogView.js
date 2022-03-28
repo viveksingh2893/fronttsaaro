@@ -57,7 +57,7 @@ const DashboardLogView=(props)=>{
           <p className="dashboard-ip">{props.country}</p>
           <div className="dashboard-ip" style={{display:'flex', flexDirection:'row',
           justifyContent:'space-between'}}>
-            <p style={{color:props.accept?'green':'#F7D230',margin:'0vw'}}>{props.status}</p>
+            <p style={{color:props.accept?'green':'red',margin:'0vw'}}>{props.status}</p>
             <Dropdown overlay={menu(props.nc,props.fc,props.an,props.pr,props.ad)} 
             trigger={['click']} placement="bottomLeft" arrow={{ pointAtCenter: true }}>
               <div className="dashboardlog-eye">

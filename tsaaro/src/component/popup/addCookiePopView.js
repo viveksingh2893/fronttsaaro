@@ -2,7 +2,8 @@ import React ,{useEffect, useState} from 'react'
 import '../../assets/css/cookiepop.css';
 import SvgIcon from '../../assets/Icon_apps';
 import TextArea from "antd/lib/input/TextArea";
-import { Input } from 'antd';
+import { Input, Popover, Button} from 'antd';
+import Icon, { CheckCircleTwoTone } from '@ant-design/icons';
 
 const AddCookiePopView= (props)=> {
   const [change, setChange] = useState(true);
@@ -15,6 +16,16 @@ const AddCookiePopView= (props)=> {
   const closed=()=>{
     setClose(true);
   }
+
+  const content = (
+    <div style={{display:'flex', flexDirection:'row', justifyContent:'center',alignItems:'center', width:'20vw'}}>
+      <Icon component={CheckCircleTwoTone}/>
+      <p style={{marginLeft:'1vw'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+                  facilisi vestibulum ipsum, mauris erat gravida. Arcu, nisl,
+                  urna vel dolor in ac cras.Arcu, nisl, urna vel dolor in ac
+                  cras.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  );
 
   return ( 
     <div className='container-pop'>
@@ -71,9 +82,9 @@ const AddCookiePopView= (props)=> {
             <div style={{display:'flex', flexDirection:'column', width:'52vw', marginTop:'1vw' }}>
               <div className="add-text1">
                 <div className="add-span">Script URL Pattern</div>
-                <div style={{display:'flex',cursor:'pointer',marginLeft:'1vw'}}>
-                  <SvgIcon name='help circle'/>
-                </div>
+                <Popover placement="right" content={content}>
+                  <Button style={{border:'white', height:'5vh', width:'2vw', margin:0}}><SvgIcon name='help circle'/></Button>
+                </Popover>
               </div>
               <p className="add-text2">
                 URL pattern for blocking the third-party script setting this

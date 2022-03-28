@@ -37,7 +37,6 @@ const CookiemanagerScr = (props) => {
     window.addEventListener('click',()=>{
     }) 
     setToggle(!toggle); 
-
   };
 
   const toggleScan =async () => {
