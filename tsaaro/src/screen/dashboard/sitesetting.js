@@ -137,7 +137,7 @@ const SiteSettingScr=()=>{
                 </form> */}
             </div>
             <div style={{display:'flex', flexDirection:'row',marginTop:'4vh', alignItems:'center', justifyContent:'flex-start'}}>
-                <p className="sitesetting-title">Default Banner language : :</p>
+                <p className="sitesetting-title">Default Banner language :</p>
                 <form>
                   <select id="lang" name="language" className="schedule-scan">
                     <option value="english">English</option>
