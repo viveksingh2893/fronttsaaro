@@ -6,11 +6,6 @@ import ScanHistoryItem from "./scanHistoryItem";
 import "../../assets/css/scanhistory.css";
  
 function ScanHistoryView(props) {
-  const [prevdata,setData]=useState()
-  // useEffect(()=>{
-  //   setData(props.scandata)
-
-  // },[props.scandata])
 
   console.log(".................inside child",props.scandata);
   return (
@@ -24,6 +19,8 @@ function ScanHistoryView(props) {
             return (
             <ScanHistoryItem key={index}
             time={value.created_date.split('.')[0]}
+            id={value.id}
+            
             status={value.scan_status}
             url={value.pages_scanned} 
             category={value.total_category} 
