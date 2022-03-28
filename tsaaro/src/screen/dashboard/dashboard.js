@@ -93,7 +93,7 @@ const DashboardScr = () => {
         <DashPieChart
           accepted='35'
           partially_accepted='35'
-          rejected='30'
+          rejected='10'
         />
       </div>
     <p className="dashboard-loghead">Recent Logs</p>
@@ -108,8 +108,7 @@ const DashboardScr = () => {
             accept={accept}
             ip='49.26.451.0'
             country='India'
-            status={accept?'Accepted':'Partially Accepted'}
-            time='14-02-2022, 08:02:22'
+            status={accept?'Accepted':'Rejected'}
             nc='Yes'
             fc='No'
             an='No'
@@ -120,7 +119,7 @@ const DashboardScr = () => {
             accept={accept}
             ip='49.26.451.0'
             country='India'
-            status={accept?'Accepted':'Partially Accepted'}
+            status={accept?'Accepted':'Rejected'}
             time='14-02-2022, 08:02:22'
             nc='Yes'
             fc='Yes'

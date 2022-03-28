@@ -7,9 +7,9 @@ import { Input } from "antd";
 
 function AddSitePopView({ closeSite }) { 
   const [change, setChange] = useState(false);
-  const [plan1, setPlan1] = useState(false);
+  const [plan1, setPlan1] = useState(true);
   const [plan2, setPlan2] = useState(false);
-  const [btn1 , setBtn1] = useState(false);
+  const [btn1 , setBtn1] = useState(true);
   const [btn2 , setBtn2] = useState(false);
   const [btn3 , setBtn3] = useState(false);
 
@@ -107,7 +107,7 @@ function AddSitePopView({ closeSite }) {
               <Input style={{width:'23vw', height: '5.1vh'}} placeholder="Flat5"/>
                 <button className="site-pop-end-btn">Apply</button>
             </div>
-            <div className="submitpop">
+            <div className="submitpops">
                   <button onClick={() => {closeSite(false)}} className="cancel">Cancel</button>
                   <button onClick={() => {closeSite(false)}} className="submit">Submit</button>
             </div>
