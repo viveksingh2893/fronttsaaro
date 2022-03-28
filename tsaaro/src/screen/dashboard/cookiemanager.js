@@ -24,7 +24,9 @@ const CookiemanagerScr = (props) => {
     if (response.status){
       if(response.status===202){
           setScanData(response.data)
-          setChoose(<ScanHistoryView scandata={scandata}/>)
+          setChoose(<ScanHistoryView scandata={response.data}/>)
+      }else{
+        setChoose(<ScanHistoryView/>)
       }
     }
   }
