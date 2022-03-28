@@ -56,8 +56,6 @@ const CookiemanagerScr = (props) => {
   useEffect(()=>{
     if (toggle){
       scanHistory();
-
-       
       
     }else{
       setChoose(<CookieView/>)

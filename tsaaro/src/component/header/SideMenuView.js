@@ -6,7 +6,7 @@ import SmButton from "./smButton";
 import { NavLink } from "react-router-dom";
 
 const SideMenuView=(props)=> {
-  const [color1, setColor1] = useState(true); 
+  const [color1, setColor1] = useState(false); 
   const [color2, setColor2] = useState(false); 
   const [color3, setColor3] = useState(false); 
   const [color4, setColor4] = useState(false); 

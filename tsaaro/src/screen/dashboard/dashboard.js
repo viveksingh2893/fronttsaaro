@@ -5,15 +5,34 @@ import { useState } from "react";
 import '../../assets/css/dashboard.css';
 import DashPieChart from "../../component/dashboard/dashPieChart";
 import DashboardLogView from "../../component/dashboard/dashboardLogView";
-
+import ScanAgainPop from "../../component/popup/scanAgainPopView";
+import Postapi from "../../api/Postapi";
 
 const DashboardScr = () => {
   const [activate, setActivate]=useState(false);
   const [accept, setAccept] = useState(true);
+  const [scan, setScan] = useState(false);
+  const [message,setMessage]=useState();
+  const [scantitle,setTitle]=useState(); 
 
   const toggle=()=>{
     setActivate(true);
   }
+
+  const toggleScan =async () => {
+    const response=await Postapi('/auth/scanner',{email:'c@a.com',website:'http://netflix.com/in'});
+    console.log('response........',response.status);
+    if(response.status){
+      if(response.status===401){
+        setMessage('Message set........')
+        setTitle('......Scan')
+      }else{
+      console.log('scanning..........')
+      setMessage(response.data.msg +'............')
+        setTitle('Status')
+    }
+    setScan(!scan);
+  }};
 
   return (
     <div className="dashboard-maincontainer">
@@ -42,7 +61,7 @@ const DashboardScr = () => {
           <p style={{margin:0}}>Last Cookie Scan :</p>
           <p style={{margin:0, marginLeft:'.5vw'}}>14-02-2022, 08:02:22</p>
         </div>
-        <div className="dashboard-scan-website">
+        <div className="dashboard-scan-website" onClick={toggleScan}>
           <p style={{margin:0}}>Scan Website  for Cookies</p>
         </div>
       </div>
@@ -110,6 +129,7 @@ const DashboardScr = () => {
             ad='No'
         />
       </div>
+      {scan && (<ScanAgainPop title={scantitle} message={message} closeScan={setScan}/>)}
     </div> 
   );
 };
