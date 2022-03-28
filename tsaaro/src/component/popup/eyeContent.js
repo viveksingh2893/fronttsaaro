@@ -3,6 +3,7 @@ import '../../assets/css/eyepop.css';
 import EyeCookieContent from "./eyeCookieContent";
 
 const EyeContent=(props)=>{
+    console.log('eye content.........',props.data)
     return(
         <div className="eye-content-container">
             <div className="eye-textbox">
@@ -16,18 +17,18 @@ const EyeContent=(props)=>{
                 <p className="eye-text-title">Description</p>
             </div>
             <div>
-                <EyeCookieContent
-                id='cky-active-check'
-                type='https'
-                duration='1 day'
-                description="Cookie Yes sets this cookie to check if the consent banner is active on the website."
-                />
-                <EyeCookieContent
-                id='_ga'
-                type='https'
-                duration='2 day'
-                description="The _ga cookie, installed by Google Analytics, calculates visitor, session and campaign data and also keeps track of site usage for the site's analytics report. The cookie stores information anonymously and assigns a randomly generated number to recognize unique visitors."
-                />
+             {props.data?props.data.map((value,index)=>{
+                 return(
+                    <EyeCookieContent
+                    id={value.name}
+                    type={value.httponly?'http':'https'}
+                    duration={value.expiry}
+                    description={value.description?value.description:'N/A'}
+                    />
+
+                 )
+             }): null}
+                
             </div>
             </div>
         </div>
