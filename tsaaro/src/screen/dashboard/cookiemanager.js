@@ -19,12 +19,14 @@ const CookiemanagerScr = (props) => {
 
   const scanHistory=async ()=>{
 
-    const response=await Postapi('/auth/scanhistory',{email:'c@a.com',website:'http://netflix.com/in'})
+    const response=await Postapi('/auth/scanhistory',{email:"c@a.com",website:"http://netflix.com/in"})
     // console.log('response.........',response)
     if (response.status){
       if(response.status===202){
           setScanData(response.data)
-          setChoose(<ScanHistoryView scandata={scandata}/>)
+          setChoose(<ScanHistoryView scandata={response.data}/>)
+      }else{
+        setChoose(<ScanHistoryView/>)
       }
     }
   }
@@ -35,7 +37,6 @@ const CookiemanagerScr = (props) => {
     window.addEventListener('click',()=>{
     }) 
     setToggle(!toggle); 
-
   };
 
   const toggleScan =async () => {
@@ -55,7 +56,8 @@ const CookiemanagerScr = (props) => {
 
   useEffect(()=>{
     if (toggle){
-      setChoose(<ScanHistoryView/>)
+      scanHistory();
+      
     }else{
       setChoose(<CookieView/>)
     } 

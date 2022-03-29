@@ -24,7 +24,7 @@ function ScanHistoryItem(props) {
       {eye && (
         <div className="eye-modal">
           <div className="eye-content">
-            <EyePopView closeEye={setEye}/>
+            <EyePopView closeEye={setEye} id={props.id} date={props.time}/>
           </div>
         </div> 
       )}

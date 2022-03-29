@@ -363,7 +363,7 @@
   color: #6F6F6F;
  }
 
- .submitpop{
+ .submitpops{
   display:flex;
   justify-Content:flex-end;
    width:70vw;
@@ -372,21 +372,21 @@
  }
 
  .cancel{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   border: 1px solid #7A4EB6;
-   background-color: white;
-   width:8.65vw;
-   height:4.81vh;
-   cursor: pointer;
-   border-radius:4px ;
-   color:#7A4EB6;
-     font-family: Roboto;
-     font-style: normal;
-     font-weight: 500;
-     font-size: 1vw;
-     line-height: 1.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #7A4EB6;
+    background-color: white;
+    width:8.65vw;
+    height:4.81vh;
+    cursor: pointer;
+    border-radius:4px ;
+    color:#7A4EB6;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 1.2vw;
  }
 
  .submit{

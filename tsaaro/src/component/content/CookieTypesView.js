@@ -36,7 +36,7 @@ function CookieTypesView(props) {
             <div>
               <div className="input">
                 <form>
-                  <select id="cars" name="cars" className="language">
+                  <select id="la" name="lang" className="language">
                     <option value="english">English</option>
                     <option value="hindi" >Hindi</option>
                     <option value="bulgarian" >Bulgarian</option>

@@ -4,7 +4,7 @@ import '../../assets/css/sidemenu.css';
 import ColumnGroup from "antd/lib/table/ColumnGroup";
  
 const SmButton= (props)=>{
-  
+
 return(
     <div className="button" style={{backgroundColor:props.color?'#7A4EB6':''}}>
       <div className={`${props.inactive ? "button-child2" : "button-child"}`}>

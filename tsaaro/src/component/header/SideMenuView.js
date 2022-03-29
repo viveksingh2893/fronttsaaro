@@ -117,7 +117,7 @@ const SideMenuView=(props)=> {
             toggle2();
           }}
         >
-          <SmButton id="cb" name="Consent Banner" inactive={props.inactive} color={color2} />
+          <SmButton id="cb" name="Consent Banner" inactive={props.inactive} color={color2}/>
         </div>
         <NavLink to=".\cm" onClick={toggle3}>
           <SmButton id="cm" name="Cookie Manager" inactive={props.inactive} color={color3}/>

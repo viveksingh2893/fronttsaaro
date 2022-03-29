@@ -1,0 +1,71 @@
+.sitesetting-maincontainer{
+    margin-Left:3vw;
+        height: calc(100vh - 8vh);
+        width:96.5vw;
+        justify-Content: center;
+        align-Items: center;
+        overflow-Y:auto;
+        padding-Right:2.5vw;
+        padding-Bottom:5vh;
+}
+
+.sitesetting-container{
+    display:flex;
+    flex-Direction:column;
+    padding:2vw;
+    background-Color:white;
+    border-Radius:4px;
+    box-Shadow:0px 0.5px 4px rgba(0, 0, 0, 0.2);
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 1.2vw;
+}
+
+.sitesetting-heading{
+    font-family: Roboto;
+    font-size: 2vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.2vw;
+    letter-spacing: 0em;
+    text-align: left;
+    color:#331A55;
+    }
+
+.sitesetting-description{
+    font-family:Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    display: flex;
+    align-items: center;
+    color:#6F6F6F;
+    margin-Bottom:5vh;
+    }
+
+.sitesetting-title {
+    display: flex;
+    align-items: flex-end;
+    padding-left:1.5vw;
+    width: 25vw;
+    margin:0;
+    }
+
+.sitesetting-content {
+    display: flex;
+    align-items: flex-end;
+    width: 25vw;
+    margin:0;
+    }
+.schedule-scan {
+    display: flex;
+    width: 7vw;
+    height: 4.26vh;
+    background-color: #F6F6F6;
+    border-radius: 4px;
+    border:1px solid #ADADAD;
+    cursor: pointer;
+    }
