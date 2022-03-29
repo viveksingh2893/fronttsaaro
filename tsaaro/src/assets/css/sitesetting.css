@@ -69,3 +69,34 @@
     border:1px solid #ADADAD;
     cursor: pointer;
     }
+
+.sitesetting-lang-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1vw;
+    cursor: pointer;
+    }
+
+.sitesetting-lang-item{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: .8vw;
+    line-height: 1vw;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    margin: 0;
+    }
+      
+.sitesetting-ant-menu:not(.ant-menu-horizontal) {
+    background-color: white;
+    /* border-top: 1px solid #ADADAD; */
+    /* width:14.5vw; */
+    /* padding-left:2vw ; */
+    }
+.sitesetting-ant-menu:not(.ant-menu-horizontal):hover {
+    background-color: #7A4EB6;
+    border-radius: 4px;
+    }

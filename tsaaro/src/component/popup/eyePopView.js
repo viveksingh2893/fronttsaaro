@@ -54,7 +54,7 @@ const EyePopView = (props)=>{
                 {advertisment.length>0?<EyeContent category='Advertisment' data={advertisment}/>:null}
                 {others.length>0?<EyeContent category='Others' data={others} />:null}
             </div>
-            <p className="eye-title" style={{marginTop:'7vh'}}>pages scanned</p>
+            <p className="eye-title" style={{marginTop:'7vh'}}>Pages Scanned</p>
             <div style={{display:'flex',border:'1px solid #ADADAD',flexDirection:'column',backgroundColor:'white',marginTop:'5vh',alignItems:'center',justifyContent:'center',width:'74vw', padding:'2vw'}}>
                 <div style={{display:'flex', flexDirection:'row', alignItems:'flex-start',justifyContent:'space-between', width:'65vw'}}>
                     <p className="eye-text-title">urls</p>

@@ -15,7 +15,9 @@ import "../../assets/css/sidemenu.css";
 const Screen = () => {
   const [inactive, setInactive] = useState(false);
   const [cbvisible, setCbvisible] = useState(false);
+
   console.log('inactive', inactive);
+  
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
       {cbvisible ? (
