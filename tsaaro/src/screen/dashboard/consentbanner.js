@@ -6,11 +6,14 @@ import Cbcolour from "../../component/consentbanner/cbcolour";
 import Cblayout from "../../component/consentbanner/cblayout";
 import Cbcontent from "../../component/consentbanner/cbcontent";
 import Cbbehaviour from "../../component/consentbanner/cbbehaviour";
+import Cbpreview from "../../component/consentbanner/longpreview";
 
 const ConsentbannerScr = (props) => {
-  const [toggle, setToggle] = useState(false);
   const [activemenu, setActiveMenu] = useState("Layout");
   const [bannermenu, setMenu] = useState([1, 0, 0, 0]);
+  const [cbcolor, setCbcolor] = useState("light");
+  const [cbtype, setCbtype] = useState("btm");
+  const [cblang, setCblang] = useState("English");
 
   const handleMenu = (id) => {
     if (id === "lay") {
@@ -145,7 +148,7 @@ const ConsentbannerScr = (props) => {
         </div>
 
         {bannermenu[0] === 1 ? (
-          <Cblayout />
+          <Cblayout SelectLayout={setCbtype} />
         ) : (
           <div style={{ width: "394px" }}></div>
         )}
@@ -155,7 +158,7 @@ const ConsentbannerScr = (props) => {
           <div style={{ width: "394px" }}></div>
         )}
         {bannermenu[2] === 1 ? (
-          <Cbcolour />
+          <Cbcolour SelectTheme={setCbcolor} />
         ) : (
           <div style={{ width: "394px" }}></div>
         )}
@@ -181,8 +184,13 @@ const ConsentbannerScr = (props) => {
             flexDirection: "row",
             width: "1242px",
             height: "333px",
+            justifyContent: "center",
+            alignItems: `${cbtype == "top" ? "flex-start" : "center"}`,
           }}
-        ></div>
+        >
+          {cbtype == "top" ? <Cbpreview theme={cbcolor} /> : null}
+          {cbtype == "tf" ? <Cbpreview theme={cbcolor} /> : null}
+        </div>
         <div
           style={{
             display: "flex",
@@ -215,119 +223,11 @@ const ConsentbannerScr = (props) => {
             width: "1242px",
             height: "333px",
             justifyContent: "center",
-            alignItems: "flex-end",
+            alignItems: `${cbtype == "btm" ? "flex-end" : "center"}`,
           }}
         >
-          <div
-            style={{
-              width: "1242px",
-              boxShadow: `0px 0px 4px rgba(0, 0, 0, 0.26)`,
-              borderRadius: "5px",
-              paddingLeft: "31px",
-              paddingRight: "31px",
-              paddingTop: "22px",
-              paddingBottom: "22px",
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "flex-end",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "640px",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "20px",
-                  lineHeight: "22px",
-                  fontWeight: 600,
-                }}
-              >
-                Cookie Consent
-              </p>
-              <p
-                style={{
-                  fontSize: "18px",
-                  lineHeight: "22.5px",
-                  fontWeight: "lighter",
-                  fontFamily: "sans-serif",
-                  textAlign: "justify",
-                }}
-              >
-                This website uses cookies that help the website to function and
-                also to track how you interact with it. We will only use the
-                cookies if you consent to it by clicking on Accept. You can also
-                manage individual cookie preferences from Settings.{" "}
-                <a>Read More</a>
-              </p>
-            </div>
-            <div
-              style={{
-                width: "540px",
-                display: "flex",
-                flexDirection: "row",
-                paddingLeft: "15px",
-                paddingBottom: "15px",
-              }}
-            >
-              <div
-                style={{
-                  width: "160px",
-                  height: "50px",
-                  marginLeft: "15px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <p
-                  className="btn-txt"
-                  style={{ color: "#7A4EB6", cursor: "pointer" }}
-                >
-                  Preferences
-                </p>
-              </div>
-              <div
-                style={{
-                  width: "160px",
-                  height: "50px",
-                  marginLeft: "15px",
-                  border: `1px solid #7A4EB6`,
-                  boxShadow: `0px 0.5px 4px rgba(0, 0, 0, 0.2)`,
-                  borderRadius: "4px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  cursor: "pointer",
-                }}
-              >
-                <p className="btn-txt" style={{ color: "#7A4EB6" }}>
-                  Reject All
-                </p>
-              </div>
-              <div
-                style={{
-                  width: "160px",
-                  height: "50px",
-                  backgroundColor: "#7A4EB6",
-                  marginLeft: "15px",
-                  borderRadius: "4px",
-                  boxShadow: `0px 0.5px 4px rgba(0, 0, 0, 0.2)`,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  cursor: "pointer",
-                }}
-              >
-                <p className="btn-txt" style={{ color: "#fff" }}>
-                  Accept All
-                </p>
-              </div>
-            </div>
-          </div>
+          {cbtype == "btm" ? <Cbpreview theme={cbcolor} /> : null}
+          {cbtype == "bf" ? <Cbpreview theme={cbcolor} /> : null}
         </div>
       </div>
     </div>
