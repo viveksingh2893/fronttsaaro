@@ -32,6 +32,7 @@ const Cbpreview = (props) => {
               fontSize: "20px",
               lineHeight: "22px",
               fontWeight: 600,
+              color: `${props.theme === "light" ? "#000" : "#fff"}`,
             }}
           >
             Cookie Consent
@@ -43,6 +44,7 @@ const Cbpreview = (props) => {
               fontWeight: "lighter",
               fontFamily: "sans-serif",
               textAlign: "justify",
+              color: `${props.theme === "light" ? "#000" : "#fff"}`,
             }}
           >
             This website uses cookies that help the website to function and also
@@ -72,7 +74,10 @@ const Cbpreview = (props) => {
           >
             <p
               className="btn-txt"
-              style={{ color: "#7A4EB6", cursor: "pointer" }}
+              style={{
+                color: `${props.theme == "light" ? "#7A4EB6" : "#fff"}`,
+                cursor: "pointer",
+              }}
             >
               Preferences
             </p>
@@ -82,8 +87,9 @@ const Cbpreview = (props) => {
               width: "160px",
               height: "50px",
               marginLeft: "15px",
-              border: `1px solid #7A4EB6`,
-              backgroundColor: "#FFF",
+              border: `1px solid ${
+                props.theme == "light" ? "#7A4EB6" : "#fff"
+              }`,
               boxShadow: `0px 0.5px 4px rgba(0, 0, 0, 0.2)`,
               borderRadius: "4px",
               display: "flex",
@@ -92,7 +98,12 @@ const Cbpreview = (props) => {
               cursor: "pointer",
             }}
           >
-            <p className="btn-txt" style={{ color: "#7A4EB6" }}>
+            <p
+              className="btn-txt"
+              style={{
+                color: `${props.theme == "light" ? "#7A4EB6" : "#fff"}`,
+              }}
+            >
               Reject All
             </p>
           </div>

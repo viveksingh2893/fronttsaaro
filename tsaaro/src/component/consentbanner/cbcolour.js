@@ -4,18 +4,28 @@ import "../../assets/css/consentbanner.css";
 import Dropmenu from "../../component/consentbanner/dropmenu";
 
 const Cbcolour = (props) => {
-  const [activeColour, setActiveColour] = useState("light");
-  const [colourSwitch, setColourSwitch] = useState([1, 0]);
-  const handleColour = (id) => {
-    if (id === "light") {
-      setColourSwitch([1, 0]);
-      setActiveColour("light");
-    } else if (id === "dark") {
-      setColourSwitch([0, 1]);
-      setActiveColour("dark");
+  // const [activeColour, setActiveColour] = useState("light");
+  const [darkmode, setDarkmode] = useState(false);
+
+  // const handleColour = (id) => {
+  //   if (id === "light") {
+  //     setActiveColour("light");
+  //   } else if (id === "dark") {
+  //     setActiveColour("dark");
+  //   }
+  //   console.log(activeColour);
+  //   props.SelectTheme(activeColour);
+  // };
+
+  const handleColour = () => {
+    if (darkmode) {
+      props.SelectTheme("dark");
+    } else {
+      props.SelectTheme("light");
     }
-    props.SelectTheme(activeColour);
+    console.log(darkmode);
   };
+
   return (
     <div>
       <Dropmenu topmargin="0px" opthead="Comply With" />
@@ -83,13 +93,14 @@ const Cbcolour = (props) => {
               cursor: "pointer",
             }}
             onClick={() => {
-              handleColour(`${activeColour == "light" ? "dark" : "light"}`);
+              setDarkmode(!darkmode);
+              handleColour();
             }}
           >
-            {activeColour === "light" ? (
-              <SvgIcon name="lighton" />
-            ) : (
+            {darkmode ? (
               <SvgIcon name="lightoff" />
+            ) : (
+              <SvgIcon name="lighton" />
             )}
           </div>
         </div>
@@ -143,14 +154,11 @@ const Cbcolour = (props) => {
               cursor: "pointer",
             }}
             onClick={() => {
-              handleColour(`${activeColour == "light" ? "dark" : "light"}`);
+              setDarkmode(!darkmode);
+              handleColour();
             }}
           >
-            {activeColour === "dark" ? (
-              <SvgIcon name="darkon" />
-            ) : (
-              <SvgIcon name="darkoff" />
-            )}
+            {darkmode ? <SvgIcon name="darkon" /> : <SvgIcon name="darkoff" />}
           </div>
         </div>
       </div>

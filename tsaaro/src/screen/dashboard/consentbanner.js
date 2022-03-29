@@ -226,8 +226,8 @@ const ConsentbannerScr = (props) => {
             alignItems: `${cbtype == "btm" ? "flex-end" : "center"}`,
           }}
         >
-          {cbtype == "btm" ? <Cbpreview /> : null}
-          {cbtype == "bf" ? <Cbpreview /> : null}
+          {cbtype == "btm" ? <Cbpreview theme={cbcolor} /> : null}
+          {cbtype == "bf" ? <Cbpreview theme={cbcolor} /> : null}
         </div>
       </div>
     </div>
