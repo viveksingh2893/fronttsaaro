@@ -14,6 +14,7 @@ const Cbcolour = (props) => {
       setColourSwitch([0, 1]);
       setActiveColour("dark");
     }
+    props.SelectTheme(activeColour);
   };
   return (
     <div>

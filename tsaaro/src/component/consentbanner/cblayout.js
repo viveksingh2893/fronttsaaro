@@ -10,15 +10,19 @@ const Cblayout = (props) => {
     if (id === "bf") {
       setLayout([1, 0, 0, 0]);
       setActive("bf");
+      props.SelectLayout("bf");
     } else if (id === "tf") {
       setLayout([0, 1, 0, 0]);
       setActive("tf");
+      props.SelectLayout("tf");
     } else if (id === "btm") {
       setLayout([0, 0, 1, 0]);
       setActive("btm");
+      props.SelectLayout("btm");
     } else if (id === "top") {
       setLayout([0, 0, 0, 1]);
       setActive("top");
+      props.SelectLayout("top");
     }
   };
 
