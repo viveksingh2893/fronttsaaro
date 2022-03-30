@@ -29,7 +29,7 @@ const Cbcolour = (props) => {
     } else {
       props.SelectTheme("light");
     }
-  })
+  },[darkmode])
 
   return (
     <div>
