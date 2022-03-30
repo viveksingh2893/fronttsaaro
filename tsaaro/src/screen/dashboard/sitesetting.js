@@ -1,21 +1,32 @@
 import React, {useEffect, useState} from "react";
 import '../../assets/css/sitesetting.css';
 import SvgIcon from "../../assets/Icon_apps";
-import {Typography, Switch, Popover, Button, Menu, Dropdown} from 'antd';
+import {Typography, Select, Switch, Popover, Button, Menu, Dropdown} from 'antd';
 import Icon, {ReloadOutlined, CheckCircleTwoTone} from '@ant-design/icons';
 
+const { Option } = Select;
 const { Paragraph } = Typography;
-
 
 const SiteSettingScr=()=>{
     const [url, setUrl] = useState('http://www.destratum.com');
     const [siteName, setSiteName] = useState('Destratum');
     const [active, setActive]= useState('Active');
     const [action, setAction] = useState(false);
-    const [array, setArray]= useState(['English']);
-    const [click, setClick] = useState('');
+    const [array, setArray]= useState(['English','German','Turkish','Arabian','Bulgarian',
+    'Catalan','Croatian','Czech','Danish','Duch','Estonian','Finnish','French','Greek','Hungarian',
+    'Italian','Latvian','Lithuanian','Norwegian','Polish','Portuguese','Portuguese(BR)','Romanian',
+    'Russian','Slovak','Slovene','Spanish','Swedish','Thai','Turkish','Ukrainian']);
     const [icon, setIcon] = useState("");
     const [change, setChange] = useState(false);
+
+    const children = [];
+    for (let i = 0; i < array.length; i++) {
+      children.push(<Option className='lang-list' key={i}>{array[i]}</Option>);
+    }
+
+    const handleChange=(value)=> {
+      console.log(`selected ${value}`);
+    }
 
     useEffect(()=>{
     if(action){
@@ -51,41 +62,6 @@ const SiteSettingScr=()=>{
           script is tailored just for the required languages. You can always change this later.</p>
         </div>
     );
-
-    const feed=(e)=>{
-      setArray(array.push([e.target.value]));
-    }
-
-    console.log('array', array)
-
-    const menu =()=> (
-      <Menu>
-      <Menu.Item key="0" onClick={feed} onMouseEnter={()=>setClick('eng')} onMouseLeave={()=>setClick('')} className="sitesetting-ant-menu">
-        <p className="sitesetting-lang-item" style={{color:click=='eng'?'white':'#6F6F6F'}}>English </p>
-      </Menu.Item>
-      <Menu.Item key="1" onMouseEnter={()=>setClick('fre')} onMouseLeave={()=>setClick('')} className="sitesetting-ant-menu">
-        <p className="sitesetting-lang-item" style={{color:click=='fre'?'white':'#6F6F6F'}}>French</p>
-      </Menu.Item>
-      <Menu.Item key="2" onMouseEnter={()=>setClick('tur')} onMouseLeave={()=>setClick('')} className="sitesetting-ant-menu">
-        <p className="sitesetting-lang-item" style={{color:click=='tur'?'white':'#6F6F6F'}}>Turkish</p>
-      </Menu.Item>
-      <Menu.Item key="3" onMouseEnter={()=>setClick('ger')} onMouseLeave={()=>setClick('')} className="sitesetting-ant-menu">
-        <p className="sitesetting-lang-item" style={{color:click=='ger'?'white':'#6F6F6F'}}>German</p>
-      </Menu.Item>
-      <Menu.Item key="4" onMouseEnter={()=>setClick('chi')} onMouseLeave={()=>setClick('')} className="sitesetting-ant-menu">
-        <p className="sitesetting-lang-item" style={{color:click=='chi'?'white':'#6F6F6F'}}>Chinese</p>
-      </Menu.Item>
-      <Menu.Item key="5" onMouseEnter={()=>setClick('ara')} onMouseLeave={()=>setClick('')} className="sitesetting-ant-menu">
-        <p className="sitesetting-lang-item" style={{color:click=='ara'?'white':'#6F6F6F'}}>Arabic</p>
-      </Menu.Item>
-      <Menu.Item key="6" onMouseEnter={()=>setClick('por')} onMouseLeave={()=>setClick('')} className="sitesetting-ant-menu">
-        <p className="sitesetting-lang-item" style={{color:click=='por'?'white':'#6F6F6F'}}>Portuguese</p>
-      </Menu.Item>
-      <Menu.Item key="7" onMouseEnter={()=>setClick('spa')} onMouseLeave={()=>setClick('')} className="sitesetting-ant-menu">
-        <p className="sitesetting-lang-item" style={{color:click=='spa'?'white':'#6F6F6F'}}>Spanish</p>
-      </Menu.Item>
-    </Menu>
-      );
 
     const toggleArrow =()=>{
         if (change===false){
@@ -177,13 +153,18 @@ const SiteSettingScr=()=>{
                         </Button>
                     </Popover>
                 </div>
-                <div style={{display:'flex',flexDirection:'row',minWidth:'10VW' ,alignItems:'center',padding:'.5vw', justifyContent:'center', height:'5vh', border:'1px solid black'}}>
-                  {array}
-                  <Dropdown overlay={menu()} trigger={['click']} onClick={(e)=>{setChange(!change);e.preventDefault();}} placement="bottomRight" arrow={{ pointAtCenter: true }}>
-                    <div className="sitesetting-lang-list">
-                      {icon}
-                    </div>
-                  </Dropdown>
+                <div style={{display:'flex', minWidth:'12vw', maxWidth:'50VW' ,justifyContent:'center'}}>
+                  <Select
+                    mode="multiple"
+                    allowClear
+                    style={{ width: '100%' }}
+                    placeholder="Please select"
+                    defaultValue={['English']}
+                    onChange={handleChange}
+                    className='ant-select-selection-selected-value'
+                  >
+                    {children}
+                  </Select>
                 </div>
             </div>
             <div style={{display:'flex', flexDirection:'row',marginTop:'4vh', alignItems:'center', justifyContent:'flex-start'}}>
