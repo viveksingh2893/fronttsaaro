@@ -16,9 +16,6 @@ const SiteSettingScr=()=>{
     'Catalan','Croatian','Czech','Danish','Duch','Estonian','Finnish','French','Greek','Hungarian',
     'Italian','Latvian','Lithuanian','Norwegian','Polish','Portuguese','Portuguese(BR)','Romanian',
     'Russian','Slovak','Slovene','Spanish','Swedish','Thai','Turkish','Ukrainian']);
-    const [icon, setIcon] = useState("");
-    const [change, setChange] = useState(false);
-
     const children = [];
     for (let i = 0; i < array.length; i++) {
       children.push(<Option className='lang-list' key={i}>{array[i]}</Option>);
@@ -62,19 +59,6 @@ const SiteSettingScr=()=>{
           script is tailored just for the required languages. You can always change this later.</p>
         </div>
     );
-
-    const toggleArrow =()=>{
-        if (change===false){
-          setIcon(<SvgIcon name='up arrow'/>)
-        } else if(change===true){
-          setIcon(<SvgIcon name='down arrow'/>) 
-        }
-      }
-      
-      useEffect(()=>{
-        toggleArrow()
-      },[change])
-    
     
     return (
       <div className="sitesetting-maincontainer">
