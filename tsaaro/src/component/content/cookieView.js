@@ -1,11 +1,45 @@
 import { Col, Button, Row } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Postapi from "../../api/Postapi";
 import "../../assets/css/cookieboard.css";
 import CookieTypesView from "./CookieTypesView";
 
 const CookieView = (props) => {
   const [cookietype, setCookieType] = useState("Neccessary");
   const [switchcookies, setSwitch] = useState([1, 0, 0, 0, 0, 0]);
+  const [nec,setNec]=useState([])
+    const [others,setOthers]=useState([])
+    const [fun,setFun]=useState([])
+    const [analytics,setAnalytics]=useState([])
+    const [advertisment,setAdv]=useState([])
+  
+
+  useEffect(()=>{
+    filterData()
+
+  },[])
+
+  const filterData= ()=>{ 
+    console.log('scandata.....',props.scandata)
+   
+
+    // const result=await Postapi("/auth/scandata",{email:"c@a.com",website:"http://netflix.com/in"})
+    // // console.log(result);
+    // if (result){
+        if(props.scandata){
+    //         // scanData(result.data)
+            setOthers(props.scandata.filter(ele=>ele.cookie_category==='others'));
+            setNec(props.scandata.filter(ele=>ele.cookie_category==='necessary'));
+            setFun(props.scandata.filter(ele=>ele.cookie_category==='functional'));
+            setAnalytics(props.scandata.filter(ele=>ele.cookie_category==='analytics'));
+            setAdv(props.scandata.filter(ele=>ele.cookie_category==='advertisment'))
+      
+
+        }
+    }
+  
+
+
 
   const handleswitch = (id) => {
     if (id === "nc") {
@@ -49,7 +83,7 @@ const CookieView = (props) => {
             className="cm-cookie-selection"
             style={{ color: switchcookies[0] ? "#5647AB" : "#1E1A1A" }}
           >
-            Neccessary (1Cookie)
+            Neccessary ({nec.length})
           </h4>
         </div>
         <div
@@ -63,7 +97,7 @@ const CookieView = (props) => {
             className="cm-cookie-selection"
             style={{ color: switchcookies[1] ? "#5647AB" : "#1E1A1A" }}
           >
-            Functional (1Cookie)
+            Functional ({fun.length})
           </h4>
         </div>
         <div
@@ -77,7 +111,7 @@ const CookieView = (props) => {
             className="cm-cookie-selection"
             style={{ color: switchcookies[2] ? "#5647AB" : "#1E1A1A" }}
           >
-            Analytics (1Cookie)
+            Analytics ({analytics.length})
           </h4>
         </div>
         <div
@@ -92,7 +126,7 @@ const CookieView = (props) => {
             className="cm-cookie-selection"
             style={{ color: switchcookies[3] ? "#5647AB" : "#1E1A1A" }}
           >
-            Advertisement (1Cookie)
+            Advertisement ({advertisment.length})
           </h4>
         </div>
         <div
@@ -107,7 +141,7 @@ const CookieView = (props) => {
             className="cm-cookie-selection"
             style={{ color: switchcookies[4] ? "#5647AB" : "#1E1A1A" }}
           >
-            Others (1Cookie)
+            Others ({others.length})
           </h4>
         </div>
       </div>
