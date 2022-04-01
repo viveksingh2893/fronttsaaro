@@ -47,7 +47,7 @@ const Screen = () => {
               <Route path="/pp" element={<PrivacypolicyScr />} />
               <Route path="/ss" element={<SitesettingScr />} />
             </Routes>
-          </div>
+          </div> 
       </div>
     </div>
   );

@@ -133,7 +133,7 @@ console.log(urlParams)
           />
           <h5 className="login-fg-pwd">Forgot password?</h5>
           {wrongcred ? (
-             <Alert
+             <Alert 
              style={{width:'21vw',background:'#F6F6F6'}}
              description={alertMessage}
              type="error"

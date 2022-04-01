@@ -1,0 +1,63 @@
+.privacy-title{
+    display:flex;
+    font-family: Samsung Sharp Sans;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2vw;
+    line-height: 2.2vw;
+    margin: 0;
+    color: white;
+  }
+
+  .privacy-img{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:16vh;
+    width:'100%';
+  }
+  
+  .privacy-img1 {
+    width: 3.5vw;
+    height: 4vw;
+  }
+  
+  .privacy-button{
+    display: flex;
+    margin-top: 4.5vh;
+    height:5vh;
+    border-radius: 0.2vw;
+    align-items: center;
+    justify-content: center ;
+  }
+  .privacy-button-child{
+    display:flex;
+    flex-direction: row;
+    height: 2.4vw;
+    width:15vw;
+    align-items: center;
+    justify-content:center;
+  }
+
+  .privacy-button:hover{
+    background: #7A4EB6;
+    width:15vw
+  }
+
+  .privacy-button-para{
+    font-family: Roboto;
+    font-size: 1vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2vw;
+    letter-spacing: 0em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color:#ffffff;
+    margin: 0;
+    display:flex;
+    align-items: flex-start;
+    text-align: left;
+    }

@@ -16,7 +16,9 @@ const SiteSettingScr=()=>{
     'Catalan','Croatian','Czech','Danish','Duch','Estonian','Finnish','French','Greek','Hungarian',
     'Italian','Latvian','Lithuanian','Norwegian','Polish','Portuguese','Portuguese(BR)','Romanian',
     'Russian','Slovak','Slovene','Spanish','Swedish','Thai','Turkish','Ukrainian']);
-    const children = [];
+    const [children, setChildren] = useState([]);
+
+    
     for (let i = 0; i < array.length; i++) {
       children.push(<Option className='lang-list' key={i}>{array[i]}</Option>);
     }
