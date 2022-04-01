@@ -1,6 +1,6 @@
 import SvgIcon from "../../assets/Icon_apps";
 import Navbutton from "../../component/consentbanner/navbutton";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../assets/css/consentbanner.css";
 import Cbcolour from "../../component/consentbanner/cbcolour";
 import Cblayout from "../../component/consentbanner/cblayout";
@@ -14,6 +14,7 @@ const ConsentbannerScr = (props) => {
   const [cbcolor, setCbcolor] = useState("light");
   const [cbtype, setCbtype] = useState("btm");
   const [cblang, setCblang] = useState("English");
+  // const [darkmode, setDarkmode] = useState(false);
 
   const handleMenu = (id) => {
     if (id === "lay") {

@@ -1,5 +1,5 @@
 import SvgIcon from "../../assets/Icon_apps";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../assets/css/consentbanner.css";
 import Dropmenu from "../../component/consentbanner/dropmenu";
 
@@ -11,20 +11,25 @@ const Cbcolour = (props) => {
   //   if (id === "light") {
   //     setActiveColour("light");
   //   } else if (id === "dark") {
-  //     setActiveColour("dark");
+  //     setActiveColour("dark"); 
   //   }
   //   console.log(activeColour);
   //   props.SelectTheme(activeColour);
   // };
 
   const handleColour = () => {
+    setDarkmode(!darkmode);
+    
+    console.log('mode',darkmode);
+  };
+
+  useEffect(()=>{
     if (darkmode) {
       props.SelectTheme("dark");
     } else {
       props.SelectTheme("light");
     }
-    console.log(darkmode);
-  };
+  },[darkmode])
 
   return (
     <div>
@@ -92,10 +97,7 @@ const Cbcolour = (props) => {
               alignItems: "center",
               cursor: "pointer",
             }}
-            onClick={() => {
-              setDarkmode(!darkmode);
-              handleColour();
-            }}
+            onClick={handleColour}
           >
             {darkmode ? (
               <SvgIcon name="lightoff" />
@@ -153,10 +155,7 @@ const Cbcolour = (props) => {
               alignItems: "center",
               cursor: "pointer",
             }}
-            onClick={() => {
-              setDarkmode(!darkmode);
-              handleColour();
-            }}
+            onClick={handleColour}
           >
             {darkmode ? <SvgIcon name="darkon" /> : <SvgIcon name="darkoff" />}
           </div>

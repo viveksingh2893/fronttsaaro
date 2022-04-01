@@ -100,3 +100,22 @@
     background-color: #7A4EB6;
     border-radius: 4px;
     }
+
+.lang-list{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    width:15vw;
+}
+
+.lang-list:hover{
+    background-color: #7A4EB6;
+    color:white
+}
+ 
+.ant-select-selection-selected-value {
+    color: #7A4EB6;
+    
+}
