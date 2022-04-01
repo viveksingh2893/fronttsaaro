@@ -61,7 +61,7 @@ console.log(urlParams)
       navigate("/dashboard/dash");
     } else if(auth.status===202) {
       setLoading(!loading)
-      navigate('/otp')
+      navigate('/otp',{state:{email:username}})
       
     }else if(auth.status===400){
       
