@@ -18,19 +18,19 @@ const PrivacyPolicySideMenu=()=>{
             </div>
         </div>
         <NavLink to=".\cwi">
-          <CsmButton id="cwi" name="Company WebSite Info"/>
+          <CsmButton id="cwi" name="Company & WebSite Info"/>
         </NavLink>
         <NavLink to=".\dc">
-          <CsmButton id="dc" name="Data Collection"/>
+          <CsmButton id="dc" name="Collection of Data"/>
         </NavLink>
         <NavLink to=".\dis">
-          <CsmButton id="dis" name="Disclosure"/>
+          <CsmButton id="dis" name="Use & Disclosure of Data"/>
         </NavLink>
         <NavLink to=".\tt">
           <CsmButton id="tt" name="Tracking Technology"/>
         </NavLink>
         <NavLink to=".\dp">
-          <CsmButton id="dp" name="DataProtection"/>
+          <CsmButton id="dp" name="Data Protection"/>
         </NavLink>
     </div>
     )

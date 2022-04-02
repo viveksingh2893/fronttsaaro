@@ -11,7 +11,7 @@ return(
         <div style={{display:'flex', alignItems:'flex-start',width:'3vw', justifyContent:'center'}}>
           <ArrowRightOutlined/>
         </div>
-        <p className="privacy-button-para" style={{display:'flex',width:'11vw',justifyContent:'flex-start'}}>
+        <p className="privacy-button-para" style={{display:'flex',width:'14vw',justifyContent:'flex-start'}}>
           {props.name}
         </p>
       </div>

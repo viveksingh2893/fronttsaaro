@@ -8,7 +8,7 @@ const CookiePolicy=()=>{
     return(
       <div style={{ display: "flex", flexDirection: "row", width:'100vw', height:'100vh' }}>
         <CookiePolicySideMenu/>
-        <div style={{display:'flex', height:'100vh', width:'78vw',overflowY:'auto'}}>
+        <div style={{display:'flex', height:'100vh', width:'78vw',overflowY:'auto', padding:'3vw'}}>
           <div>
             <Routes>
               <Route path="/ct" element={<CookieTypes/>} />

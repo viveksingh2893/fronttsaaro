@@ -128,10 +128,10 @@ const SideMenuView=(props)=> {
         <NavLink to=".\cl" onClick={toggle4}>
           <SmButton id="cl" name="Consent Log" inactive={props.inactive} color={color4}/>
         </NavLink>
-        <div style={{cursor:'pointer'}} onClick={()=>{navigate("/privacypolicy");toggle5();}}>
+        <div style={{cursor:'pointer'}} onClick={()=>{navigate("/privacypolicy/cwi");toggle5();}}>
           <SmButton id="pp" name="Privacy Policy" inactive={props.inactive} color={color5}/>
         </div>
-        <div style={{cursor:'pointer'}} onClick={()=>{navigate("/cookiepolicy");toggle6();}}>
+        <div style={{cursor:'pointer'}} onClick={()=>{navigate("/cookiepolicy/ct");toggle6();}}>
           <SmButton id="cp" name="Cookie Policy" inactive={props.inactive} color={color6}/>
         </div>
         <NavLink to=".\ss" onClick={toggle7}>

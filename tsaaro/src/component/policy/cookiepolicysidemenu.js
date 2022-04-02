@@ -18,10 +18,10 @@ const CookiePolicySideMenu=()=>{
             </div>
         </div>
         <NavLink to=".\ct">
-          <CsmButton id="cwi" name="Company WebSite Info"/>
+          <CsmButton id="ct" name="Types of Cookies"/>
         </NavLink>
         <NavLink to=".\mcp">
-          <CsmButton id="dc" name="Data Collection"/>
+          <CsmButton id="mcp" name="Manage Cookie Preferences"/>
         </NavLink>
     </div>
     )
