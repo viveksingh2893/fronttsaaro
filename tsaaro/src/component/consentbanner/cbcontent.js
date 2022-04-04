@@ -8,6 +8,9 @@ import TextArea from "rc-textarea";
 const Cbcontent = (props) => {
   const [boxopen, setBoxopen] = useState(false);
   const [val, setVal] = useState("");
+  const [close, setClose] = useState(true);
+  const [brand, setBrand] = useState(true);
+
   return (
     <div>
       <Dropmenu topmargin="0px" opthead="Comply With" />
@@ -126,14 +129,96 @@ const Cbcontent = (props) => {
                 props.DefTxt(e.target.value);
               }}
             />
-            {/* <div
+            <div
               style={{
                 width: "346px",
-                height: "40px",
-                marginTop: "15px",
-                backgroundColor: "yellow",
+                flexDirection: "row",
+                display: "flex",
+                marginTop: "20px",
               }}
-            ></div> */}
+            >
+              <div style={{ width: "100px", paddingTop: "5px" }}>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 500,
+                    fontSize: "14px",
+                    lineHeight: "16px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  Close Button
+                </p>
+              </div>
+              <div
+                style={{
+                  width: "246px",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "flex-end",
+                  alignItems: "flex-start",
+                }}
+              >
+                <div
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    setClose(!close);
+                  }}
+                >
+                  {close ? (
+                    <SvgIcon name="darkon" />
+                  ) : (
+                    <SvgIcon name="lightoff" />
+                  )}
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                width: "346px",
+                flexDirection: "row",
+                display: "flex",
+                marginTop: "10px",
+              }}
+            >
+              <div style={{ width: "246px", paddingTop: "5px" }}>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 500,
+                    fontSize: "14px",
+                    lineHeight: "16px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  Disable Tsaaro Branding
+                </p>
+              </div>
+              <div
+                style={{
+                  width: "100px",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "flex-end",
+                  alignItems: "flex-start",
+                }}
+              >
+                <div
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    setBrand(!brand);
+                  }}
+                >
+                  {brand ? (
+                    <SvgIcon name="darkon" />
+                  ) : (
+                    <SvgIcon name="lightoff" />
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         ) : null}
       </div>

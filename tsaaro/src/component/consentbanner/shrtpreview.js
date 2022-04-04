@@ -13,7 +13,7 @@ const Cbpreview = (props) => {
           borderRadius: "5px",
           paddingLeft: "31px",
           paddingRight: "31px",
-          paddingTop: "10px",
+          paddingTop: "15px",
           paddingBottom: "10px",
           flexDirection: "column",
           display: "flex",
