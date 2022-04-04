@@ -3,14 +3,16 @@ import "../../assets/css/header.css";
 import SvgIcon from "../../assets/Icon_apps";
 import { Menu, Dropdown } from 'antd';
 import AddSitePopView from '../popup/addSitePopView';
-
+import { useNavigate } from "react-router-dom";
 
 function HeaderMenuView(props) {
   const [change, setChange] = useState(false);
   const [icon, setIcon] = useState("")
   const [site, setSite] = useState(false);
   const [click, setClick] = useState('')
- 
+
+  const navigate = useNavigate();
+
   const toggleSite = () => { 
     setSite(!site);
   };
@@ -32,7 +34,7 @@ function HeaderMenuView(props) {
       <Menu.Item key="0" onMouseEnter={()=>setClick('co')} onMouseLeave={()=>setClick('')} className="ant-menu">
         <p className="acc-default" style={{color:click=='co'?'white':'#ADADAD'}}>Contact</p>
       </Menu.Item>
-      <Menu.Item key="1" onMouseEnter={()=>setClick('ac')} onMouseLeave={()=>setClick('')} className="ant-menu">
+      <Menu.Item key="1" onClick={()=>navigate('/dashboard/as')} onMouseEnter={()=>setClick('ac')} onMouseLeave={()=>setClick('')} className="ant-menu">
         <p className="acc-default" style={{color:click=='ac'?'white':'#ADADAD'}}>Account Setting</p>
       </Menu.Item>
       <Menu.Item key="2" onMouseEnter={()=>setClick('cp')} onMouseLeave={()=>setClick('')} className="ant-menu">

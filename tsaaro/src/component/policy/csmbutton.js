@@ -6,8 +6,8 @@ import {ArrowRightOutlined} from '@ant-design/icons';
 
 const CsmButton= (props)=>{
 return(
-    <div className="privacy-button">
-      <div className="privacy-button-child">
+    <div className="privacy-button" style={{backgroundColor:props.color?'#7A4EB6':''}}>
+      <div className="privacy-button-child" >
         <div style={{display:'flex', alignItems:'flex-start',width:'3vw', justifyContent:'center'}}>
           <ArrowRightOutlined/>
         </div>
