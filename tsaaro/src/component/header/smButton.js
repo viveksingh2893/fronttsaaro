@@ -4,7 +4,6 @@ import '../../assets/css/sidemenu.css';
  
 const SmButton= (props)=>{
 
-
 return(
     <div className="button" style={{backgroundColor:props.color?'#7A4EB6':''}} onClick={props.action}>
       <div className={`${props.inactive ? "button-child2" : "button-child"}`}>

@@ -9,7 +9,7 @@ const CookieView = (props) => {
 
   const handleswitch = (id) => {
     if (id === "nc") {
-      setSwitch([1, 0, 0, 0, 0]);
+      setSwitch([1, 0, 0, 0, 0]); 
       setCookieType("Neccessary");
     } else if (id === "fc") {
       setSwitch([0, 1, 0, 0, 0]);
