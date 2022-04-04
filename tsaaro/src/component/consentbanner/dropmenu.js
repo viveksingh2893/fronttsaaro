@@ -64,7 +64,7 @@ const Dropmenu = (props) => {
           </select>
         </form>
       ) : null}
-      {props.opthead === "Cookie Notice" ? (
+      {/* {props.opthead === "Cookie Notice" ? (
         <form>
           <select className="drpdwn">
             <option value="Implicit">Option 1</option>
@@ -79,7 +79,7 @@ const Dropmenu = (props) => {
             <option value="Explicit">Option 2</option>
           </select>
         </form>
-      ) : null}
+      ) : null} */}
 
       {/* <div
         style={{

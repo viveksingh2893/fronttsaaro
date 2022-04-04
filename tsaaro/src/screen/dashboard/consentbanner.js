@@ -6,7 +6,7 @@ import Cbcolour from "../../component/consentbanner/cbcolour";
 import Cblayout from "../../component/consentbanner/cblayout";
 import Cbcontent from "../../component/consentbanner/cbcontent";
 import Cbbehaviour from "../../component/consentbanner/cbbehaviour";
-import Cbpreview from "../../component/consentbanner/longpreview";
+import Cbpreview from "../../component/consentbanner/shrtpreview";
 
 const ConsentbannerScr = (props) => {
   const [activemenu, setActiveMenu] = useState("Layout");
@@ -14,6 +14,9 @@ const ConsentbannerScr = (props) => {
   const [cbcolor, setCbcolor] = useState("light");
   const [cbtype, setCbtype] = useState("btm");
   const [cblang, setCblang] = useState("English");
+  const [cbtext, setCbtext] = useState(
+    "This website uses cookies that help the website to function and also to track how you interact with it. We will only use the cookies if you consent to it by clicking on Accept. You can also manage individual cookie preferences from Settings."
+  );
   // const [darkmode, setDarkmode] = useState(false);
 
   const handleMenu = (id) => {
@@ -154,7 +157,7 @@ const ConsentbannerScr = (props) => {
           <div style={{ width: "394px" }}></div>
         )}
         {bannermenu[1] === 1 ? (
-          <Cbcontent />
+          <Cbcontent DefTxt={setCbtext} />
         ) : (
           <div style={{ width: "394px" }}></div>
         )}
@@ -189,8 +192,8 @@ const ConsentbannerScr = (props) => {
             alignItems: `${cbtype == "top" ? "flex-start" : "center"}`,
           }}
         >
-          {cbtype == "top" ? <Cbpreview theme={cbcolor} /> : null}
-          {cbtype == "tf" ? <Cbpreview theme={cbcolor} /> : null}
+          {cbtype == "top" ? <Cbpreview theme={cbcolor} text={cbtext} /> : null}
+          {cbtype == "tf" ? <Cbpreview theme={cbcolor} text={cbtext} /> : null}
         </div>
         <div
           style={{
@@ -227,8 +230,8 @@ const ConsentbannerScr = (props) => {
             alignItems: `${cbtype == "btm" ? "flex-end" : "center"}`,
           }}
         >
-          {cbtype == "btm" ? <Cbpreview theme={cbcolor} /> : null}
-          {cbtype == "bf" ? <Cbpreview theme={cbcolor} /> : null}
+          {cbtype == "btm" ? <Cbpreview theme={cbcolor} text={cbtext} /> : null}
+          {cbtype == "bf" ? <Cbpreview theme={cbcolor} text={cbtext} /> : null}
         </div>
       </div>
     </div>
