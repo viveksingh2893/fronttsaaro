@@ -35,7 +35,7 @@ function HeaderMenuView(props) {
         <p className="acc-default" style={{color:click=='co'?'white':'#ADADAD'}}>Contact</p>
       </Menu.Item>
       <Menu.Item key="1" onClick={()=>navigate('/dashboard/as')} onMouseEnter={()=>setClick('ac')} onMouseLeave={()=>setClick('')} className="ant-menu">
-        <p className="acc-default" style={{color:click=='ac'?'white':'#ADADAD'}}>Account Setting</p>
+        <p className="acc-default" style={{color:click=='ac'?'white':'#ADADAD'}}>Account Settings</p>
       </Menu.Item>
       <Menu.Item key="2" onMouseEnter={()=>setClick('cp')} onMouseLeave={()=>setClick('')} className="ant-menu">
        <p className="acc-default" style={{color:click=='cp'?'white':'#ADADAD'}}>Change Password</p>
