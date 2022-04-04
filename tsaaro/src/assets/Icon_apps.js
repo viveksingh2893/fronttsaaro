@@ -581,6 +581,25 @@ function SvgIcon(props) {
       </svg>
     );
   }
+  if (props.name === "whitecross") {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1.5vw"
+        height="1.5vw"
+        fill="none"
+        viewBox="0 0 28 28"
+      >
+        <path
+          stroke="#fff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M21 7L7 21M7 7l14 14"
+        ></path>
+      </svg>
+    );
+  }
   if (props.name === "asterisk") {
     return (
       <svg
@@ -798,8 +817,8 @@ function SvgIcon(props) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
+        width="18"
+        height="18"
         fill="none"
         viewBox="0 0 40 40"
       >
@@ -988,46 +1007,46 @@ function SvgIcon(props) {
   if (props.name === "red cross encircle") {
     return (
       <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1.2vw"
-      height="1.2vw"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <path
-        stroke="#F51D2C"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM15 9l-6 6M9 9l6 6"
-      ></path>
-    </svg>
+        xmlns="http://www.w3.org/2000/svg"
+        width="1.2vw"
+        height="1.2vw"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="#F51D2C"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM15 9l-6 6M9 9l6 6"
+        ></path>
+      </svg>
     );
   }
   if (props.name === "check circle") {
     return (
       <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1.2vw"
-      height="1.2vw"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <path
-        stroke="#4ACD96"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M22 11.08V12a10 10 0 11-5.93-9.14"
-      ></path>
-      <path
-        stroke="#4ACD96"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M22 4L12 14.01l-3-3"
-      ></path>
-    </svg>
+        xmlns="http://www.w3.org/2000/svg"
+        width="1.2vw"
+        height="1.2vw"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="#4ACD96"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M22 11.08V12a10 10 0 11-5.93-9.14"
+        ></path>
+        <path
+          stroke="#4ACD96"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M22 4L12 14.01l-3-3"
+        ></path>
+      </svg>
     );
   }
 }
