@@ -10,6 +10,7 @@ const Cbcontent = (props) => {
   const [val, setVal] = useState("");
   const [close, setClose] = useState(true);
   const [brand, setBrand] = useState(true);
+  const [mylogo, setMylogo] = useState(true);
 
   return (
     <div>
@@ -193,7 +194,7 @@ const Cbcontent = (props) => {
                     alignItems: "center",
                   }}
                 >
-                  Disable Tsaaro Branding
+                  Enable Tsaaro Branding
                 </p>
               </div>
               <div
@@ -219,6 +220,66 @@ const Cbcontent = (props) => {
                 </div>
               </div>
             </div>
+            <div
+              style={{
+                width: "346px",
+                flexDirection: "row",
+                display: "flex",
+                marginTop: "10px",
+              }}
+            >
+              <div style={{ width: "246px", paddingTop: "5px" }}>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 500,
+                    fontSize: "14px",
+                    lineHeight: "16px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  Show My Brand Logo
+                </p>
+              </div>
+              <div
+                style={{
+                  width: "100px",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "flex-end",
+                  alignItems: "flex-start",
+                }}
+              >
+                <div
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    setMylogo(!mylogo);
+                  }}
+                >
+                  {mylogo ? (
+                    <SvgIcon name="darkon" />
+                  ) : (
+                    <SvgIcon name="lightoff" />
+                  )}
+                </div>
+              </div>
+            </div>
+            {mylogo ? (
+              <TextArea
+                style={{
+                  width: "346px",
+                  height: "40px",
+                  borderRadius: "5px",
+                  backgroundColor: "#F0EDFF",
+                  borderWidth: "0px",
+                  borderColor: "transparent",
+                  padding: "10px",
+                  outline: "none",
+                }}
+                placeholder="Logo URL"
+              />
+            ) : null}
           </div>
         ) : null}
       </div>
