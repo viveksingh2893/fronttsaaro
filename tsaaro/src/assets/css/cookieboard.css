@@ -273,7 +273,7 @@ body.active-pop {
 }
 
 .add-modal{
-  overflow-y: scroll;
+  overflow-y: auto;
   display: flex;
   width: 100vw;
   height: 100vh;

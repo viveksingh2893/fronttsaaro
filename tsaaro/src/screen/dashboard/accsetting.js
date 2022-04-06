@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Col, Button, Row } from "antd";
-import "../../assets/css/cookieboard.css"; 
+import '../../assets/css/accsettings.css';
 import Website from "../../component/accsettings/website";
 
 const AccsettingScr=()=>{
@@ -18,7 +18,7 @@ const AccsettingScr=()=>{
         width: "96.5vw",
         justifyContent: "center",
         alignItems: "center",
-        overflowY:'scroll',
+        overflowY:'auto',
         paddingRight:'2.5vw',
         paddingBottom:'5vh'
 
@@ -33,7 +33,7 @@ const AccsettingScr=()=>{
         }}
       >
         <Col span={12}>
-          <h2 className="cm">Account Settings</h2>
+          <h2 className="as">Account Settings</h2>
         </Col>
         <Col
           span={12}
@@ -43,8 +43,8 @@ const AccsettingScr=()=>{
             justifyContent: "flex-end",
           }}
         >
-            <Button onClick={()=>console.log('acc setting')} type="primary" style={{width:'12vw'}} className="primary-btn">
-              <p className="scan-again">Delete My account</p>
+            <Button onClick={()=>console.log('acc setting')} type="primary" style={{width:'12vw'}} className="as-primary-btn">
+              <p className="as-delete-acc">Delete My account</p>
             </Button>
         </Col>
       </Row>
@@ -59,38 +59,38 @@ const AccsettingScr=()=>{
             <Col
               // onChange={handletoggle}
               onClick={()=>handletoggle('website')}
-              className="cm-toggle-col"
+              className="as-toggle-col"
               style={{ backgroundColor: head==='website' ? "#F0EDFF" : "#ffffff"  }}
               span={3}
             >
-              <h3 className="cm-toggle" style={{color:head=='website'?'#5647AB':'#6F6F6F'}}>Websites</h3>
+              <h3 className="as-toggle" style={{color:head=='website'?'#5647AB':'#6F6F6F'}}>Websites</h3>
             </Col>
             <Col
             //  onChange={handletoggle}
               onClick={()=>handletoggle('plans')}
-              className="cm-toggle-col" 
+              className="as-toggle-col" 
               style={{ backgroundColor: head==='plans' ? "#F0EDFF" : "#ffffff" }}
               span={3}
             >
-              <h3 className="cm-toggle" style={{color:head=='plans'?'#5647AB':'#6F6F6F'}}>Plans</h3>
+              <h3 className="as-toggle" style={{color:head=='plans'?'#5647AB':'#6F6F6F'}}>Plans</h3>
             </Col>
             <Col
             //  onChange={handletoggle}
               onClick={()=>handletoggle('invoice')}
-              className="cm-toggle-col" 
+              className="as-toggle-col" 
               style={{ backgroundColor: head==='invoice'? "#F0EDFF" : "#ffffff" }}
               span={3}
             >
-              <h3 className="cm-toggle" style={{color:head=='invoice'?'#5647AB':'#6F6F6F'}}>Invoice</h3>
+              <h3 className="as-toggle" style={{color:head=='invoice'?'#5647AB':'#6F6F6F'}}>Invoice</h3>
             </Col>
             <Col
             //  onChange={handletoggle}
               onClick={()=>handletoggle('pay')}
-              className="cm-toggle-col" 
+              className="as-toggle-col" 
               style={{ backgroundColor: head==='pay' ? "#F0EDFF" : "#ffffff" }}
               span={3}
             >
-              <h3 className="cm-toggle" style={{color:head=='pay'?'#5647AB':'#6F6F6F'}}>Billing/Payment</h3>
+              <h3 className="as-toggle" style={{color:head=='pay'?'#5647AB':'#6F6F6F'}}>Billing/Payment</h3>
             </Col>
           </Row>
         </Col>
