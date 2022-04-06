@@ -47,83 +47,105 @@ const Cbpreview = (props) => {
               color: `${props.theme === "light" ? "#000" : "#fff"}`,
             }}
           >
-            This website uses cookies that help the website to function and also
-            to track how you interact with it. We will only use the cookies if
-            you consent to it by clicking on Accept. You can also manage
-            individual cookie preferences from Settings. <a>Read More</a>
+            {props.text} <a>Read More</a>
           </p>
         </div>
         <div
           style={{
-            width: "540px",
             display: "flex",
-            flexDirection: "row",
-            paddingLeft: "15px",
-            paddingBottom: "15px",
+            flexDirection: "column",
           }}
         >
           <div
             style={{
-              width: "160px",
-              height: "50px",
-              marginLeft: "15px",
+              width: "540px",
+              height: "100px",
               display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
+              justifyContent: "flex-end",
+              // backgroundColor: "orange",
             }}
           >
-            <p
-              className="btn-txt"
+            <div style={{ cursor: "pointer" }}>
+              {props.theme == "light" ? (
+                <SvgIcon name="cross" />
+              ) : (
+                <SvgIcon name="whitecross" />
+              )}
+            </div>
+          </div>
+          <div
+            style={{
+              width: "540px",
+              display: "flex",
+              flexDirection: "row",
+              paddingLeft: "15px",
+              paddingBottom: "15px",
+              // backgroundColor: "green",
+            }}
+          >
+            <div
               style={{
-                color: `${props.theme == "light" ? "#7A4EB6" : "#fff"}`,
+                width: "160px",
+                height: "50px",
+                marginLeft: "15px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <p
+                className="btn-txt"
+                style={{
+                  color: `${props.theme == "light" ? "#7A4EB6" : "#fff"}`,
+                  cursor: "pointer",
+                }}
+              >
+                Preferences
+              </p>
+            </div>
+            <div
+              style={{
+                width: "160px",
+                height: "50px",
+                marginLeft: "15px",
+                border: `1px solid ${
+                  props.theme == "light" ? "#7A4EB6" : "#fff"
+                }`,
+                boxShadow: `0px 0.5px 4px rgba(0, 0, 0, 0.2)`,
+                borderRadius: "4px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
                 cursor: "pointer",
               }}
             >
-              Preferences
-            </p>
-          </div>
-          <div
-            style={{
-              width: "160px",
-              height: "50px",
-              marginLeft: "15px",
-              border: `1px solid ${
-                props.theme == "light" ? "#7A4EB6" : "#fff"
-              }`,
-              boxShadow: `0px 0.5px 4px rgba(0, 0, 0, 0.2)`,
-              borderRadius: "4px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              cursor: "pointer",
-            }}
-          >
-            <p
-              className="btn-txt"
+              <p
+                className="btn-txt"
+                style={{
+                  color: `${props.theme == "light" ? "#7A4EB6" : "#fff"}`,
+                }}
+              >
+                Reject All
+              </p>
+            </div>
+            <div
               style={{
-                color: `${props.theme == "light" ? "#7A4EB6" : "#fff"}`,
+                width: "160px",
+                height: "50px",
+                backgroundColor: "#7A4EB6",
+                marginLeft: "15px",
+                borderRadius: "4px",
+                boxShadow: `0px 0.5px 4px rgba(0, 0, 0, 0.2)`,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
               }}
             >
-              Reject All
-            </p>
-          </div>
-          <div
-            style={{
-              width: "160px",
-              height: "50px",
-              backgroundColor: "#7A4EB6",
-              marginLeft: "15px",
-              borderRadius: "4px",
-              boxShadow: `0px 0.5px 4px rgba(0, 0, 0, 0.2)`,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              cursor: "pointer",
-            }}
-          >
-            <p className="btn-txt" style={{ color: "#fff" }}>
-              Accept All
-            </p>
+              <p className="btn-txt" style={{ color: "#fff" }}>
+                Accept All
+              </p>
+            </div>
           </div>
         </div>
       </div>

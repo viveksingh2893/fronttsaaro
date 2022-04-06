@@ -11,6 +11,7 @@ import ConsentlogScr from "./consentlog";
 import DashboardScr from "./dashboard";
 import SitesettingScr from "./sitesetting";
 import "../../assets/css/sidemenu.css";
+import AccsettingScr from "./accsetting";
 
 const Screen = () => {
   const [inactive, setInactive] = useState(false);
@@ -46,8 +47,9 @@ const Screen = () => {
               <Route path="/cp" element={<CookiepolicyScr />} />
               <Route path="/pp" element={<PrivacypolicyScr />} />
               <Route path="/ss" element={<SitesettingScr />} />
+              <Route path="/as" element={<AccsettingScr />} />
             </Routes>
-          </div>
+          </div> 
       </div>
     </div>
   );

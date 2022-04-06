@@ -4,6 +4,7 @@ import "../../assets/css/sidemenu.css";
 import logo from "../../assets/images/img1.png";
 import SmButton from "./smButton";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SideMenuView=(props)=> {
   const [color1, setColor1] = useState(false); 
@@ -13,6 +14,8 @@ const SideMenuView=(props)=> {
   const [color5, setColor5] = useState(false); 
   const [color6, setColor6] = useState(false); 
   const [color7, setColor7] = useState(false);  
+
+  const navigate = useNavigate();
 
   const toggle1=()=>{
       setColor1(true);
@@ -93,7 +96,7 @@ const SideMenuView=(props)=> {
         <div className="img1">
           <Image src={logo} preview={false} />
         </div>
-        <div className="img2">
+        <div>
           <h2 className="title">tsaaro</h2>
         </div>
       </div>
@@ -125,12 +128,12 @@ const SideMenuView=(props)=> {
         <NavLink to=".\cl" onClick={toggle4}>
           <SmButton id="cl" name="Consent Log" inactive={props.inactive} color={color4}/>
         </NavLink>
-        <NavLink to=".\pp" onClick={toggle5}>
+        <div style={{cursor:'pointer'}} onClick={()=>{navigate("/privacypolicy/cwi");toggle5();}}>
           <SmButton id="pp" name="Privacy Policy" inactive={props.inactive} color={color5}/>
-        </NavLink>
-        <NavLink to=".\cp" onClick={toggle6}>
-          <SmButton id="cp" name="Cookie Policy" inactive={props.inactive} color={color6} />
-        </NavLink>
+        </div>
+        <div style={{cursor:'pointer'}} onClick={()=>{navigate("/cookiepolicy/ct");toggle6();}}>
+          <SmButton id="cp" name="Cookie Policy" inactive={props.inactive} color={color6}/>
+        </div>
         <NavLink to=".\ss" onClick={toggle7}>
           <SmButton id="ss" name="Site Settings" inactive={props.inactive} color={color7}/>
         </NavLink>
@@ -140,3 +143,4 @@ const SideMenuView=(props)=> {
 }
 
 export default SideMenuView;
+  
