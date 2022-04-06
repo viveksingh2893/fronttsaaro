@@ -2,7 +2,7 @@ import SvgIcon from "../../assets/Icon_apps";
 import React, { useState } from "react";
 import "../../assets/css/consentbanner.css";
 import Dropmenu from "../../component/consentbanner/dropmenu";
-import Cookienotice from "../../component/consentbanner/cookienotice";
+// import Cookienotice from "../../component/consentbanner/cookienotice";
 import TextArea from "rc-textarea";
 
 const Cbcontent = (props) => {
