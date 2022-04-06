@@ -19,8 +19,9 @@ const OtpScr=()=>{
     const navigate = useNavigate();
     
     const location =useLocation();
-    console.log("...................",location.state)
+    // console.log("...................",location.state)
     const data ={email:location.state.email,otp:otp}
+    // console.log(data)
     const variants = { 
     
       hidden:{opacity:0,
@@ -44,7 +45,8 @@ const OtpScr=()=>{
       if (valid!=undefined){
 
         if(valid.status===200){
-          navigate('/dashboard')
+          console.log('rescue .............')
+          navigate("/")
         }
       }
     };

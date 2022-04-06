@@ -17,18 +17,24 @@ const EyePopView = (props)=>{
         getData()
 
     },[])
-    const getData=async ()=>{
+    const getData=async ()=>{ 
         console.log(props.id)
 
         const result=await Postapi("/auth/scanhistoryid",{id:props.id})
         // console.log(result);
-        scanData(result.data)
-        setOthers(result.data.cookies.filter(ele=>ele.cookie_category==='others'));
-        setNec(result.data.cookies.filter(ele=>ele.cookie_category==='necessary'));
-        setFun(result.data.cookies.filter(ele=>ele.cookie_category==='functional'));
-        setAnalytics(result.data.cookies.filter(ele=>ele.cookie_category==='analytics'));
-        setAnalytics(result.data.cookies.filter(ele=>ele.cookie_category==='advertisment'))
-  
+        if (result){
+            if(result.status){
+                scanData(result.data)
+                setOthers(result.data.cookies.filter(ele=>ele.cookie_category==='others'));
+                setNec(result.data.cookies.filter(ele=>ele.cookie_category==='necessary'));
+                setFun(result.data.cookies.filter(ele=>ele.cookie_category==='functional'));
+                setAnalytics(result.data.cookies.filter(ele=>ele.cookie_category==='analytics'));
+                setAnalytics(result.data.cookies.filter(ele=>ele.cookie_category==='advertisment'))
+          
+
+            }
+        }
+      
 
     }
     if(sdata){

@@ -30,6 +30,20 @@ const CookiemanagerScr = (props) => {
       }
     }
   }
+  const recentCookie=async ()=>{
+
+    const response=await Postapi('/auth/scandata',{email:"c@a.com",website:"http://netflix.com/in"})
+    console.log('response.........recent cookie',response);
+    if (response){
+      if(response.status===202){
+        console.log('inside response.........recent cookie',response);
+          setScanData(response.data)
+          setChoose(<CookieView scandata={response.data}/>)
+      }else{
+        setChoose(<CookieView/>)
+      }
+    }
+  }
 
 
   const handletoggle = (e) => {
@@ -59,7 +73,7 @@ const CookiemanagerScr = (props) => {
       scanHistory();
       
     }else{
-      setChoose(<CookieView/>)
+      recentCookie();
     } 
   },[toggle])
   
