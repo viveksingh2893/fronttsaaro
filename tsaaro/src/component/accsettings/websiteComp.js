@@ -2,6 +2,7 @@ import React from "react";
 import '../../assets/css/accsettings.css';
 import SvgIcon from "../../assets/Icon_apps";
 import {Popover, Button} from 'antd';
+import {CodeTwoTone} from '@ant-design/icons';
 
 const WebsiteComp=(props)=>{
     const subs = (
@@ -22,7 +23,7 @@ const WebsiteComp=(props)=>{
             <p style={{ width:'12vw',textAlign:'center',borderRadius:'4px',margin:0,}}>
                 {props.banner}
             </p>
-            <div style={{display:'flex',width:'12vw',flexDirection:'row',alignItems:'center', justifyContent:'center'}}>
+            <div style={{display:'flex',width:'15vw',flexDirection:'row',alignItems:'center', justifyContent:'center'}}>
                 <p style={{textAlign:'center',padding:'.5vw',color:'green',backgroundColor:'lightblue',borderRadius:'4px',margin:0, cursor:'pointer'}}>
                     Reactivate
                 </p>
@@ -32,9 +33,12 @@ const WebsiteComp=(props)=>{
                     </Button>
                 </Popover>
             </div>
-            <p style={{ width:'12vw',textAlign:'center',borderRadius:'4px',margin:0,}}>
-                Script
-            </p>
+            <div style={{display:'flex',width:'10vw',cursor:'pointer', flexDirection:'row',borderRadius:'4px', backgroundColor:'#7A4EB6', justifyContent:'center', padding:'.3vw', alignItems:'center'}}>
+                <CodeTwoTone style={{fontSize: '1.5vw', color:'white'}}/>
+                <p style={{textAlign:'center',fontSize:'1vw',paddingLeft:'.5vw',margin:0, color:'white'}}>
+                    Install Banner
+                </p>
+            </div>
         </div>
     )
 }
