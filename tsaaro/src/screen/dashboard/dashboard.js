@@ -7,8 +7,9 @@ import DashPieChart from "../../component/dashboard/dashPieChart";
 import DashboardLogView from "../../component/dashboard/dashboardLogView";
 import ScanAgainPop from "../../component/popup/scanAgainPopView";
 import Postapi from "../../api/Postapi";
+import { OmitProps } from "antd/lib/transfer/ListBody";
 
-const DashboardScr = () => {
+const DashboardScr = (props) => {
   const [activate, setActivate]=useState(false);
   const [accept, setAccept] = useState(true);
   const [scan, setScan] = useState(false);
@@ -65,17 +66,19 @@ const DashboardScr = () => {
           <p style={{margin:0}}>Scan Website  for Cookies</p>
         </div>
       </div>
-    <div style={{display:'flex', flexDirection:'row',flexDirection:'row', alignItems:'center', justifyContent:'space-between', marginTop:'2vh'}}> 
+    <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', marginTop:'2vh'}}> 
           <div style={{display:'flex', flexDirection:'column'}}>
             <DashboardTck 
               name="cookie" 
               number="2000" 
               total="Total Cookies" 
+              inactive={props.inactive}
             />
             <DashboardTck 
               name="script" 
-              number="2000" 
+              number="2000"
               total="Total Scripts" 
+              inactive={props.inactive}
             />
           </div>
         <div style={{display:'flex', flexDirection:'column'}}>
@@ -83,11 +86,13 @@ const DashboardScr = () => {
               name="categories" 
               number="2000"
               total="Total Categories"
+              inactive={props.inactive}
             />
             <DashboardTck 
               name="scan" 
               number="2000" 
               total="Pages Scanned" 
+              inactive={props.inactive}
             />
         </div>
         <DashPieChart

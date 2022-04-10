@@ -2,9 +2,17 @@ import React, {useState, useEffect} from "react";
 import { Col, Button, Row } from "antd";
 import '../../assets/css/accsettings.css';
 import Website from "../../component/accsettings/website";
+import DeleteAccPop from "../../component/popup/deleteAccPop";
+import Plans from "../../component/accsettings/plans";
+import Invoice from "../../component/accsettings/invoice";
 
 const AccsettingScr=()=>{
   const [head, setHead] = useState('website');
+  const [del, setDel] = useState(false);
+
+  const toggleDel=()=>{
+    setDel(!del);
+  }
   
   const handletoggle = (value) => {
     setHead(value); 
@@ -43,14 +51,15 @@ const AccsettingScr=()=>{
             justifyContent: "flex-end",
           }}
         >
-            <Button onClick={()=>console.log('acc setting')} type="primary" style={{width:'12vw'}} className="as-primary-btn">
+            <button onClick={toggleDel} style={{width:'12vw'}} className="as-primary-btn">
               <p className="as-delete-acc">Delete My account</p>
-            </Button>
+            </button>
+            {del?<DeleteAccPop closeDel={setDel}/>:null}
         </Col>
       </Row>
       <Row>
         <p className="description">
-        Manage your websites, Billing and invoice here.
+        Manage your websites, plans, invoices, and billing details here.
         </p>
       </Row>
       <Row style={{backgroundColor:'white', borderRadius:'4px',boxShadow:'0px 0.5px 4px rgba(0, 0, 0, 0.2)'}}>
@@ -95,6 +104,8 @@ const AccsettingScr=()=>{
           </Row>
         </Col>
         {head==='website' && <Website/>}
+        {head==='plans' && <Plans/>}
+        {head==='invoice' && <Invoice/>}
       </Row>
       </div>
       )

@@ -11,7 +11,7 @@ function CookieTypesView(props) {
   const [modal, setModal] = useState(false);
   const [add, setAdd] = useState(false);
 
-  const toggleAdd = (props) => {
+  const toggleAdd = () => { 
     setAdd(!add);
   };
  
