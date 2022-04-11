@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import InputView from "../../component/input/inputView";
+import React, {useState} from "react";
+import '../../assets/css/accsettings.css';
 import SvgIcon from "../../assets/Icon_apps";
-import { Input, Select} from "antd";
+import {Select} from 'antd';
 
 const { Option } = Select;
 
-const CompanyWebsiteInfo=()=>{
-    const [color,setColor] = useState(false);
+const Pay=()=>{
     const [country, setCountry]= useState(["Afghanistan","Albania","Algeria","American Samoa","Andorra","Angola","Anguilla","Antarctica","Antigua and Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas (the)","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia (Plurinational State of)","Bonaire, Sint Eustatius and Saba","Bosnia and Herzegovina","Botswana","Bouvet Island","Brazil","British Indian Ocean Territory (the)","Brunei Darussalam","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia","Cameroon","Canada","Cayman Islands (the)","Central African Republic (the)",
 	"Chad","Chile","China","Christmas Island","Cocos (Keeling) Islands (the)","Colombia","Comoros (the)","Congo (the Democratic Republic of the)","Congo (the)","Cook Islands (the)","Costa Rica","Croatia","Cuba","Curaçao","Cyprus","Czechia","Côte d'Ivoire","Denmark","Djibouti","Dominica","Dominican Republic (the)","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Falkland Islands (the) [Malvinas]","Faroe Islands (the)","Fiji","Finland","France","French Guiana","French Polynesia","French Southern Territories (the)","Gabon","Gambia (the)","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland",
     "Grenada","Guadeloupe","Guam","Guatemala","Guernsey","Guinea","Guinea-Bissau","Guyana","Haiti","Heard Island and McDonald Islands","Holy See (the)","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran (Islamic Republic of)","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Korea (the Democratic People's Republic of)","Korea (the Republic of)","Kuwait","Kyrgyzstan","Lao People's Democratic Republic (the)","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macao","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta",
@@ -16,6 +15,7 @@ const CompanyWebsiteInfo=()=>{
     ]);
 
     const [children, setChildren] = useState([]);
+
     
     for (let i = 0; i < country.length; i++) {
       children.push(<Option className='lang-list' key={i}>{country[i]}</Option>);
@@ -24,84 +24,42 @@ const CompanyWebsiteInfo=()=>{
     const handleChange=(value)=> {
       console.log(`selected ${value}`);
     }
-    const toggle=()=>{
-        setColor(!color);
-    } 
-    return (
-        <div style={{display:'flex',flexDirection:'column', alignItems:'flex-start', justifyContent:'flex-start'}}>
-            <p className="privacy-policy-maintitle">Company & Website Info</p>
-            <div className="input-box">
-                <div style={{display:'flex',flexDirection:'column'}}>
-                    <div style={{display:'flex',flexDirection:'row'}}>
-                        <p className="input-label">Website URL ?</p>
-                        <div style={{display:'flex', justifyContent:'flex-start'}}><SvgIcon name='asterisk'/></div>
-                    </div>
-                    <Input style={{width:'70vw',height:'5.2vh',}} placeholder={'http://www.mysite.com'}/>
-                </div> 
-            </div>
-            <div style={{display:'flex',width:'70vw',marginTop:'2vh', flexDirection:'row', justifyContent:'space-between'}}>
-                <InputView name="Company name in full" placeholder='' />
-                <InputView name="Address" placeholder='' />
-            </div>
-            <div style={{display:'flex',width:'70vw',marginTop:'2vh', flexDirection:'row', justifyContent:'space-between'}}>
-                <InputView name="Email ID" placeholder='' />
-                <InputView name="Zip code/ Postal code" placeholder='' />
-            </div>
-            <div style={{display:'flex',width:'70vw',marginTop:'2vh', flexDirection:'row', justifyContent:'space-between'}}>
-                <InputView name="Phone number" placeholder='' />
-                <div className="input-box">
+
+    return(
+        <div className="as-website">
+            <div className='as' style={{display:"flex",paddingLeft:'1.2vw',color:'#6F6F6F',flexDirection:'column', justifyContent:'center',fontSize:'1vw', alignItems:'flex-start'}}>
+                <p style={{color:'#373737'}}>Click the link below to manage your payment method</p>
+                <button style={{width:'15vw'}} className="as-primary-btn">
+                    <p className="as-delete-acc">Stripe Customer Portal</p>
+                </button>
+                <p style={{fontSize:'1.2vw', marginTop:'5vh'}}>Tax Details</p>
+                
+                <div className="input-box" style={{margin:0}}>
                     <div style={{display:'flex',flexDirection:'column'}}>
                         <div style={{display:'flex',flexDirection:'row'}}>
                             <p className="input-label">Country</p>
                             <div style={{display:'flex', justifyContent:'flex-start'}}><SvgIcon name='asterisk'/></div>
                         </div>
                         <div className="input">
-                            <form style={{cursor:'pointer'}}>
-                                <Select
-                                    allowClear
-                                    style={{ width:'33.6vw', height:'5vh' }}
-                                    placeholder="Please select"
-                                    defaultValue={['India']}
-                                    onChange={handleChange}
-                                    className='ant-select-selection-selected-value'
-                                    >
-                                    {children}
-                                </Select>
-                            </form>
+                            <Select
+                                allowClear
+                                style={{ width: '25vw' }}
+                                placeholder="Please select"
+                                defaultValue={['India']}
+                                onChange={handleChange}
+                                className='ant-select-selection-selected-value'
+                                >
+                                {children}
+                            </Select>
                         </div> 
                     </div>
                 </div>
             </div>
-            <div style={{display:'flex',width:'70vw',marginTop:'2vh', flexDirection:'row', justifyContent:'space-between'}}>
-            <div className="input-box">
-                    <div style={{display:'flex',flexDirection:'column'}}>
-                        <div style={{display:'flex',flexDirection:'row'}}>
-                            <p className="input-label">We use this website for</p>
-                            <div style={{display:'flex', justifyContent:'flex-start'}}><SvgIcon name='asterisk'/></div>
-                        </div>
-                        <div className="input">
-                            <form style={{cursor:'pointer'}}>
-                                <select id="web" name="website" className="select" style={{width:'33.6vw', height:'5vh'}}>
-                                    <option value="is">Information Sharing</option>
-                                    <option value="sh">Shopping</option>
-                                    <option value="ch">Charity</option>
-                                    <option value="ot">Other</option>
-                                </select>
-                            </form>
-                        </div> 
-                    </div>
-                </div>
-                <InputView name="State/ Territory/ Province" placeholder='' />
-            </div>
-            <div style={{display:'flex', flexDirection:'row',alignItems:'center', width:'20vw', marginTop:'2vh'}}>
-                <div onClick={toggle} className='check' style={{backgroundColor:color?'#7A4EB6':''}}/>
-                <p style={{marginLeft:'1vw', marginBottom:0, fontSize:'1vw' }}>I agree to the <a href="#">terms and conditions</a></p>
-            </div>
-            <div className="save">
-                <button className="submit" style={{margin:'0vw', height:'6vh', width:'10vw'}}>Save & Proceed</button>
+            <div className="submitpop" style={{width:'76vw'}}>
+                  <button className="as-web-submit">Update</button>
             </div>
         </div>
     )
 }
 
-export default CompanyWebsiteInfo;
+export default Pay;

@@ -5,6 +5,7 @@ import Website from "../../component/accsettings/website";
 import DeleteAccPop from "../../component/popup/deleteAccPop";
 import Plans from "../../component/accsettings/plans";
 import Invoice from "../../component/accsettings/invoice";
+import Pay from "../../component/accsettings/pay";
 
 const AccsettingScr=()=>{
   const [head, setHead] = useState('website');
@@ -103,9 +104,10 @@ const AccsettingScr=()=>{
             </Col>
           </Row>
         </Col>
-        {head==='website' && <Website/>}
-        {head==='plans' && <Plans/>}
-        {head==='invoice' && <Invoice/>}
+        {head === 'website' && <Website/>}
+        {head === 'plans' && <Plans/>}
+        {head === 'invoice' && <Invoice/>}
+        {head === 'pay' && <Pay/>}
       </Row>
       </div>
       )
