@@ -6,7 +6,7 @@ import Cbcolour from "../../component/consentbanner/cbcolour";
 import Cblayout from "../../component/consentbanner/cblayout";
 import Cbcontent from "../../component/consentbanner/cbcontent";
 import Cbbehaviour from "../../component/consentbanner/cbbehaviour";
-import Cbpreview from "../../component/consentbanner/shrtpreview";
+import Cbpreview from "../../component/consentbanner/cbpreview";
 
 const ConsentbannerScr = (props) => {
   const [activemenu, setActiveMenu] = useState("Layout");
@@ -17,6 +17,12 @@ const ConsentbannerScr = (props) => {
   const [cbtext, setCbtext] = useState(
     "This website uses cookies that help the website to function and also to track how you interact with it. We will only use the cookies if you consent to it by clicking on Accept. You can also manage individual cookie preferences from Settings."
   );
+  const [cbttl, setCbttl] = useState("Cookie Consent");
+  const [logolink, setLogolink] = useState("");
+  const [readlink, setReadlink] = useState("");
+  const [tsaaro, setTsaaro] = useState(true);
+  const [logo, setLogo] = useState(false);
+  const [close, setClose] = useState(true);
   // const [darkmode, setDarkmode] = useState(false);
 
   const handleMenu = (id) => {
@@ -157,7 +163,15 @@ const ConsentbannerScr = (props) => {
           <div style={{ width: "394px" }}></div>
         )}
         {bannermenu[1] === 1 ? (
-          <Cbcontent DefTxt={setCbtext} />
+          <Cbcontent
+            DefTxt={setCbtext}
+            DefTtl={setCbttl}
+            DefTsaaro={setTsaaro}
+            DefLogo={setLogo}
+            DefClose={setClose}
+            DefLogolink={setLogolink}
+            DefReadlink={setReadlink}
+          />
         ) : (
           <div style={{ width: "394px" }}></div>
         )}
@@ -192,8 +206,30 @@ const ConsentbannerScr = (props) => {
             alignItems: `${cbtype == "top" ? "flex-start" : "center"}`,
           }}
         >
-          {cbtype == "top" ? <Cbpreview theme={cbcolor} text={cbtext} /> : null}
-          {cbtype == "tf" ? <Cbpreview theme={cbcolor} text={cbtext} /> : null}
+          {cbtype == "top" ? (
+            <Cbpreview
+              theme={cbcolor}
+              text={cbtext}
+              title={cbttl}
+              tsaaro={tsaaro}
+              logo={logo}
+              logolink={logolink}
+              readlink={readlink}
+              close={close}
+            />
+          ) : null}
+          {cbtype == "tf" ? (
+            <Cbpreview
+              theme={cbcolor}
+              text={cbtext}
+              title={cbttl}
+              tsaaro={tsaaro}
+              logo={logo}
+              logolink={logolink}
+              readlink={readlink}
+              close={close}
+            />
+          ) : null}
         </div>
         <div
           style={{
@@ -230,8 +266,30 @@ const ConsentbannerScr = (props) => {
             alignItems: `${cbtype == "btm" ? "flex-end" : "center"}`,
           }}
         >
-          {cbtype == "btm" ? <Cbpreview theme={cbcolor} text={cbtext} /> : null}
-          {cbtype == "bf" ? <Cbpreview theme={cbcolor} text={cbtext} /> : null}
+          {cbtype == "btm" ? (
+            <Cbpreview
+              theme={cbcolor}
+              text={cbtext}
+              title={cbttl}
+              tsaaro={tsaaro}
+              logo={logo}
+              logolink={logolink}
+              readlink={readlink}
+              close={close}
+            />
+          ) : null}
+          {cbtype == "bf" ? (
+            <Cbpreview
+              theme={cbcolor}
+              text={cbtext}
+              title={cbttl}
+              tsaaro={tsaaro}
+              logo={logo}
+              logolink={logolink}
+              readlink={readlink}
+              close={close}
+            />
+          ) : null}
         </div>
       </div>
     </div>
