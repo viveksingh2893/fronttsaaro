@@ -26,7 +26,7 @@ const PlansComp=(props)=>{
                 {props.website}
             </p>
             <div style={{display:'flex',width:'12vw',flex:'1.2',flexDirection:'row',alignItems:'center', justifyContent:'flex-start', cursor:'pointer'}}>
-                <p style={{display:'flex',alignItems:'center', padding:'.3vw',color:'red',backgroundColor:'lightpink',borderRadius:'4px',margin:0}}>
+                <p style={{display:'flex',width:'9vw',justifyContent:'space-around',alignItems:'center', padding:'.3vw',color:'red',backgroundColor:'lightpink',borderRadius:'4px',margin:0}}>
                 <SvgIcon name='delete cookie'/>
                 Cancel Plan
                 </p>
