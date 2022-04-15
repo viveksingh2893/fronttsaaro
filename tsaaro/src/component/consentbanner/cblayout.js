@@ -28,17 +28,17 @@ const Cblayout = (props) => {
 
   return (
     <div>
-      <Dropmenu topmargin="0px" opthead="Comply With" />
-      <Dropmenu topmargin="15px" opthead="Default Language" />
-      <Dropmenu topmargin="15px" opthead="Consent Type" />
+      <Dropmenu topmargin="0vw" opthead="Comply With" />
+      <Dropmenu topmargin="1.52vh" opthead="Default Language" />
+      <Dropmenu topmargin="1.52vh" opthead="Consent Type" />
       <div
         style={{
-          marginTop: "15px",
+          marginTop: "1.52vh",
           width: "100%",
-          height: "375px",
+          height: "37.68vh",
           backgroundColor: "#fff",
-          borderRadius: "5px",
-          padding: "17px",
+          borderRadius: "4px",
+          padding: ".9vw",
         }}
       >
         <div>
@@ -47,8 +47,8 @@ const Cblayout = (props) => {
         <div
           style={{
             width: "100%",
-            height: "300px",
-            marginTop: "30px",
+            height: "30.14vh",
+            marginTop: "3vh",
             display: "flex",
             flexDirection: "column",
           }}
@@ -62,15 +62,15 @@ const Cblayout = (props) => {
           >
             <div
               style={{
-                width: "136px",
-                height: "96px",
+                width: "7.1vw",
+                height: "9.64vh",
                 backgroundColor: "#F6F6F6",
-                borderRadius: "2px",
+                borderRadius: "4px",
                 boxShadow: `0px 0px 4px rgba(0, 0, 0, 0.25)`,
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "flex-end",
-                padding: "15px",
+                padding: ".9vw",
                 cursor: "pointer",
               }}
               onClick={() => {
@@ -80,24 +80,24 @@ const Cblayout = (props) => {
               <div
                 style={{
                   width: "100%",
-                  height: "15px",
+                  height: "1.5vh",
                   backgroundColor: `${active == "bf" ? "#715FD2" : "#ADADAD"}`,
-                  borderRadius: "2px",
+                  borderRadius: "4px",
                 }}
               ></div>
             </div>
             <div
               style={{
-                width: "136px",
-                height: "96px",
+                width: "7.1vw",
+                height: "9.64vh",
                 backgroundColor: "#F6F6F6",
-                borderRadius: "2px",
-                marginLeft: "40px",
+                borderRadius: "4px",
+                marginLeft: "2.1vw",
                 boxShadow: `0px 0px 4px rgba(0, 0, 0, 0.25)`,
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "flex-start",
-                padding: "15px",
+                padding: ".9vw",
                 cursor: "pointer",
               }}
               onClick={() => {
@@ -107,9 +107,9 @@ const Cblayout = (props) => {
               <div
                 style={{
                   width: "100%",
-                  height: "15px",
+                  height: "1.51vh",
                   backgroundColor: `${active == "tf" ? "#715FD2" : "#ADADAD"}`,
-                  borderRadius: "2px",
+                  borderRadius: "4px",
                 }}
               ></div>
             </div>
@@ -118,16 +118,16 @@ const Cblayout = (props) => {
             style={{
               display: "flex",
               flexDirection: "row",
-              marginTop: "40px",
+              marginTop: "4vh",
               width: "100%",
             }}
           >
             <div
               style={{
-                width: "136px",
-                height: "96px",
+                width: "7.1vw",
+                height: "9.64vh",
                 backgroundColor: "#F6F6F6",
-                borderRadius: "2px",
+                borderRadius: "4px",
                 boxShadow: `0px 0px 4px rgba(0, 0, 0, 0.25)`,
                 display: "flex",
                 justifyContent: "center",
@@ -141,20 +141,20 @@ const Cblayout = (props) => {
               <div
                 style={{
                   width: "100%",
-                  height: "15px",
+                  height: "1.51vh",
                   backgroundColor: `${active == "btm" ? "#715FD2" : "#ADADAD"}`,
-                  borderBottomLeftRadius: "2px",
-                  borderBottomRightRadius: "2px",
+                  borderBottomLeftRadius: "4px",
+                  borderBottomRightRadius: "4px",
                 }}
               ></div>
             </div>
             <div
               style={{
-                width: "136px",
-                height: "96px",
+                width: "7.1vw",
+                height: "9.64vh",
                 backgroundColor: "#F6F6F6",
-                borderRadius: "2px",
-                marginLeft: "40px",
+                borderRadius: "4px",
+                marginLeft: "2.1vw",
                 boxShadow: `0px 0px 4px rgba(0, 0, 0, 0.25)`,
                 display: "flex",
                 justifyContent: "center",
@@ -168,10 +168,10 @@ const Cblayout = (props) => {
               <div
                 style={{
                   width: "100%",
-                  height: "15px",
+                  height: "1.51vh",
                   backgroundColor: `${active == "top" ? "#715FD2" : "#ADADAD"}`,
-                  borderTopLeftRadius: "2px",
-                  borderTopRightRadius: "2px",
+                  borderTopLeftRadius: "4px",
+                  borderTopRightRadius: "4px",
                 }}
               ></div>
             </div>

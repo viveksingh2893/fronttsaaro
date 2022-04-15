@@ -5,26 +5,25 @@ const Dropmenu = (props) => {
   return (
     <div
       style={{
-        width: "394px",
-        height: "64px",
+        width: "20.52vw",
+        height: "6.44vh",
         backgroundColor: "#fff",
-        borderRadius: "5px",
+        borderRadius: "4px",
         marginTop: props.topmargin,
         display: "flex",
         flexDirection: "row",
-        justifyContent: "flex-start",
+        justifyContent: "space-around",
         alignItems: "center",
       }}
     >
       <div
         style={{
-          width: "240px",
-          height: "40px",
-          marginLeft: "19px",
+          width: "12.5vw",
+          height: "4vh",
+          marginLeft: "9.9vw",
           display: "flex",
-          justifyContent: "flex-start",
-          alignItems: "center",
           backgroundColor: "#fff",
+          margin:0
         }}
       >
         <p className="drpdwn-title">{props.opthead}</p>

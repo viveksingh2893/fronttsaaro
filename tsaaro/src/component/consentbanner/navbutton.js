@@ -8,8 +8,8 @@ const Navbutton = (props) => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        height: "80px",
-        width: "133px",
+        height: "8.03vh",
+        width: "6.93vw",
         backgroundColor: props.backcolor,
         cursor: "pointer",
       }}
@@ -20,13 +20,15 @@ const Navbutton = (props) => {
       <SvgIcon name={props.iconname} />
       <p
         style={{
+          fontFamily:'Roboto',
           fontStyle: "normal",
           fontWeight: "500",
-          fontSize: "12px",
-          lineHeight: "14px",
+          fontSize: "1vw",
+          lineHeight: "1.2vw",
           display: "flex",
           alignItems: "center",
           textAlign: "center",
+          margin:0,
           color: `${props.textcolor}`,
         }}
       >

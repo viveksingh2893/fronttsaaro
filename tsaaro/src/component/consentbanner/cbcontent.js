@@ -53,42 +53,41 @@ const Cbcontent = (props) => {
 
   return (
     <div>
-      <Dropmenu topmargin="0px" opthead="Comply With" />
-      <Dropmenu topmargin="15px" opthead="Default Language" />
+      <Dropmenu topmargin="0vw" opthead="Comply With" />
+      <Dropmenu topmargin="1.51vh" opthead="Default Language" />
       <div>
         <div
           style={{
-            width: "394px",
-            height: "64px",
+            width: "20.52vw",
+            height: "6.42vh",
             backgroundColor: "#fff",
-            borderBottomLeftRadius: `${boxopen ? "0px" : "5px"}`,
-            borderBottomRightRadius: `${boxopen ? "0px" : "5px"}`,
-            borderTopLeftRadius: "5px",
-            borderTopRightRadius: "5px",
-            marginTop: "15px",
+            borderBottomLeftRadius: `${boxopen ? "0px" : "4px"}`,
+            borderBottomRightRadius: `${boxopen ? "0px" : "4px"}`,
+            borderTopLeftRadius: "4px",
+            borderTopRightRadius: "4px",
+            marginTop: "1.51vh",
             display: "flex",
             flexDirection: "row",
-            justifyContent: "flex-start",
+            justifyContent: "space-around",
             alignItems: "center",
           }}
         >
           <div
             style={{
-              width: "240px",
-              height: "40px",
+              width: "12.5vw",
+              height: "4vh",
               marginLeft: "19px",
               display: "flex",
-              justifyContent: "flex-start",
-              alignItems: "center",
               backgroundColor: "#fff",
+              margin:0
             }}
           >
             <p className="drpdwn-title">Cookie Notice</p>
           </div>
           <div
             style={{
-              width: "120px",
-              height: "40px",
+              width: "6.25vw",
+              height: "4vh",
               display: "flex",
               flexDirection: "row",
               justifyContent: "flex-end",
@@ -105,23 +104,23 @@ const Cbcontent = (props) => {
         {boxopen ? (
           <div
             style={{
-              width: "394px",
-              height: "500px",
+              width: "20.52vw",
+              height: "50.25vh",
               backgroundColor: "#fff",
               marginTop: "1px",
-              borderBottomLeftRadius: "5px",
-              borderBottomRightRadius: "5px",
-              paddingLeft: "19px",
-              paddingRight: "19px",
-              paddingTop: "8px",
-              paddingBottom: "8px",
-              overflowY: "scroll",
+              borderBottomLeftRadius: "4px",
+              borderBottomRightRadius: "4px",
+              paddingLeft: "1vw",
+              paddingRight: "1vw",
+              paddingTop: ".87vh",
+              paddingBottom: ".87vh",
+              overflowY: "auto",
             }}
           >
             <div
               style={{
-                width: "90px",
-                height: "40px",
+                width: "4.7vw",
+                height: "4vh",
                 display: "flex",
               }}
             >
@@ -129,10 +128,11 @@ const Cbcontent = (props) => {
                 style={{
                   fontStyle: "normal",
                   fontWeight: 500,
-                  fontSize: "14px",
-                  lineHeight: "16px",
+                  fontSize: "1vw",
+                  lineHeight: "1.2vw",
                   display: "flex",
                   alignItems: "center",
+                  justifyContent:'center'
                 }}
               >
                 Title
@@ -140,14 +140,16 @@ const Cbcontent = (props) => {
             </div>
             <TextArea
               style={{
-                width: "346px",
-                height: "40px",
-                borderRadius: "5px",
+                width: "17.02vw",
+                height: "5vh",
+                borderRadius: "4px",
                 backgroundColor: "#F0EDFF",
-                borderWidth: "0px",
+                borderWidth: "0vw",
                 borderColor: "transparent",
-                padding: "10px",
+                padding: ".5vw",
                 outline: "none",
+                fontSize:'1vw',
+                lineHeight:'1.2vw',
               }}
               placeholder="Cookie Consent"
               value={title}
@@ -156,18 +158,22 @@ const Cbcontent = (props) => {
                 props.DefTtl(e.target.value);
               }}
             />
-            <div style={{ marginTop: "16px", width: "99px" }}>
+            <div style={{ 
+              marginTop: "1.63vh", 
+              fontSize:'1vw',
+              lineHeight:'1.2vw',
+              }}>
               <p>Default text</p>
             </div>
             <TextArea
               style={{
-                width: "346px",
-                height: "160px",
-                borderRadius: "5px",
+                width: "17.02vw",
+                height: "16.1vh",
+                borderRadius: "4px",
                 backgroundColor: "#F0EDFF",
-                borderWidth: "0px",
+                borderWidth: "0vw",
                 borderColor: "transparent",
-                padding: "10px",
+                padding: ".5vw",
                 outline: "none",
               }}
               placeholder="This website uses cookies that help the website to function and also to track how you interact with it. We will only use the cookies if you consent to it by clicking on Accept. You can also manage individual cookie preferences from Settings."
@@ -179,21 +185,21 @@ const Cbcontent = (props) => {
             />
             <div
               style={{
-                width: "346px",
+                width: "17.02vw",
                 flexDirection: "row",
                 display: "flex",
-                marginTop: "20px",
+                marginTop: "1.85vh",
+                justifyContent:'space-between'
               }}
             >
-              <div style={{ width: "100px", paddingTop: "5px" }}>
+              <div style={{paddingTop: ".5vh" }}>
                 <p
                   style={{
                     fontStyle: "normal",
                     fontWeight: 500,
-                    fontSize: "14px",
-                    lineHeight: "16px",
+                    fontSize: "1vw",
+                    lineHeight: "1.2vw",
                     display: "flex",
-                    alignItems: "center",
                   }}
                 >
                   Close Button
@@ -201,7 +207,6 @@ const Cbcontent = (props) => {
               </div>
               <div
                 style={{
-                  width: "246px",
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "flex-end",
@@ -219,19 +224,20 @@ const Cbcontent = (props) => {
             </div>
             <div
               style={{
-                width: "346px",
+                width: "17.02vw",
                 flexDirection: "row",
                 display: "flex",
-                marginTop: "10px",
+                marginTop: ".92vh",
+                justifyContent:'space-between'
               }}
             >
-              <div style={{ width: "246px", paddingTop: "5px" }}>
+              <div style={{paddingTop: ".5vh" }}>
                 <p
                   style={{
                     fontStyle: "normal",
                     fontWeight: 500,
-                    fontSize: "14px",
-                    lineHeight: "16px",
+                    fontSize: "1vw",
+                    lineHeight: "1.2vw",
                     display: "flex",
                     alignItems: "center",
                   }}
@@ -241,7 +247,6 @@ const Cbcontent = (props) => {
               </div>
               <div
                 style={{
-                  width: "100px",
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "flex-end",
@@ -259,19 +264,20 @@ const Cbcontent = (props) => {
             </div>
             <div
               style={{
-                width: "346px",
+                width: "17.02vw",
                 flexDirection: "row",
                 display: "flex",
-                marginTop: "10px",
+                marginTop: "1vh",
+                justifyContent:'space-between'
               }}
             >
-              <div style={{ width: "246px", paddingTop: "5px" }}>
+              <div style={{paddingTop: ".5vh" }}>
                 <p
                   style={{
                     fontStyle: "normal",
                     fontWeight: 500,
-                    fontSize: "14px",
-                    lineHeight: "16px",
+                    fontSize: "1vw",
+                    lineHeight: "1.2vw",
                     display: "flex",
                     alignItems: "center",
                   }}
@@ -281,7 +287,6 @@ const Cbcontent = (props) => {
               </div>
               <div
                 style={{
-                  width: "100px",
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "flex-end",
@@ -300,13 +305,13 @@ const Cbcontent = (props) => {
             {mylogo ? (
               <TextArea
                 style={{
-                  width: "346px",
-                  height: "40px",
-                  borderRadius: "5px",
+                  width: "17.02vw",
+                  height: "4vh",
+                  borderRadius: "4px",
                   backgroundColor: "#F0EDFF",
-                  borderWidth: "0px",
+                  borderWidth: "0vw",
                   borderColor: "transparent",
-                  padding: "10px",
+                  padding: ".5vw",
                   outline: "none",
                 }}
                 placeholder="Logo URL"
@@ -319,19 +324,20 @@ const Cbcontent = (props) => {
             ) : null}
             <div
               style={{
-                width: "346px",
+                width: "17.02vw",
                 flexDirection: "row",
                 display: "flex",
-                marginTop: "10px",
+                marginTop: "1vh",
+                justifyContent:'space-between'
               }}
             >
-              <div style={{ width: "246px", paddingTop: "5px" }}>
+              <div style={{paddingTop: ".5vh" }}>
                 <p
                   style={{
                     fontStyle: "normal",
                     fontWeight: 500,
-                    fontSize: "14px",
-                    lineHeight: "16px",
+                    fontSize: "1vw",
+                    lineHeight: "1.2vw",
                     display: "flex",
                     alignItems: "center",
                   }}
@@ -341,7 +347,6 @@ const Cbcontent = (props) => {
               </div>
               <div
                 style={{
-                  width: "100px",
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "flex-end",
@@ -365,13 +370,15 @@ const Cbcontent = (props) => {
             {readmore ? (
               <TextArea
                 style={{
-                  width: "346px",
-                  height: "40px",
-                  borderRadius: "5px",
+                  width: "17.02vw",
+                  height: "5vh",
+                  borderRadius: "4px",
                   backgroundColor: "#F0EDFF",
-                  borderWidth: "0px",
+                  borderWidth: "0vw",
                   borderColor: "transparent",
-                  padding: "10px",
+                  padding: ".5vw",
+                  fontSize:'1vw',
+                  lineHeight:'1.2vw',
                   outline: "none",
                 }}
                 placeholder="Read More URL"

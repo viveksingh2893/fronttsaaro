@@ -8,44 +8,21 @@ const Cbpreview = (props) => {
     <div>
       <div
         style={{
-          width: "1242px",
+          width: "64.69vw",
           boxShadow: `0px 0px 4px rgba(0, 0, 0, 0.26)`,
-          borderRadius: "5px",
-          paddingLeft: "31px",
-          paddingRight: "31px",
-          paddingTop: "15px",
-          paddingBottom: "10px",
+          borderRadius: "4px",
+          padding:'1vw',
           flexDirection: "column",
           display: "flex",
           alignItems: "flex-start",
           backgroundColor: `${props.theme === "dark" ? "#373737" : "#fff"}`,
         }}
       >
-        {props.close ? (
-          <div
-            style={{
-              width: "1180px",
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "flex-end",
-              alignItems: "center",
-            }}
-          >
-            <div style={{ cursor: "pointer" }}>
-              {props.theme == "light" ? (
-                <SvgIcon name="cross" />
-              ) : (
-                <SvgIcon name="whitecross" />
-              )}
-            </div>
-          </div>
-        ) : null}
         <div
           style={{
-            width: "1180px",
             display: "flex",
             flexDirection: "row",
-            justifyContent: "flex-start",
+            justifyContent: "center",
             alignItems: "center",
           }}
         >
@@ -57,55 +34,63 @@ const Cbpreview = (props) => {
                 alignItems: "center",
               }}
             >
-              <Image width={120} preview={false} src={props.logolink} />
+              <Image width={'6.25vw'} preview={false} src={props.logolink} />
             </div>
           ) : null}
           <div
             style={{
-              width: "1060px",
-              padding: "20px",
               display: "flex",
               flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
             }}
           >
             <div
               style={{
-                width: "1040px",
                 display: "flex",
                 flexDirection: "row",
-                alignItems: "flex-start",
+                justifyContent:'space-between'
               }}
             >
               <p
                 style={{
-                  fontSize: "20px",
-                  lineHeight: "22px",
+                  fontSize: "1vw",
+                  lineHeight: "1.2vw",
                   fontWeight: 600,
                   color: `${props.theme === "light" ? "#000" : "#fff"}`,
-                  maxWidth: "1040px",
                 }}
               >
                 {props.title}
               </p>
+              {props.close ? (
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                  }}
+                >
+                  <div style={{ cursor: "pointer" }}>
+                    {props.theme == "light" ? (
+                      <SvgIcon name="cross" />
+                    ) : (
+                      <SvgIcon name="whitecross" />
+                    )}
+                  </div>
+                </div>
+              ) : null}
             </div>
             <div
               style={{
-                width: "1040px",
                 display: "flex",
                 flexDirection: "row",
               }}
             >
               <p
                 style={{
-                  fontSize: "18px",
-                  lineHeight: "22.5px",
+                  fontSize: "1vw",
+                  lineHeight: "1.2vw",
                   fontWeight: "lighter",
                   fontFamily: "sans-serif",
                   textAlign: "justify",
                   color: `${props.theme === "light" ? "#000" : "#fff"}`,
-                  maxWidth: "1040px",
                 }}
               >
                 {props.text} <a href={props.readlink}>Read More</a>
@@ -115,23 +100,21 @@ const Cbpreview = (props) => {
         </div>
         <div
           style={{
-            width: "1180px",
+            width: "100%",
             display: "flex",
             flexDirection: "row",
-            alignItems: "flex-end",
+            justifyContent:'space-between',
           }}
         >
-          <div
-            style={{
-              width: "180px",
-            }}
-          >
+          <div>
             {props.tsaaro ? (
               <p
                 style={{
                   fontFamily: "sans-serif",
                   textAlign: "start",
-                  lineHeight: "18px",
+                  fontSize:'1vw',
+                  lineHeight: "1.2vw",
+                  margin:0,
                   color: `${props.theme === "light" ? "#000" : "#fff"}`,
                 }}
               >
@@ -142,18 +125,15 @@ const Cbpreview = (props) => {
 
           <div
             style={{
-              width: "1000px",
               display: "flex",
               flexDirection: "row",
-              justifyContent: "flex-end",
-              // backgroundColor: "green",
             }}
           >
             <div
               style={{
-                width: "160px",
-                height: "50px",
-                marginLeft: "15px",
+                width: "8.33vw",
+                height: "5.03vh",
+                marginLeft: ".78vw",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
@@ -171,9 +151,9 @@ const Cbpreview = (props) => {
             </div>
             <div
               style={{
-                width: "160px",
-                height: "50px",
-                marginLeft: "15px",
+                width: "8.33vw",
+                height: "5.03vh",
+                marginLeft: ".78vw",
                 border: `1px solid ${
                   props.theme == "light" ? "#7A4EB6" : "#fff"
                 }`,
@@ -196,10 +176,10 @@ const Cbpreview = (props) => {
             </div>
             <div
               style={{
-                width: "160px",
-                height: "50px",
+                width: "8.33vw",
+                height: "5.03vh",
                 backgroundColor: "#7A4EB6",
-                marginLeft: "15px",
+                marginLeft: ".78vw",
                 borderRadius: "4px",
                 boxShadow: `0px 0.5px 4px rgba(0, 0, 0, 0.2)`,
                 display: "flex",

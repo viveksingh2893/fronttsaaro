@@ -367,3 +367,96 @@
   margin-left: 1vw;
   border-radius: 4px;
  }
+
+ .as-update-pop,
+  .as-update-pop-overlay {
+    display:flex;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+  }
+  
+  .as-update-pop-overlay {
+    background: rgba(49, 49, 49, 0.8);
+  }
+  .as-update-pop-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 32vh;
+    left: 32vw;
+    background: #f1f1f1;
+    border-radius: 4px;
+    width:32.56vw;
+    height:32.4vh;
+    padding:1.5vw;
+  }
+  
+  .as-update-pop-img {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  
+  img{display: flex;
+      width: 2vw;
+      height: 2vw;
+  }
+
+  .as-update-pop-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    color: #4acd96;
+  }
+  
+  .as-update-pop-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: .9vw;
+    line-height: 1vw;
+    display: flex;
+    text-align: center;
+    color: #6F6F6F;
+  }
+  
+  .as-update-pop-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 1vh;
+    margin: 1vw;
+  }
+
+  .as-update-pop-ok {
+    background: #7a4eb6;
+    border-radius: 4px;
+    width: 5.2vw;
+    height: 4.8vh;
+    color: white;
+    border:1px solid #7A4EB6;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    display: flex;
+  }

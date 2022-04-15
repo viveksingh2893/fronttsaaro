@@ -44,8 +44,6 @@ const Screen = () => {
               <Route path="/cm" element={<CookiemanagerScr />} />
               <Route path="/cb" element={<ConsentbannerScr />} />
               <Route path="/cl" element={<ConsentlogScr />} />
-              {/* <Route path="/cp" element={<CookiepolicyScr />} />
-              <Route path="/pp" element={<PrivacypolicyScr />} /> */}
               <Route path="/ss" element={<SitesettingScr />} />
               <Route path="/as" element={<AccsettingScr />} />
             </Routes>
