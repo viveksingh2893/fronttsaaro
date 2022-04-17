@@ -23,7 +23,7 @@ const WebsiteComp=(props)=>{
         <div className="as-website-content">
             <p style={{width:'17vw',flex:'1.65',margin:0,}}>{props.website}</p>
             <div style={{display:'flex',flex:'1', justifyContent:'center', alignItems:'center'}}>
-                <p style={{textAlign:'center',backgroundColor:'green',width:'5vw',color:'white',padding:'.5vh', borderRadius:'4px',margin:0,}}>
+                <p style={{textAlign:'center',backgroundColor:props.plan==='ultimate'?'green':'gray',width:'5vw',color:'white',padding:'.5vh', borderRadius:'4px',margin:0,}}>
                     {props.plan}
                 </p>
             </div>

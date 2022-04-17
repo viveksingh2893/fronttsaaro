@@ -19,9 +19,16 @@ function HeaderMenuView(props) {
     setPass(!pass);
   }
 
-  const toggleSite = () => { 
-    setSite(!site);
+  const toggleSite = (e) => {
+    console.log("toggle..........");
+    window.addEventListener('click',()=>{
+    }) 
+    setSite(!site); 
   };
+
+  // const toggleSite = () => { 
+  //   setSite(!site);
+  // };
 
   const toggle =()=>{
     if (change===false){
@@ -66,12 +73,12 @@ function HeaderMenuView(props) {
             <option value="fiat">Fiat</option>
             <option value="audi">Audi</option>
           </select>
-        </form>
+        </form> 
       </div>
       <div className="btn1">
-        <a href="#" className="a2" onClick={toggleSite}>
+        <p className="a2" style={{cursor:'pointer'}} onClick={toggleSite}>
           + Add Site
-        </a>
+        </p>
       </div> 
       
       <div className="acc" style={{marginLeft:props.inactive?'52.5vw':'45.5vw'}}>

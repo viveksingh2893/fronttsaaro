@@ -10,6 +10,7 @@ import Pay from "../../component/accsettings/pay";
 const AccsettingScr=()=>{
   const [head, setHead] = useState('website');
   const [del, setDel] = useState(false);
+  const [plan, setPlan] = useState('ultimate');
 
   const toggleDel=()=>{
     setDel(!del);
@@ -75,6 +76,7 @@ const AccsettingScr=()=>{
             >
               <h3 className="as-toggle" style={{color:head=='website'?'#5647AB':'#6F6F6F'}}>Websites</h3>
             </Col>
+            {plan==='ultimate'?<>
             <Col
             //  onChange={handletoggle}
               onClick={()=>handletoggle('plans')}
@@ -102,9 +104,10 @@ const AccsettingScr=()=>{
             >
               <h3 className="as-toggle" style={{color:head=='pay'?'#5647AB':'#6F6F6F'}}>Billing/Payment</h3>
             </Col>
+            </>:null}
           </Row>
         </Col>
-        {head === 'website' && <Website/>}
+        {head === 'website' && <Website plan={plan}/>}
         {head === 'plans' && <Plans/>}
         {head === 'invoice' && <Invoice/>}
         {head === 'pay' && <Pay/>}
