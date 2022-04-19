@@ -1,13 +1,13 @@
 import { Row, Col } from "antd";
 import DashboardTck from "../../component/dashboard/dashticket";
 import SvgIcon from "../../assets/Icon_apps";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import '../../assets/css/dashboard.css';
 import DashPieChart from "../../component/dashboard/dashPieChart";
 import DashboardLogView from "../../component/dashboard/dashboardLogView";
 import ScanAgainPop from "../../component/popup/scanAgainPopView";
 import Postapi from "../../api/Postapi";
-import { OmitProps } from "antd/lib/transfer/ListBody";
+import WebsitePop from "../../component/popup/websitePop";
 
 const DashboardScr = (props) => {
   const [activate, setActivate]=useState(false);
@@ -15,6 +15,7 @@ const DashboardScr = (props) => {
   const [scan, setScan] = useState(false);
   const [message,setMessage]=useState();
   const [scantitle,setTitle]=useState(); 
+  const [website, setWebsite] = useState(false);
 
   const toggle=()=>{
     setActivate(true);
@@ -135,6 +136,7 @@ const DashboardScr = (props) => {
         />
       </div>
       {scan && (<ScanAgainPop title={scantitle} message={message} closeScan={setScan}/>)}
+      {website===false?<WebsitePop closeWeb={setWebsite}/>:null}
     </div> 
   );
 };

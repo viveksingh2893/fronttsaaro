@@ -4,13 +4,19 @@ import SvgIcon from "../../assets/Icon_apps";
 import {Popover, Button} from 'antd';
 import {CodeTwoTone} from '@ant-design/icons';
 import ReactivePop from "../popup/reactivepop";
+import ScriptPop from "../popup/scriptPop";
 
 const WebsiteComp=(props)=>{
     const [reactive, setReactive] = useState(false);
+    const [script, setScript] = useState(false);
 
-  const toggleR = () => { 
-    setReactive(!reactive);
-  };
+    const togglepop=()=>{
+        setScript(!script);
+    }
+
+    const toggleR = () => { 
+        setReactive(!reactive);
+    };
 
     const subs = (
         <div style={{display:'flex', flexDirection:'row', justifyContent:'center',alignItems:'center', width:'20vw'}}>
@@ -41,12 +47,13 @@ const WebsiteComp=(props)=>{
                     </Button>
                 </Popover>
             </div>
-            <div style={{display:'flex',width:'10vw',flex:'1',cursor:'pointer', flexDirection:'row',borderRadius:'4px', backgroundColor:'#7A4EB6', justifyContent:'center', padding:'.3vw', alignItems:'center'}}>
+            <div onClick={togglepop} style={{display:'flex',width:'10vw',flex:'1',cursor:'pointer', flexDirection:'row',borderRadius:'4px', backgroundColor:'#7A4EB6', justifyContent:'center', padding:'.3vw', alignItems:'center'}}>
                 <CodeTwoTone style={{fontSize: '1.5vw', color:'white'}}/>
                 <p style={{textAlign:'center',fontSize:'1vw',paddingLeft:'.5vw',margin:0, color:'white'}}>
                     Install Banner
                 </p>
             </div>
+            {script?<ScriptPop closeScript={setScript}/>:null}
         </div>
     )
 }
