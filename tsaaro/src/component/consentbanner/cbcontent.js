@@ -23,6 +23,10 @@ const Cbcontent = (props) => {
     setMylogo(!mylogo);
   };
 
+  const handleRead = () => {
+    setReadmore(!readmore);
+  };
+
   const handleClose = () => {
     setClose(!close);
   };
@@ -79,7 +83,7 @@ const Cbcontent = (props) => {
               marginLeft: "19px",
               display: "flex",
               backgroundColor: "#fff",
-              margin:0
+              margin: 0,
             }}
           >
             <p className="drpdwn-title">Cookie Notice</p>
@@ -132,7 +136,7 @@ const Cbcontent = (props) => {
                   lineHeight: "1.2vw",
                   display: "flex",
                   alignItems: "center",
-                  justifyContent:'center'
+                  justifyContent: "center",
                 }}
               >
                 Title
@@ -148,8 +152,8 @@ const Cbcontent = (props) => {
                 borderColor: "transparent",
                 padding: ".5vw",
                 outline: "none",
-                fontSize:'1vw',
-                lineHeight:'1.2vw',
+                fontSize: "1vw",
+                lineHeight: "1.2vw",
               }}
               placeholder="Cookie Consent"
               value={title}
@@ -158,11 +162,13 @@ const Cbcontent = (props) => {
                 props.DefTtl(e.target.value);
               }}
             />
-            <div style={{ 
-              marginTop: "1.63vh", 
-              fontSize:'1vw',
-              lineHeight:'1.2vw',
-              }}>
+            <div
+              style={{
+                marginTop: "1.63vh",
+                fontSize: "1vw",
+                lineHeight: "1.2vw",
+              }}
+            >
               <p>Default text</p>
             </div>
             <TextArea
@@ -189,10 +195,10 @@ const Cbcontent = (props) => {
                 flexDirection: "row",
                 display: "flex",
                 marginTop: "1.85vh",
-                justifyContent:'space-between'
+                justifyContent: "space-between",
               }}
             >
-              <div style={{paddingTop: ".5vh" }}>
+              <div style={{ paddingTop: ".5vh" }}>
                 <p
                   style={{
                     fontStyle: "normal",
@@ -228,10 +234,10 @@ const Cbcontent = (props) => {
                 flexDirection: "row",
                 display: "flex",
                 marginTop: ".92vh",
-                justifyContent:'space-between'
+                justifyContent: "space-between",
               }}
             >
-              <div style={{paddingTop: ".5vh" }}>
+              <div style={{ paddingTop: ".5vh" }}>
                 <p
                   style={{
                     fontStyle: "normal",
@@ -268,10 +274,10 @@ const Cbcontent = (props) => {
                 flexDirection: "row",
                 display: "flex",
                 marginTop: "1vh",
-                justifyContent:'space-between'
+                justifyContent: "space-between",
               }}
             >
-              <div style={{paddingTop: ".5vh" }}>
+              <div style={{ paddingTop: ".5vh" }}>
                 <p
                   style={{
                     fontStyle: "normal",
@@ -328,10 +334,10 @@ const Cbcontent = (props) => {
                 flexDirection: "row",
                 display: "flex",
                 marginTop: "1vh",
-                justifyContent:'space-between'
+                justifyContent: "space-between",
               }}
             >
-              <div style={{paddingTop: ".5vh" }}>
+              <div style={{ paddingTop: ".5vh" }}>
                 <p
                   style={{
                     fontStyle: "normal",
@@ -353,12 +359,7 @@ const Cbcontent = (props) => {
                   alignItems: "flex-start",
                 }}
               >
-                <div
-                  style={{ cursor: "pointer" }}
-                  onClick={() => {
-                    setReadmore(!readmore);
-                  }}
-                >
+                <div style={{ cursor: "pointer" }} onClick={handleRead}>
                   {readmore ? (
                     <SvgIcon name="darkon" />
                   ) : (
@@ -377,8 +378,8 @@ const Cbcontent = (props) => {
                   borderWidth: "0vw",
                   borderColor: "transparent",
                   padding: ".5vw",
-                  fontSize:'1vw',
-                  lineHeight:'1.2vw',
+                  fontSize: "1vw",
+                  lineHeight: "1.2vw",
                   outline: "none",
                 }}
                 placeholder="Read More URL"

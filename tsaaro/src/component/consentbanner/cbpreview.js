@@ -11,11 +11,11 @@ const Cbpreview = (props) => {
           width: "64.69vw",
           boxShadow: `0px 0px 4px rgba(0, 0, 0, 0.26)`,
           borderRadius: "4px",
-          padding:'1vw',
+          padding: "1vw",
           flexDirection: "column",
           display: "flex",
           alignItems: "flex-start",
-          backgroundColor: `${props.theme === "dark" ? "#373737" : "#fff"}`,
+          // backgroundColor: `${props.theme === "dark" ? "#373737" : "#fff"}`,
         }}
       >
         <div
@@ -32,9 +32,10 @@ const Cbpreview = (props) => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                marginRight: "0.5vw",
               }}
             >
-              <Image width={'6.25vw'} preview={false} src={props.logolink} />
+              <Image width={"6.25vw"} preview={false} src={props.logolink} />
             </div>
           ) : null}
           <div
@@ -47,7 +48,7 @@ const Cbpreview = (props) => {
               style={{
                 display: "flex",
                 flexDirection: "row",
-                justifyContent:'space-between'
+                justifyContent: "space-between",
               }}
             >
               <p
@@ -60,6 +61,7 @@ const Cbpreview = (props) => {
               >
                 {props.title}
               </p>
+
               {props.close ? (
                 <div
                   style={{
@@ -103,7 +105,7 @@ const Cbpreview = (props) => {
             width: "100%",
             display: "flex",
             flexDirection: "row",
-            justifyContent:'space-between',
+            justifyContent: "space-between",
           }}
         >
           <div>
@@ -112,9 +114,9 @@ const Cbpreview = (props) => {
                 style={{
                   fontFamily: "sans-serif",
                   textAlign: "start",
-                  fontSize:'1vw',
+                  fontSize: "1vw",
                   lineHeight: "1.2vw",
-                  margin:0,
+                  margin: 0,
                   color: `${props.theme === "light" ? "#000" : "#fff"}`,
                 }}
               >
