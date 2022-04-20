@@ -4,7 +4,7 @@ import "../../assets/css/consentbanner.css";
 import { Image } from "antd";
 
 const Cbpreview = (props) => {
-  console.log("readmore.....", props.readmore);
+  console.log("read.....", props.readmore);
   return (
     <div>
       <div
@@ -98,8 +98,7 @@ const Cbpreview = (props) => {
                 }}
               >
                 {props.text}
-                {props.readmore ? <a href={props.readlink}>Read More</a> : null}
-                {/* {props.readmore?<div><p>Read More</p></div>:null} */}
+                {props.readmore? <a href={props.readlink}>Read More</a> : null}
               </p>
             </div>
           </div>
