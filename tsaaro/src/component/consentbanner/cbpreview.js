@@ -24,6 +24,7 @@ const Cbpreview = (props) => {
             display: "flex",
             flexDirection: "row",
             justifyContent: "center",
+            width:'62.7vw',
             alignItems: "center",
           }}
         >
@@ -49,7 +50,6 @@ const Cbpreview = (props) => {
               style={{
                 display: "flex",
                 flexDirection: "row",
-                width:'62.7vw',
                 justifyContent: "space-between",
               }}
             >

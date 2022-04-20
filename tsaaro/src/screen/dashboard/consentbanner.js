@@ -23,7 +23,7 @@ const ConsentbannerScr = (props) => {
   const [tsaaro, setTsaaro] = useState(true);
   const [logo, setLogo] = useState(false);
   const [close, setClose] = useState(true);
-  const [readmore, setReadmore] = useState(false);
+  const [readmore, setReadmore] = useState(true);
   // const [darkmode, setDarkmode] = useState(false);
 
   const handleMenu = (id) => {
