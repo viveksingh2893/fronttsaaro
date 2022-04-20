@@ -64,10 +64,12 @@ const CookieView = (props) => {
         style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-around",
+          justifyContent: "space-between",
           borderTop: "2px solid #F0EDFF",
           borderBottom: "2px solid #F0EDFF",
           paddingTop: "2.5vh",
+          paddingLeft:'2.4vw',
+          paddingRight:'2.4vw',
         }}
       >
         <div
