@@ -6,7 +6,7 @@ const WebsitePop=(props)=> {
   return (
     <div className="dashboard-website-modal">
         <div className="dashboard-website-modal-content">
-            <div className="dashboard-website-reactivate">
+            <div className="dashboard-website-container">
                 <div style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
                     <p className="dashboard-website-p">Please enter the name of the website</p>
                 </div>

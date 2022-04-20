@@ -331,3 +331,11 @@ margin:0;
     color: #331a55;
     margin: 0.5vw;
   }
+
+  .dashboard-website-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* padding:2vw; */
+  }
