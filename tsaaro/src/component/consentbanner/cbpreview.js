@@ -50,7 +50,6 @@ const Cbpreview = (props) => {
               style={{
                 display: "flex",
                 flexDirection: "row",
-                width: "62.7vw",
                 justifyContent: "space-between",
               }}
             >
