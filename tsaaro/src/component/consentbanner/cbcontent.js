@@ -11,7 +11,6 @@ const Cbcontent = (props) => {
   const [logolink, setLogolink] = useState("");
   const [readlink, setReadlink] = useState("");
   const [close, setClose] = useState(true);
-  const [readmore, setReadmore] = useState(true);
   const [brand, setBrand] = useState(true);
   const [mylogo, setMylogo] = useState(false);
 
@@ -24,7 +23,8 @@ const Cbcontent = (props) => {
   };
 
   const handleRead = () => {
-    setReadmore(!readmore);
+    console.log('..................',props.readmore)
+    props.setReadmore(!props.readmore);
   };
 
   const handleClose = () => {
@@ -360,15 +360,11 @@ const Cbcontent = (props) => {
                 }}
               >
                 <div style={{ cursor: "pointer" }} onClick={handleRead}>
-                  {readmore ? (
-                    <SvgIcon name="darkon" />
-                  ) : (
-                    <SvgIcon name="lightoff" />
-                  )}
+                  {props.readmore?<SvgIcon name="darkon"/>:<SvgIcon name="lightoff" />}
                 </div>
               </div>
             </div>
-            {readmore ? (
+            {props.readmore ? (
               <TextArea
                 style={{
                   width: "17.02vw",

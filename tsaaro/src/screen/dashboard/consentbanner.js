@@ -1,6 +1,6 @@
 import SvgIcon from "../../assets/Icon_apps";
 import Navbutton from "../../component/consentbanner/navbutton";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../../assets/css/consentbanner.css";
 import Cbcolour from "../../component/consentbanner/cbcolour";
 import Cblayout from "../../component/consentbanner/cblayout";
@@ -23,6 +23,7 @@ const ConsentbannerScr = (props) => {
   const [tsaaro, setTsaaro] = useState(true);
   const [logo, setLogo] = useState(false);
   const [close, setClose] = useState(true);
+  const [readmore, setReadmore] = useState(false);
   // const [darkmode, setDarkmode] = useState(false);
 
   const handleMenu = (id) => {
@@ -41,11 +42,10 @@ const ConsentbannerScr = (props) => {
     }
   };
 
-  // const handletoggle = (e) => {
-  //   console.log("toggle..........");
-  //   window.addEventListener("click", () => {});
-  //   setToggle(!toggle);
-  // };
+  useEffect(()=>{
+    console.log("toggle..........");
+    window.addEventListener("click", () => {});
+  },[readmore]);
 
   return (
     <div
@@ -172,6 +172,8 @@ const ConsentbannerScr = (props) => {
             DefClose={setClose}
             DefLogolink={setLogolink}
             DefReadlink={setReadlink}
+            readmore={readmore}
+            setReadmore={setReadmore}
           />
         ) : (
           <div style={{ width: "20.52vw" }}></div>
@@ -217,6 +219,7 @@ const ConsentbannerScr = (props) => {
               logolink={logolink}
               readlink={readlink}
               close={close}
+              readmore={readmore}
             />
           ) : null}
           {cbtype == "tf" ? (
@@ -229,6 +232,7 @@ const ConsentbannerScr = (props) => {
               logolink={logolink}
               readlink={readlink}
               close={close}
+              readmore={readmore}
             />
           ) : null}
         </div>

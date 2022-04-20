@@ -4,6 +4,7 @@ import "../../assets/css/consentbanner.css";
 import { Image } from "antd";
 
 const Cbpreview = (props) => {
+  console.log('readmore.....',props.readmore)
   return (
     <div>
       <div
@@ -48,6 +49,7 @@ const Cbpreview = (props) => {
               style={{
                 display: "flex",
                 flexDirection: "row",
+                width:'62.7vw',
                 justifyContent: "space-between",
               }}
             >
@@ -95,7 +97,9 @@ const Cbpreview = (props) => {
                   color: `${props.theme === "light" ? "#000" : "#fff"}`,
                 }}
               >
-                {props.text} <a href={props.readlink}>Read More</a>
+                {props.text} 
+                {props.readmore?<a href={props.readlink}>Read More</a>:null}
+                {/* {props.readmore?<div><p>Read More</p></div>:null} */}
               </p>
             </div>
           </div>
