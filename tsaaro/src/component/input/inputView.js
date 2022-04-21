@@ -4,6 +4,7 @@ import SvgIcon from "../../assets/Icon_apps";
 import { Input } from "antd";
 
 function InputView(props) {
+
   return (
     <div className="input-box">
       <div style={{display:'flex',flexDirection:'column'}}>
@@ -11,7 +12,7 @@ function InputView(props) {
             <p className="input-label">{props.name}</p>
             <div style={{display:'flex', justifyContent:'flex-start'}}><SvgIcon name='asterisk'/></div>
           </div>
-          <Input style={{width: '33.64vw',height:'5.2vh',}} placeholder={props.placeholder}/>
+          <Input style={{width: '33.64vw',height:'5.2vh',}} placeholder={props.placeholder} onChange={props.onChange}/>
       </div> 
     </div>
   );

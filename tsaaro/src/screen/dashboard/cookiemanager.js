@@ -15,6 +15,7 @@ const CookiemanagerScr = (props) => {
   
   const [toggle, setToggle] = useState(false);
   const [choose, setChoose] = useState('')
+  
 
 
   const scanHistory=async ()=>{
@@ -30,7 +31,7 @@ const CookiemanagerScr = (props) => {
       }
     }
   }
-  const recentCookie=async ()=>{
+   const recentCookie=async ()=>{
 
     const response=await Postapi('/auth/scandata',{email:"c@a.com",website:"http://netflix.com/in"})
     console.log('response.........recent cookie',response);

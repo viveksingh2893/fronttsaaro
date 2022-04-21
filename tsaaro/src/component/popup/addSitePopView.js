@@ -4,14 +4,24 @@ import PlanListView from "./planListView";
 import "../../assets/css/addsitepop.css";
 import SvgIcon from '../../assets/Icon_apps';
 import { Input } from "antd";
+import Postapi from "../../api/Postapi";
 
 function AddSitePopView({ closeSite }) { 
   const [change, setChange] = useState(false);
+  const [url,setUrl] =useState()
+  const [domain,setDomain] =useState()
   const [plan1, setPlan1] = useState(true);
   const [plan2, setPlan2] = useState(false);
   const [btn1 , setBtn1] = useState(true);
   const [btn2 , setBtn2] = useState(false);
   const [btn3 , setBtn3] = useState(false);
+
+  const AddWebsite=async ()=>{
+    const response=await Postapi('/auth/add_website',{url:url})
+    closeSite(false)
+    console.log(response)
+
+  }
 
   const moneyA = () => {
     setBtn1(true);
@@ -42,12 +52,12 @@ function AddSitePopView({ closeSite }) {
   const toggle=()=>{
     setChange(!change);
   }
-
+console.log(url,domain)
   return (
       <div className="site-content">
         <div className="site-pop-input">
-            <InputView name="URL" placeholder='example.com'/>
-            <InputView name="Website Name" placeholder='My Website' />
+            <InputView name="URL" placeholder='example.com' onChange={(e)=>setUrl(e.target.value)}/>
+            <InputView name="Website Name" placeholder='My Website'  onChange={(e)=>setDomain(e.target.value)} />
         </div>
         <div className="mid-content"> 
           <div className="site-pop-head">
@@ -109,7 +119,7 @@ function AddSitePopView({ closeSite }) {
             </div>
             <div className="submitpops">
                   <button onClick={() => {closeSite(false)}} className="cancel">Cancel</button>
-                  <button onClick={() => {closeSite(false)}} className="submit">Submit</button>
+                  <button onClick={AddWebsite} className="submit">Submit</button>
             </div>
       </div>
     </div>
