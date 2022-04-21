@@ -14,9 +14,11 @@ import Getapi from "../../api/Getapi";
 import { useDispatch } from "react-redux";
 
 import { changeWebsite } from "../../redux/action";
+import WebsitePop from "../../component/popup/websitePop";
 
 const Screen = () => {
   const [inactive, setInactive] = useState(false);
+  const [active, setActive] = useState(false);
   const [cbvisible, setCbvisible] = useState(false);
   const [webList, setwebList] = useState([]);
   const [selectItem, setItem] = useState();
@@ -31,8 +33,11 @@ const Screen = () => {
     if (response.data) {
       if (response.data.website_check) {
         const response = await Getapi("/auth/get_allwebsite");
-
+        dispatch(changeWebsite({data:response.data[0]}))
         setwebList(response.data);
+      }else if(!response.data.website_check){
+        setActive(true)
+
       }
     }
   };
@@ -71,6 +76,7 @@ const Screen = () => {
             backgroundColor: "#E5E5E5",
           }}
         >
+          {active &&(<WebsitePop active={setActive}/>)}
           <Routes>
             <Route path="/dash" element={<DashboardScr />} />
             <Route path="/cm" element={<CookiemanagerScr />} />
