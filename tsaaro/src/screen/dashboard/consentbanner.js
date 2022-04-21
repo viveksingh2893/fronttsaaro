@@ -288,6 +288,7 @@ const ConsentbannerScr = (props) => {
               logolink={logolink}
               readlink={readlink}
               close={close}
+              readmore={readmore}
             />
           ) : null}
           {cbtype == "bf" ? (
@@ -300,6 +301,7 @@ const ConsentbannerScr = (props) => {
               logolink={logolink}
               readlink={readlink}
               close={close}
+              readmore={readmore}
             />
           ) : null}
         </div>

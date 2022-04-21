@@ -14,7 +14,13 @@ function ManualCookieView(props) {
             >
               <h4 className="ct" style={{color: '#6F6F6F'}}>Manually Added Cookies</h4>
             </div>
-            <ManuallyAddCookieView inactive={props.inactive}/>
+            <ManuallyAddCookieView 
+              inactive={props.inactive}
+              id="Lorem ipsum dolor sit amet, consectetur adip"
+              domain='Lorem ipsum'
+              duration='Lorem ipsum'
+              description='Lorem ipsum'
+            /> 
        </div>
   );
 }

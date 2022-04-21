@@ -120,14 +120,12 @@ color:#6F6F6F;
         background-color: #F6F6F6;
         padding: 2vw;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
     }
 
     .macc{
       display:flex;
       font-size: .8vw;
-      width:67vw;
+      
       flex-Direction: row;
       justify-content: space-between;
     }

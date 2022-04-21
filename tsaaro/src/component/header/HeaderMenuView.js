@@ -4,16 +4,25 @@ import SvgIcon from "../../assets/Icon_apps";
 import { Menu, Dropdown } from 'antd';
 import AddSitePopView from '../popup/addSitePopView';
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { changeWebsite } from "../../redux/action";
 import ChangePassPop from "../popup/changePassPop";
 
 function HeaderMenuView(props) {
   const [change, setChange] = useState(false);
   const [icon, setIcon] = useState("")
   const [site, setSite] = useState(false);
-  const [click, setClick] = useState('');
-  const [pass, setPass] = useState(false);
+  const [click, setClick] = useState('')
+  const [pass, setPass]=useState(false)
+  const dispatch =useDispatch()
+  
 
   const navigate = useNavigate();
+  const onchangeHandle=(e)=>{
+   
+    dispatch(changeWebsite({data:e.target.value}))
+    console.log("value.....",e.target.value)
+  }
 
   const togglePass=()=>{
     setPass(!pass);
@@ -67,11 +76,16 @@ function HeaderMenuView(props) {
       </div>
       <div className="input"> 
         <form>
-          <select id="cars" name="cars" className="inps">
-            <option value="netflex">https://netflix.com/in</option>
+          <select id="website" name="website" className="inps" onChange={onchangeHandle}>
+            {props.webList?props.webList.map((value,index)=>{
+              return(
+                <option key={index}value={value.website_url}>{value.website_url}</option>
+              )
+            }):null}
+            {/* <option value="netflex">https://netflix.com/in</option>
             <option value="saab">Saab</option>
             <option value="fiat">Fiat</option>
-            <option value="audi">Audi</option>
+            <option value="audi">Audi</option> */}
           </select>
         </form> 
       </div>
