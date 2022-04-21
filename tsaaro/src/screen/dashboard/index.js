@@ -5,8 +5,6 @@ import SideMenuView from "../../component/header/SideMenuView";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CookiemanagerScr from "./cookiemanager";
 import ConsentbannerScr from "./consentbanner";
-// import CookiepolicyScr from "./cookiepolicy";
-// import PrivacypolicyScr from "./privacypolicy";
 import ConsentlogScr from "./consentlog";
 import DashboardScr from "./dashboard";
 import SitesettingScr from "./sitesetting";

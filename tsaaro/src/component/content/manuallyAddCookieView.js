@@ -9,7 +9,7 @@ function ManuallyAddCookieView(props) {
 
   const editPop = () => { 
     setPop(!pop);
-  };
+  }; 
  
   return (
     <>
