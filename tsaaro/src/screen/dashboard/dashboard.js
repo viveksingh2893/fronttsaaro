@@ -1,28 +1,29 @@
-import { Row, Col } from "antd";
 import DashboardTck from "../../component/dashboard/dashticket";
 import SvgIcon from "../../assets/Icon_apps";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import '../../assets/css/dashboard.css';
 import DashPieChart from "../../component/dashboard/dashPieChart";
 import DashboardLogView from "../../component/dashboard/dashboardLogView";
 import ScanAgainPop from "../../component/popup/scanAgainPopView";
 import Postapi from "../../api/Postapi";
-import WebsitePop from "../../component/popup/websitePop";
+import {useSelector} from 'react-redux';
 
-const DashboardScr = (props) => {
+
+const DashboardScr = () => {
   const [activate, setActivate]=useState(false);
   const [accept, setAccept] = useState(true);
   const [scan, setScan] = useState(false);
   const [message,setMessage]=useState();
   const [scantitle,setTitle]=useState(); 
-  const [website, setWebsite] = useState(false);
+  const selector=useSelector(state=>state.ChangeSite)
+  console.log("selector......",selector)
 
   const toggle=()=>{
     setActivate(true);
   }
 
   const toggleScan =async () => {
-    const response=await Postapi('/auth/scanner',{email:'c@a.com',website:'http://netflix.com/in'});
+    const response=await Postapi('/auth/scanner',{email:'c@a.com',website:selector.websiteData});
     console.log('response........',response.status);
     if(response.status){
       if(response.status===401){
@@ -67,19 +68,17 @@ const DashboardScr = (props) => {
           <p style={{margin:0}}>Scan Website  for Cookies</p>
         </div>
       </div>
-    <div style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', marginTop:'2vh'}}> 
+    <div style={{display:'flex', flexDirection:'row',flexDirection:'row', alignItems:'center', justifyContent:'space-between', marginTop:'2vh'}}> 
           <div style={{display:'flex', flexDirection:'column'}}>
             <DashboardTck 
               name="cookie" 
               number="2000" 
               total="Total Cookies" 
-              inactive={props.inactive}
             />
             <DashboardTck 
               name="script" 
-              number="2000"
+              number="2000" 
               total="Total Scripts" 
-              inactive={props.inactive}
             />
           </div>
         <div style={{display:'flex', flexDirection:'column'}}>
@@ -87,13 +86,11 @@ const DashboardScr = (props) => {
               name="categories" 
               number="2000"
               total="Total Categories"
-              inactive={props.inactive}
             />
             <DashboardTck 
               name="scan" 
               number="2000" 
               total="Pages Scanned" 
-              inactive={props.inactive}
             />
         </div>
         <DashPieChart
@@ -136,7 +133,6 @@ const DashboardScr = (props) => {
         />
       </div>
       {scan && (<ScanAgainPop title={scantitle} message={message} closeScan={setScan}/>)}
-      {website===false?<WebsitePop closeWeb={setWebsite}/>:null}
     </div> 
   );
 };
