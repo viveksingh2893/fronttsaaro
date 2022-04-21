@@ -6,12 +6,14 @@ import AddSitePopView from '../popup/addSitePopView';
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { changeWebsite } from "../../redux/action";
+import ChangePassPop from "../popup/changePassPop";
 
 function HeaderMenuView(props) {
   const [change, setChange] = useState(false);
   const [icon, setIcon] = useState("")
   const [site, setSite] = useState(false);
   const [click, setClick] = useState('')
+  const [pass, setPass]=useState(false)
   const dispatch =useDispatch()
   
 
@@ -22,9 +24,20 @@ function HeaderMenuView(props) {
     console.log("value.....",e.target.value)
   }
 
-  const toggleSite = () => { 
-    setSite(!site);
+  const togglePass=()=>{
+    setPass(!pass);
+  }
+
+  const toggleSite = (e) => {
+    console.log("toggle..........");
+    window.addEventListener('click',()=>{
+    }) 
+    setSite(!site); 
   };
+
+  // const toggleSite = () => { 
+  //   setSite(!site);
+  // };
 
   const toggle =()=>{
     if (change===false){
@@ -46,7 +59,7 @@ function HeaderMenuView(props) {
       <Menu.Item key="1" onClick={()=>navigate('/dashboard/as')} onMouseEnter={()=>setClick('ac')} onMouseLeave={()=>setClick('')} className="ant-menu">
         <p className="acc-default" style={{color:click=='ac'?'white':'#ADADAD'}}>Account Settings</p>
       </Menu.Item>
-      <Menu.Item key="2" onMouseEnter={()=>setClick('cp')} onMouseLeave={()=>setClick('')} className="ant-menu">
+      <Menu.Item key="2" onClick={togglePass} onMouseEnter={()=>setClick('cp')} onMouseLeave={()=>setClick('')} className="ant-menu">
        <p className="acc-default" style={{color:click=='cp'?'white':'#ADADAD'}}>Change Password</p>
       </Menu.Item>
       <Menu.Item key="3" onMouseEnter={()=>setClick('lo')} onMouseLeave={()=>setClick('')} className="ant-menu">
@@ -74,12 +87,12 @@ function HeaderMenuView(props) {
             <option value="fiat">Fiat</option>
             <option value="audi">Audi</option> */}
           </select>
-        </form>
+        </form> 
       </div>
       <div className="btn1">
-        <a href="#" className="a2" onClick={toggleSite}>
+        <p className="a2" style={{cursor:'pointer'}} onClick={toggleSite}>
           + Add Site
-        </a>
+        </p>
       </div> 
       
       <div className="acc" style={{marginLeft:props.inactive?'52.5vw':'45.5vw'}}>
@@ -90,6 +103,7 @@ function HeaderMenuView(props) {
         </Dropdown>
       </div> 
     </div>
+    {pass?<ChangePassPop closePass={setPass}/>:null}
     {site && (
       <div className="addsite-modal">
         <div className="addsite-content">

@@ -1,55 +1,97 @@
 import SvgIcon from "../../assets/Icon_apps";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../assets/css/consentbanner.css";
 import Dropmenu from "../../component/consentbanner/dropmenu";
-// import Cookienotice from "../../component/consentbanner/cookienotice";
 import TextArea from "rc-textarea";
 
 const Cbcontent = (props) => {
   const [boxopen, setBoxopen] = useState(false);
-  const [val, setVal] = useState("");
+  const [content, setContent] = useState("");
+  const [title, setTitle] = useState("");
+  const [logolink, setLogolink] = useState("");
+  const [readlink, setReadlink] = useState("");
   const [close, setClose] = useState(true);
   const [brand, setBrand] = useState(true);
-  const [mylogo, setMylogo] = useState(true);
+  const [mylogo, setMylogo] = useState(false);
+
+  const handleBrand = () => {
+    setBrand(!brand);
+  };
+
+  const handleLogo = () => {
+    setMylogo(!mylogo);
+  };
+
+  const handleRead = () => {
+    console.log('..................',props.readmore)
+    props.setReadmore(!props.readmore);
+  };
+
+  const handleClose = () => {
+    setClose(!close);
+  };
+
+  useEffect(() => {
+    if (brand) {
+      props.DefTsaaro(true);
+    } else {
+      props.DefTsaaro(false);
+    }
+  }, [brand]);
+
+  useEffect(() => {
+    if (mylogo) {
+      props.DefLogo(true);
+    } else {
+      props.DefLogo(false);
+    }
+  }, [mylogo]);
+
+  useEffect(() => {
+    if (close) {
+      props.DefClose(true);
+    } else {
+      props.DefClose(false);
+    }
+  }, [close]);
 
   return (
     <div>
-      <Dropmenu topmargin="0px" opthead="Comply With" />
-      <Dropmenu topmargin="15px" opthead="Default Language" />
+      <Dropmenu topmargin="0vw" opthead="Comply With" />
+      <Dropmenu topmargin="1.51vh" opthead="Default Language" />
       <div>
         <div
           style={{
-            width: "394px",
-            height: "64px",
+            width: "20.52vw",
+            height: "6.42vh",
             backgroundColor: "#fff",
-            borderBottomLeftRadius: `${boxopen ? "0px" : "5px"}`,
-            borderBottomRightRadius: `${boxopen ? "0px" : "5px"}`,
-            borderTopLeftRadius: "5px",
-            borderTopRightRadius: "5px",
-            marginTop: "15px",
+            borderBottomLeftRadius: `${boxopen ? "0px" : "4px"}`,
+            borderBottomRightRadius: `${boxopen ? "0px" : "4px"}`,
+            borderTopLeftRadius: "4px",
+            borderTopRightRadius: "4px",
+            marginTop: "1.51vh",
             display: "flex",
             flexDirection: "row",
-            justifyContent: "flex-start",
+            justifyContent: "space-around",
             alignItems: "center",
           }}
         >
           <div
             style={{
-              width: "240px",
-              height: "40px",
+              width: "12.5vw",
+              height: "4vh",
               marginLeft: "19px",
               display: "flex",
-              justifyContent: "flex-start",
-              alignItems: "center",
               backgroundColor: "#fff",
+              margin: 0,
             }}
           >
             <p className="drpdwn-title">Cookie Notice</p>
           </div>
           <div
             style={{
-              width: "120px",
-              height: "40px",
+              width: "6.25vw",
+              height: "4vh",
               display: "flex",
               flexDirection: "row",
               justifyContent: "flex-end",
@@ -66,20 +108,23 @@ const Cbcontent = (props) => {
         {boxopen ? (
           <div
             style={{
-              width: "394px",
+              width: "20.52vw",
+              height: "50.25vh",
               backgroundColor: "#fff",
               marginTop: "1px",
-              borderBottomLeftRadius: "5px",
-              borderBottomRightRadius: "5px",
-              paddingLeft: "19px",
-              paddingRight: "19px",
-              paddingTop: "8px",
+              borderBottomLeftRadius: "4px",
+              borderBottomRightRadius: "4px",
+              paddingLeft: "1vw",
+              paddingRight: "1vw",
+              paddingTop: ".87vh",
+              paddingBottom: ".87vh",
+              overflowY: "auto",
             }}
           >
             <div
               style={{
-                width: "90px",
-                height: "40px",
+                width: "4.7vw",
+                height: "4vh",
                 display: "flex",
               }}
             >
@@ -87,10 +132,11 @@ const Cbcontent = (props) => {
                 style={{
                   fontStyle: "normal",
                   fontWeight: 500,
-                  fontSize: "14px",
-                  lineHeight: "16px",
+                  fontSize: "1vw",
+                  lineHeight: "1.2vw",
                   display: "flex",
                   alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
                 Title
@@ -98,55 +144,68 @@ const Cbcontent = (props) => {
             </div>
             <TextArea
               style={{
-                width: "346px",
-                height: "40px",
-                borderRadius: "5px",
+                width: "17.02vw",
+                height: "5vh",
+                borderRadius: "4px",
                 backgroundColor: "#F0EDFF",
-                borderWidth: "0px",
+                borderWidth: "0vw",
                 borderColor: "transparent",
-                padding: "10px",
+                padding: ".5vw",
                 outline: "none",
+                fontSize: "1vw",
+                lineHeight: "1.2vw",
               }}
               placeholder="Cookie Consent"
+              value={title}
+              onChange={(e) => {
+                setTitle(e.target.value);
+                props.DefTtl(e.target.value);
+              }}
             />
-            <div style={{ marginTop: "16px", width: "99px" }}>
+            <div
+              style={{
+                marginTop: "1.63vh",
+                fontSize: "1vw",
+                lineHeight: "1.2vw",
+              }}
+            >
               <p>Default text</p>
             </div>
             <TextArea
               style={{
-                width: "346px",
-                height: "160px",
-                borderRadius: "5px",
+                width: "17.02vw",
+                height: "16.1vh",
+                borderRadius: "4px",
                 backgroundColor: "#F0EDFF",
-                borderWidth: "0px",
+                borderWidth: "0vw",
                 borderColor: "transparent",
-                padding: "10px",
+                padding: ".5vw",
                 outline: "none",
               }}
               placeholder="This website uses cookies that help the website to function and also to track how you interact with it. We will only use the cookies if you consent to it by clicking on Accept. You can also manage individual cookie preferences from Settings."
-              value={val}
+              value={content}
               onChange={(e) => {
-                setVal(e.target.value);
+                setContent(e.target.value);
                 props.DefTxt(e.target.value);
               }}
             />
             <div
               style={{
-                width: "346px",
+                width: "17.02vw",
                 flexDirection: "row",
                 display: "flex",
-                marginTop: "20px",
+                marginTop: "1.85vh",
+                justifyContent: "space-between",
               }}
             >
-              <div style={{ width: "100px", paddingTop: "5px" }}>
+              <div style={{ paddingTop: ".5vh" }}>
                 <p
                   style={{
                     fontStyle: "normal",
                     fontWeight: 500,
-                    fontSize: "14px",
-                    lineHeight: "16px",
+                    fontSize: "1vw",
+                    lineHeight: "1.2vw",
                     display: "flex",
-                    alignItems: "center",
                   }}
                 >
                   Close Button
@@ -154,19 +213,13 @@ const Cbcontent = (props) => {
               </div>
               <div
                 style={{
-                  width: "246px",
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "flex-end",
                   alignItems: "flex-start",
                 }}
               >
-                <div
-                  style={{ cursor: "pointer" }}
-                  onClick={() => {
-                    setClose(!close);
-                  }}
-                >
+                <div style={{ cursor: "pointer" }} onClick={handleClose}>
                   {close ? (
                     <SvgIcon name="darkon" />
                   ) : (
@@ -177,19 +230,20 @@ const Cbcontent = (props) => {
             </div>
             <div
               style={{
-                width: "346px",
+                width: "17.02vw",
                 flexDirection: "row",
                 display: "flex",
-                marginTop: "10px",
+                marginTop: ".92vh",
+                justifyContent: "space-between",
               }}
             >
-              <div style={{ width: "246px", paddingTop: "5px" }}>
+              <div style={{ paddingTop: ".5vh" }}>
                 <p
                   style={{
                     fontStyle: "normal",
                     fontWeight: 500,
-                    fontSize: "14px",
-                    lineHeight: "16px",
+                    fontSize: "1vw",
+                    lineHeight: "1.2vw",
                     display: "flex",
                     alignItems: "center",
                   }}
@@ -199,19 +253,13 @@ const Cbcontent = (props) => {
               </div>
               <div
                 style={{
-                  width: "100px",
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "flex-end",
                   alignItems: "flex-start",
                 }}
               >
-                <div
-                  style={{ cursor: "pointer" }}
-                  onClick={() => {
-                    setBrand(!brand);
-                  }}
-                >
+                <div style={{ cursor: "pointer" }} onClick={handleBrand}>
                   {brand ? (
                     <SvgIcon name="darkon" />
                   ) : (
@@ -222,19 +270,20 @@ const Cbcontent = (props) => {
             </div>
             <div
               style={{
-                width: "346px",
+                width: "17.02vw",
                 flexDirection: "row",
                 display: "flex",
-                marginTop: "10px",
+                marginTop: "1vh",
+                justifyContent: "space-between",
               }}
             >
-              <div style={{ width: "246px", paddingTop: "5px" }}>
+              <div style={{ paddingTop: ".5vh" }}>
                 <p
                   style={{
                     fontStyle: "normal",
                     fontWeight: 500,
-                    fontSize: "14px",
-                    lineHeight: "16px",
+                    fontSize: "1vw",
+                    lineHeight: "1.2vw",
                     display: "flex",
                     alignItems: "center",
                   }}
@@ -244,19 +293,13 @@ const Cbcontent = (props) => {
               </div>
               <div
                 style={{
-                  width: "100px",
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "flex-end",
                   alignItems: "flex-start",
                 }}
               >
-                <div
-                  style={{ cursor: "pointer" }}
-                  onClick={() => {
-                    setMylogo(!mylogo);
-                  }}
-                >
+                <div style={{ cursor: "pointer" }} onClick={handleLogo}>
                   {mylogo ? (
                     <SvgIcon name="darkon" />
                   ) : (
@@ -268,16 +311,79 @@ const Cbcontent = (props) => {
             {mylogo ? (
               <TextArea
                 style={{
-                  width: "346px",
-                  height: "40px",
-                  borderRadius: "5px",
+                  width: "17.02vw",
+                  height: "4vh",
+                  borderRadius: "4px",
                   backgroundColor: "#F0EDFF",
-                  borderWidth: "0px",
+                  borderWidth: "0vw",
                   borderColor: "transparent",
-                  padding: "10px",
+                  padding: ".5vw",
                   outline: "none",
                 }}
                 placeholder="Logo URL"
+                value={logolink}
+                onInputCapture={(e) => {
+                  setLogolink(e.target.value);
+                  props.DefLogolink(e.target.value);
+                }}
+              />
+            ) : null}
+            <div
+              style={{
+                width: "17.02vw",
+                flexDirection: "row",
+                display: "flex",
+                marginTop: "1vh",
+                justifyContent: "space-between",
+              }}
+            >
+              <div style={{ paddingTop: ".5vh" }}>
+                <p
+                  style={{
+                    fontStyle: "normal",
+                    fontWeight: 500,
+                    fontSize: "1vw",
+                    lineHeight: "1.2vw",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  Read More
+                </p>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "flex-end",
+                  alignItems: "flex-start",
+                }}
+              >
+                <div style={{ cursor: "pointer" }} onClick={handleRead}>
+                  {props.readmore?<SvgIcon name="darkon"/>:<SvgIcon name="lightoff" />}
+                </div>
+              </div>
+            </div>
+            {props.readmore ? (
+              <TextArea
+                style={{
+                  width: "17.02vw",
+                  height: "5vh",
+                  borderRadius: "4px",
+                  backgroundColor: "#F0EDFF",
+                  borderWidth: "0vw",
+                  borderColor: "transparent",
+                  padding: ".5vw",
+                  fontSize: "1vw",
+                  lineHeight: "1.2vw",
+                  outline: "none",
+                }}
+                placeholder="Read More URL"
+                value={readlink}
+                onInputCapture={(e) => {
+                  setReadlink(e.target.value);
+                  props.DefReadlink(e.target.value);
+                }}
               />
             ) : null}
           </div>

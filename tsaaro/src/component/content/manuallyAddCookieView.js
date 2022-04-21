@@ -22,9 +22,9 @@ function ManuallyAddCookieView(props) {
             <div className='macs' style={{justifyContent:'center',cursor:'pointer'}}><SvgIcon name='delete cookie'/></div>
           </div>
           <div className="macc">
-            <div className="macs"><p className="input">Lorem ipsum dolor sit amet, consectetur adip</p></div>
-            <div className="macs"><p className="input">Lorem ipsum</p></div>
-            <div className="macs"><p className="input">Lorem ipsum</p></div>
+            <div className="macs"><p className="input">{props.id}</p></div>
+            <div className="macs"><p className="input">{props.domain}</p></div>
+            <div className="macs"><p className="input">{props.duration}</p></div>
             <div className='macs' style={{justifyContent:'center'}} ></div>
             <div className='macs' style={{justifyContent:'center'}}></div>
           </div>
@@ -36,7 +36,7 @@ function ManuallyAddCookieView(props) {
             <div className='macs' style={{justifyContent:'center'}}></div>
           </div>
           <div className="macc">
-            <div className="macs"><p className="input">Lorem ipsum</p></div>
+            <div className="macs"><p className="input">{props.description}</p></div>
             <div className="macs"></div>
             <div className="macs"></div>
             <div className='macs' style={{justifyContent:'center'}} ></div>

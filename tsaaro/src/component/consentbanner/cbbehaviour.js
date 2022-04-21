@@ -15,44 +15,40 @@ const Cbbehaviour = (props) => {
   };
   return (
     <div>
-      <Dropmenu topmargin="0px" opthead="Comply With" />
+      <Dropmenu topmargin="0vw" opthead="Comply With" />
       <div
         style={{
-          width: "100%",
-          height: "146px",
+          height: "13vh",
           backgroundColor: "#FFF",
-          borderRadius: "5px",
-          marginTop: "15px",
-          paddingLeft: "19px",
-          paddingRight: "19px",
-          paddingTop: "9px",
+          borderRadius: "4px",
+          marginTop: "1.51vh",
+          padding:'.5vw',
           display: "flex",
           flexDirection: "row",
+          justifyContent:'center'
         }}
       >
         <div
           style={{
-            width: "218px",
             display: "flex",
             flexDirection: "column",
+            justifyContent:'center',
           }}
         >
           <p
             style={{
-              fontSize: "14px",
-              lineHeight: "16px",
+              fontSize: "1vw",
+              lineHeight: "1.2vw",
               display: "flex",
-              alignItems: "flex-end",
             }}
           >
             Geo-targetting cookie banner
           </p>
           <p
             style={{
-              fontSize: "14px",
-              lineHeight: "16px",
+              fontSize: "1vw",
+              lineHeight: "1.2vw",
               display: "flex",
-              alignItems: "flex-start",
               color: "#CCACF8",
             }}
           >
@@ -61,18 +57,16 @@ const Cbbehaviour = (props) => {
         </div>
         <div
           style={{
-            width: "138px",
-            height: "60px",
-
+            width: "7.2vw",
             display: "flex",
             flexDirection: "column",
+            justifyContent:'center'
           }}
         >
-          <div style={{ height: "30px" }}></div>
           <div
             style={{
-              width: "138px",
-              height: "30px",
+              width: "5.2vw",
+              height: "3.02vh",
               display: "flex",
               flexDirection: "row",
               justifyContent: "flex-end",

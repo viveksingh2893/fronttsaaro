@@ -11,7 +11,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1vw;
   display: flex;
   align-items: center;
   margin: 0;
@@ -22,8 +22,8 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 1vw;
+  line-height: 1.2vw;
   display: flex;
   align-items: center;
   margin: 0;
@@ -32,10 +32,10 @@
 }
 
 .drpdwn-option {
-  font-family: sans-serif;
+  font-family:Roboto;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 1vw;
+  line-height: 1.2vw;
   display: flex;
   align-items: center;
   margin: 0;
@@ -45,10 +45,10 @@
 }
 
 .drpdwn-title {
-  font-family: "Calibri";
+  font-family:Roboto;
   font-weight: bold;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 1vw;
+  line-height: 1.2vw;
   display: flex;
   align-items: center;
   margin: 0;
@@ -63,7 +63,7 @@
 .inp {
   display: flex;
   width: 17.6vw;
-  height: 4.26vh;
+  height: 4.63vh;
   background-color: #f6f6f6;
   border: 0px solid #adadad;
   border-radius: 4px;
@@ -72,8 +72,8 @@
 
 .drpdwn {
   display: flex;
-  width: 120px;
-  height: 40px;
+  width: 6.25vw;
+  height: 4vh;
   background-color: #fff;
   border: 0px solid #fff;
   border-radius: 4px;

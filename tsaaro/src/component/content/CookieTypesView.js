@@ -11,7 +11,7 @@ function CookieTypesView(props) {
   const [modal, setModal] = useState(false);
   const [add, setAdd] = useState(false);
 
-  const toggleAdd = (props) => {
+  const toggleAdd = () => { 
     setAdd(!add);
   };
  
@@ -19,9 +19,23 @@ function CookieTypesView(props) {
     setModal(!modal);
   };
 
+  const cookieList=(type, nec, fun, an, advt, ot)=>{
+    if(type==='Neccessary'){
+      return (nec.length>0?<ManualCookieView inactive={props.inactive}/>:<NoCookieView/>)
+    }else if(type==='Functional'){
+      return (fun.length>0?<ManualCookieView inactive={props.inactive}/>:<NoCookieView/>)
+    }else if(type==='Analytics'){
+      return (an.length>0?<ManualCookieView inactive={props.inactive}/>:<NoCookieView/>)
+    }else if(type==='Advertisement'){
+      return (advt.length>0?<ManualCookieView inactive={props.inactive}/>:<NoCookieView/>)
+    }else if(type==='Others'){
+      return (ot.length>0?<ManualCookieView inactive={props.inactive}/>:<NoCookieView/>)
+    }
+  }
+
   return (
     <>
-      <div style={{marginLeft:'3vw', marginRight:'3vw', marginTop:'2vw'}}>
+      <div style={{marginLeft:'3vw', marginRight:'3vw', marginTop:'3.55vh'}}>
         <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', marginTop:'1vh'}}>
             <div
               style={{
@@ -76,8 +90,7 @@ function CookieTypesView(props) {
                   </h3>
             </div>
           </div>
-          <ManualCookieView inactive={props.inactive}/>
-          {/* <NoCookieView/> */}
+          {cookieList(props.type, props.nec, props.fun, props.an, props.advt, props.ot)}
       </div>
           {modal && (
             <div className="modal">

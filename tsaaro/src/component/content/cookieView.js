@@ -7,16 +7,14 @@ import CookieTypesView from "./CookieTypesView";
 const CookieView = (props) => {
   const [cookietype, setCookieType] = useState("Neccessary");
   const [switchcookies, setSwitch] = useState([1, 0, 0, 0, 0, 0]);
-  const [nec,setNec]=useState([])
-    const [others,setOthers]=useState([])
-    const [fun,setFun]=useState([])
-    const [analytics,setAnalytics]=useState([])
-    const [advertisment,setAdv]=useState([])
-  
+  const [nec,setNec]=useState([]);
+  const [others,setOthers]=useState([]);
+  const [fun,setFun]=useState([]);
+  const [analytics,setAnalytics]=useState([]);
+  const [advertisment,setAdv]=useState([]);
 
   useEffect(()=>{
     filterData()
-
   },[])
 
   const filterData= ()=>{ 
@@ -66,10 +64,12 @@ const CookieView = (props) => {
         style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-around",
+          justifyContent: "space-between",
           borderTop: "2px solid #F0EDFF",
           borderBottom: "2px solid #F0EDFF",
           paddingTop: "2.5vh",
+          paddingLeft:'2.4vw',
+          paddingRight:'2.4vw',
         }}
       >
         <div
@@ -145,7 +145,7 @@ const CookieView = (props) => {
           </h4>
         </div>
       </div>
-      <CookieTypesView type={cookietype} inactive={props.inactive} />
+      <CookieTypesView type={cookietype} inactive={props.inactive} nec={nec} fun={fun} an={analytics} advt={advertisment} ot={others}/>
     </div>
   );
 };

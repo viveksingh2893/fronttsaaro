@@ -99,7 +99,7 @@ function AddSitePopView({ closeSite }) {
             <h4 className="site-pop-h4">Price are in USD excl VAT.</h4>
             <h3 className="site-pop-h">Billing Details</h3>
             <div className="site-pop-input">
-                <InputView name="Name" placeholder='example.com'/>
+                <InputView name="Name" placeholder='Jhon joe'/>
                 <InputView name="Website Name" placeholder='My Website'/>
             </div>
             <p className="coupon">Coupon</p>

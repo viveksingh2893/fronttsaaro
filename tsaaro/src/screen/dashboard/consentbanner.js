@@ -1,12 +1,12 @@
 import SvgIcon from "../../assets/Icon_apps";
 import Navbutton from "../../component/consentbanner/navbutton";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../../assets/css/consentbanner.css";
 import Cbcolour from "../../component/consentbanner/cbcolour";
 import Cblayout from "../../component/consentbanner/cblayout";
 import Cbcontent from "../../component/consentbanner/cbcontent";
 import Cbbehaviour from "../../component/consentbanner/cbbehaviour";
-import Cbpreview from "../../component/consentbanner/shrtpreview";
+import Cbpreview from "../../component/consentbanner/cbpreview";
 
 const ConsentbannerScr = (props) => {
   const [activemenu, setActiveMenu] = useState("Layout");
@@ -17,6 +17,13 @@ const ConsentbannerScr = (props) => {
   const [cbtext, setCbtext] = useState(
     "This website uses cookies that help the website to function and also to track how you interact with it. We will only use the cookies if you consent to it by clicking on Accept. You can also manage individual cookie preferences from Settings."
   );
+  const [cbttl, setCbttl] = useState("Cookie Consent");
+  const [logolink, setLogolink] = useState("");
+  const [readlink, setReadlink] = useState("");
+  const [tsaaro, setTsaaro] = useState(true);
+  const [logo, setLogo] = useState(false);
+  const [close, setClose] = useState(true);
+  const [readmore, setReadmore] = useState(true);
   // const [darkmode, setDarkmode] = useState(false);
 
   const handleMenu = (id) => {
@@ -35,24 +42,23 @@ const ConsentbannerScr = (props) => {
     }
   };
 
-  // const handletoggle = (e) => {
-  //   console.log("toggle..........");
-  //   window.addEventListener("click", () => {});
-  //   setToggle(!toggle);
-  // };
+  useEffect(()=>{
+    console.log("toggle..........");
+    window.addEventListener("click", () => {});
+  },[readmore]);
 
   return (
     <div
       style={{
-        width: "1840px",
-        height: "888px",
+        width: "95.83vw",
+        height: "89.24vh",
         backgroundColor: "white",
         position: "absolute",
-        zIndex: 1000,
-        top: "18px",
-        left: "47px",
+        zIndex: 2,
+        top: "5.43vh",
+        left: "2.45vw",
         borderRadius: "4px",
-        display: "flex",
+        display: "flex", 
         flexDirection: "row",
         justifyContent: "flex-start",
         alignItems: "flex-start",
@@ -61,19 +67,19 @@ const ConsentbannerScr = (props) => {
     >
       <div
         style={{
-          width: "133px",
-          height: "888px",
+          width: "6.93vw",
+          height: "89.24vh",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          paddingTop: "32px",
+          paddingTop: "3.21vh",
         }}
       >
         <div
           onClick={() => {
             props.callcb();
           }}
-          style={{ cursor: "pointer", marginBottom: "32px" }}
+          style={{ cursor: "pointer", marginBottom: "3.21vh" }}
         >
           <SvgIcon name="bannerclose" />
         </div>
@@ -116,15 +122,15 @@ const ConsentbannerScr = (props) => {
       </div>
       <div
         style={{
-          width: "465px",
-          height: "888px",
+          width: "24.22vw",
+          height: "89.24vh",
           display: "flex",
           flexDirection: "column",
           backgroundColor: "#F0EDFF",
           justifyContent: "flex-start",
           alignItems: "center",
-          paddingRight: "36px",
-          paddingLeft: "36px",
+          paddingRight: "1.87vw",
+          paddingLeft: "1.87vw",
         }}
       >
         <div
@@ -133,16 +139,17 @@ const ConsentbannerScr = (props) => {
             display: "flex",
             flexDirection: "row",
             justifyContent: "flex-end",
-            marginTop: "17px",
-            marginBottom: "32px",
+            backgroundColor: "#F0EDFF",
+            marginTop: "1.7vh",
+            marginBottom: "3.5vh",
           }}
         >
           <div
             className="cb-btn"
             style={{
-              width: "200px",
-              height: "48px",
-              borderRadius: "5px",
+              width: "10.46vw",
+              height: "4.82vh",
+              borderRadius: "4px",
             }}
           >
             <p className="btn-txt" style={{ color: "#fff" }}>
@@ -154,28 +161,38 @@ const ConsentbannerScr = (props) => {
         {bannermenu[0] === 1 ? (
           <Cblayout SelectLayout={setCbtype} />
         ) : (
-          <div style={{ width: "394px" }}></div>
+          <div style={{ width: "20.52vw" }}></div>
         )}
         {bannermenu[1] === 1 ? (
-          <Cbcontent DefTxt={setCbtext} />
+          <Cbcontent
+            DefTxt={setCbtext}
+            DefTtl={setCbttl}
+            DefTsaaro={setTsaaro}
+            DefLogo={setLogo}
+            DefClose={setClose}
+            DefLogolink={setLogolink}
+            DefReadlink={setReadlink}
+            readmore={readmore}
+            setReadmore={setReadmore}
+          />
         ) : (
-          <div style={{ width: "394px" }}></div>
+          <div style={{ width: "20.52vw" }}></div>
         )}
         {bannermenu[2] === 1 ? (
           <Cbcolour SelectTheme={setCbcolor} />
         ) : (
-          <div style={{ width: "394px" }}></div>
+          <div style={{ width: "20.52vw" }}></div>
         )}
         {bannermenu[3] === 1 ? (
-          <Cbbehaviour />
+          <Cbbehaviour/>
         ) : (
-          <div style={{ width: "394px" }}></div>
+          <div style={{ width: "20.52vw" }}></div>
         )}
       </div>
       <div
         style={{
-          width: "1242px",
-          height: "888px",
+          width: "64.69vw",
+          height: "89.24vh",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -186,30 +203,54 @@ const ConsentbannerScr = (props) => {
           style={{
             display: "flex",
             flexDirection: "row",
-            width: "1242px",
-            height: "333px",
+            width: "64.69vw",
+            height: "36.72vh",
             justifyContent: "center",
             alignItems: `${cbtype == "top" ? "flex-start" : "center"}`,
           }}
         >
-          {cbtype == "top" ? <Cbpreview theme={cbcolor} text={cbtext} /> : null}
-          {cbtype == "tf" ? <Cbpreview theme={cbcolor} text={cbtext} /> : null}
+          {cbtype == "top" ? (
+            <Cbpreview
+              theme={cbcolor}
+              text={cbtext}
+              title={cbttl}
+              tsaaro={tsaaro}
+              logo={logo}
+              logolink={logolink}
+              readlink={readlink}
+              close={close}
+              readmore={readmore}
+            />
+          ) : null}
+          {cbtype == "tf" ? (
+            <Cbpreview
+              theme={cbcolor}
+              text={cbtext}
+              title={cbttl}
+              tsaaro={tsaaro}
+              logo={logo}
+              logolink={logolink}
+              readlink={readlink}
+              close={close}
+              readmore={readmore}
+            />
+          ) : null}
         </div>
         <div
           style={{
             display: "flex",
             flexDirection: "row",
-            width: "1242px",
-            height: "222px",
+            width: "64.68vw",
+            height: "22.3vh",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
           <div
             style={{
-              width: "394px",
-              height: "56px",
-              borderRadius: "2px",
+              width: "20.52vw",
+              height: "5.62vh",
+              borderRadius: "4px",
               backgroundColor: "#F6F6F6",
               display: "flex",
               justifyContent: "center",
@@ -224,14 +265,38 @@ const ConsentbannerScr = (props) => {
           style={{
             display: "flex",
             flexDirection: "row",
-            width: "1242px",
-            height: "333px",
+            width: "64.68vw",
+            height: "33.46vh",
             justifyContent: "center",
             alignItems: `${cbtype == "btm" ? "flex-end" : "center"}`,
           }}
         >
-          {cbtype == "btm" ? <Cbpreview theme={cbcolor} text={cbtext} /> : null}
-          {cbtype == "bf" ? <Cbpreview theme={cbcolor} text={cbtext} /> : null}
+          {cbtype == "btm" ? (
+            <Cbpreview
+              theme={cbcolor}
+              text={cbtext}
+              title={cbttl}
+              tsaaro={tsaaro}
+              logo={logo}
+              logolink={logolink}
+              readlink={readlink}
+              close={close}
+              readmore={readmore}
+            />
+          ) : null}
+          {cbtype == "bf" ? (
+            <Cbpreview
+              theme={cbcolor}
+              text={cbtext}
+              title={cbttl}
+              tsaaro={tsaaro}
+              logo={logo}
+              logolink={logolink}
+              readlink={readlink}
+              close={close}
+              readmore={readmore}
+            />
+          ) : null}
         </div>
       </div>
     </div>

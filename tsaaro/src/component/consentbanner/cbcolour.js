@@ -33,57 +33,59 @@ const Cbcolour = (props) => {
 
   return (
     <div>
-      <Dropmenu topmargin="0px" opthead="Comply With" />
+      <Dropmenu topmargin="0vw" opthead="Comply With" />
       <div
         style={{
-          height: "120px",
+          height: "12.06vh",
           width: "100%",
           backgroundColor: "white",
-          marginTop: "15px",
-          borderRadius: "5px",
+          marginTop: "2vh",
+          borderRadius: "4px",
           display: "flex",
           flexDirection: "column",
-          paddingLeft: "19px",
-          paddingTop: "12px",
+          justifyContent:'center',
+          paddingLeft: "1vw",
+          paddingTop: "1.2vh",
         }}
       >
         <div
           style={{
-            width: "250px",
-            height: "40px",
-
+            width: "18.02vw",
+            height: "4vh",
             display: "flex",
             flexDirection: "row",
-            justifyContent: "center",
+            justifyContent: "space-around",
+            alignItems:'center',
           }}
         >
           <div
             style={{
-              width: "24px",
+              width: "1.25vw",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              margin:0
             }}
           >
             <SvgIcon name="lightdrop" />
           </div>
           <div
             style={{
-              width: "202px",
+              width: "10.52vw",
               display: "flex",
               flexDirection: "row",
-              justifyContent: "flex-start",
-              paddingLeft: "50px",
-              alignItems: "flex-end",
+              justifyContent: "center",
             }}
           >
             <p
               style={{
-                fontSize: "14px",
-                lineHeight: "16px",
+                fontSize: "1vw",
+                lineHeight: "1.2vw",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                fontFamily:'Roboto',
+                margin:0
               }}
             >
               Light
@@ -91,7 +93,7 @@ const Cbcolour = (props) => {
           </div>
           <div
             style={{
-              width: "24px",
+              width: "1.25vw",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -108,16 +110,17 @@ const Cbcolour = (props) => {
         </div>
         <div
           style={{
-            width: "250px",
-            height: "40px",
-            marginTop: "16px",
+            width: "18.02vw",
+            height: "4vh",
+            marginTop: "1.5vh",
             display: "flex",
             flexDirection: "row",
+            justifyContent:'space-around',
           }}
         >
           <div
             style={{
-              width: "24px",
+              width: "1.25vw",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -127,21 +130,21 @@ const Cbcolour = (props) => {
           </div>
           <div
             style={{
-              width: "202px",
+              width: "10.52vw",
               display: "flex",
               flexDirection: "row",
-              justifyContent: "flex-start",
-              paddingLeft: "50px",
-              alignItems: "flex-end",
+              justifyContent: "center",
             }}
           >
             <p
               style={{
-                fontSize: "14px",
-                lineHeight: "16px",
+                fontSize: "1vw",
+                lineHeight: "1.2vw",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                fontFamily:'Roboto',
+                margin:0
               }}
             >
               Dark
@@ -149,7 +152,7 @@ const Cbcolour = (props) => {
           </div>
           <div
             style={{
-              width: "24px",
+              width: "1.25vw",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
