@@ -1,4 +1,3 @@
-import { Row, Col } from "antd";
 import DashboardTck from "../../component/dashboard/dashticket";
 import SvgIcon from "../../assets/Icon_apps";
 import { useState } from "react";
@@ -7,6 +6,8 @@ import DashPieChart from "../../component/dashboard/dashPieChart";
 import DashboardLogView from "../../component/dashboard/dashboardLogView";
 import ScanAgainPop from "../../component/popup/scanAgainPopView";
 import Postapi from "../../api/Postapi";
+import {useSelector} from 'react-redux';
+
 
 const DashboardScr = () => {
   const [activate, setActivate]=useState(false);
@@ -14,13 +15,15 @@ const DashboardScr = () => {
   const [scan, setScan] = useState(false);
   const [message,setMessage]=useState();
   const [scantitle,setTitle]=useState(); 
+  const selector=useSelector(state=>state.ChangeSite)
+  console.log("selector......",selector)
 
   const toggle=()=>{
     setActivate(true);
   }
 
   const toggleScan =async () => {
-    const response=await Postapi('/auth/scanner',{email:'c@a.com',website:'http://netflix.com/in'});
+    const response=await Postapi('/auth/scanner',{email:'c@a.com',website:selector.websiteData});
     console.log('response........',response.status);
     if(response.status){
       if(response.status===401){
