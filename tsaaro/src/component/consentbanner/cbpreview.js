@@ -24,7 +24,7 @@ const Cbpreview = (props) => {
             display: "flex",
             flexDirection: "row",
             justifyContent: "center",
-            width:'62.7vw',
+            width: "62.7vw",
             alignItems: "center",
           }}
         >
@@ -37,13 +37,14 @@ const Cbpreview = (props) => {
                 marginRight: "0.5vw",
               }}
             >
-              <Image width={"6.25vw"} preview={false} src={props.logolink} />
+              <Image width={"6.2vw"} preview={false} src={props.logolink} />
             </div>
           ) : null}
           <div
             style={{
               display: "flex",
               flexDirection: "column",
+              width: `${props.logo ? "56vw" : "62.7vw"}`,
             }}
           >
             <div
@@ -98,7 +99,7 @@ const Cbpreview = (props) => {
                 }}
               >
                 {props.text}
-                {props.readmore? <a href={props.readlink}>Read More</a> : null}
+                {props.readmore ? <a href={props.readlink}>Read More</a> : null}
               </p>
             </div>
           </div>

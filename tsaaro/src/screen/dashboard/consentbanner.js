@@ -42,10 +42,10 @@ const ConsentbannerScr = (props) => {
     }
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log("toggle..........");
     window.addEventListener("click", () => {});
-  },[readmore]);
+  }, [readmore]);
 
   return (
     <div
@@ -58,7 +58,7 @@ const ConsentbannerScr = (props) => {
         top: "5.43vh",
         left: "2.45vw",
         borderRadius: "4px",
-        display: "flex", 
+        display: "flex",
         flexDirection: "row",
         justifyContent: "flex-start",
         alignItems: "flex-start",
@@ -184,7 +184,7 @@ const ConsentbannerScr = (props) => {
           <div style={{ width: "20.52vw" }}></div>
         )}
         {bannermenu[3] === 1 ? (
-          <Cbbehaviour/>
+          <Cbbehaviour />
         ) : (
           <div style={{ width: "20.52vw" }}></div>
         )}
@@ -241,12 +241,19 @@ const ConsentbannerScr = (props) => {
             display: "flex",
             flexDirection: "row",
             width: "64.68vw",
-            height: "22.3vh",
+            height: "50vh",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
           <div
+            style={{
+              width: "50vw",
+              height: "35vh",
+              backgroundColor: "#F6F6F6",
+            }}
+          ></div>
+          {/* <div
             style={{
               width: "20.52vw",
               height: "5.62vh",
@@ -259,7 +266,7 @@ const ConsentbannerScr = (props) => {
             }}
           >
             <p className="prvbtn-txt">Preview your website</p>
-          </div>
+          </div> */}
         </div>
         <div
           style={{
