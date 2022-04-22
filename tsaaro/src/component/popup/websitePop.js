@@ -15,9 +15,9 @@ const WebsitePop=({active,setActive})=> {
         <div className="dashboard-website-modal-content">
             <div className="dashboard-website-container">
                 <div style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
-                    <p className="dashboard-website-p">Please enter the name of the website</p>
+                    <p className="dashboard-website-p">Please enter the URL</p>
                 </div>
-                <InputView name='Website Name' placeholder='My Website' onChange={(e)=>setUrl(e)}/>
+                <InputView name='URL' placeholder='example.com' onChange={(e)=>setUrl(e)}/>
                 <div className="dashboard-website-submitpop">
                     <button onClick={AddWebsite} className="dashboard-website-submit">Submit</button>
                 </div>
