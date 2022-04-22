@@ -33,7 +33,7 @@ const openGoogleLoginPage = useCallback(() => {
     const params = {
       response_type: 'code',
       client_id: '476617142718-lluvm3mkk189lkp2968vqv8l2l8sig1q.apps.googleusercontent.com',
-      redirect_uri: `http://3.6.243.234:8001/${redirectUri}`,
+      redirect_uri: `http://shorthand.blog:8001/${redirectUri}`,
       prompt: 'select_account',
       access_type: 'offline',
       scope

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {motion} from 'framer-motion'
 import { Col, Button, Row } from "antd";
+import {useSelector} from 'react-redux';
 import "../../assets/css/cookieboard.css";
 import CookieView from "../../component/content/cookieView";
 import ScanHistoryView from "../../component/content/scanHistoryView";
@@ -15,12 +16,13 @@ const CookiemanagerScr = (props) => {
   
   const [toggle, setToggle] = useState(false);
   const [choose, setChoose] = useState('')
-  
+  const selector=useSelector(state=>state.ChangeSite)
+  // console.log(".............here data",selector)
 
 
   const scanHistory=async ()=>{
 
-    const response=await Postapi('/auth/scanhistory',{email:"c@a.com",website:"http://netflix.com/in"})
+    const response=await Postapi('/auth/scanhistory',{email:"c@a.com",website:selector.websiteData.website_url})
     // console.log('response.........',response)
     if (response.status){
       if(response.status===202){

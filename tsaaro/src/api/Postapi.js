@@ -1,6 +1,6 @@
 import axios from 'axios';
-const IP_ADDR=process.env.REACT_APP_IP_ADDR;
-// const IP_ADDR='http://192.168.29.5:8001';
+// const IP_ADDR=process.env.REACT_APP_IP_ADDR;
+const IP_ADDR='http://shorthand.blog:8001';
 console.log('address.......',IP_ADDR)
 
 
